@@ -1,18 +1,4 @@
 一开始的思路就是将数字转换成字符串，然后再将字符串转数组遍历，遇到1就count++，一直到结束
-初始代码：
-public class Solution {
-    // you need to treat n as an unsigned value
-    public int hammingWeight(int n) {
-        int count = 0;
-        String s= Integer.toBinaryString(n);
-        for(char c : s.toCharArray()){
-            if(c=='1'){
-                count++;
-            }
-        }
-        return count;
-  }
-}
 
 下面分析一下时空复杂度，对时间来说，遍历了一整个数组，所以时间的复杂度肯定就是O(n)，空间的话并没有用到额外的空间，那么空间的复杂度就是O(1)
 时空的复杂度还是没有达到最优，那么应该找一个最优化的算法来做。
