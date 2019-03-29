@@ -38,6 +38,6 @@
  ## Array
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-| [No.026](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|Remove Duplicates from Sorted Array|[Solution](./026/Code.java)|[Note](./026/Note.text)|Easy|O(n)|O(1)|Array|
+| |[No.026](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|Remove Duplicates from Sorted Array|[Solution](./026/Code.java)|[Note](./026/Note.text)|Easy|O(n)|O(1)|Array|
 | |[No.027](https://leetcode.com/problems/remove-element/)|Remove Element|[Solution](./027/Code.java)|[Note](./027/Node.text)|Easy|O(n)|O(1)||
 | |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(1)||
