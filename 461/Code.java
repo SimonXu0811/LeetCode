@@ -12,6 +12,12 @@ class Solution1 {
     }
 }
 
+/*
+时间复杂度:O(1)
+空间复杂度:O(1)
+*/
+
+
 class Solution2{
 public int hammingDistance(int x, int y) {
         int num = 0;
@@ -26,8 +32,20 @@ public int hammingDistance(int x, int y) {
     }
 }
 
+/*
+时间复杂度:O(1)
+空间复杂度:O(1)
+*/
+
+
 class Solution3{
 public int hammingDistance(int x, int y) {
     return Integer.bitCount(x^y);
 }
 }
+
+/*
+时间复杂度:O(1)
+空间复杂度:O(1)
+*/
+
