@@ -41,8 +41,8 @@ class Solution2 {
 }
 
 /*
-时间复杂度:O(1)
-空间复杂度:O(1)
+时间复杂度:O(n^2)
+空间复杂度:O(n)
 */
 
 
@@ -75,7 +75,36 @@ class Solution3 {
 }
 
 /*
-时间复杂度:O(1)
+时间复杂度:O()
 空间复杂度:O(n)
+*/
+
+
+class Solution4 {
+    public int[] findErrorNums(int[] nums) {
+        int len = nums.length;
+        int[] result = new int[2];
+        int expectSum = len * (len + 1) / 2;
+        int actualSum = 0;
+        
+        for (int i = 0; i < len; i++) {//遍历如果出现，就将索引上的值乘-1
+            int n = Math.abs(nums[i]);
+            actualSum += n;
+            if (nums[n - 1] < 0) {//如果是负，那么就是已经出现过了
+                result[0] = n;
+            }
+            
+            nums[n - 1] *= -1;
+        }
+        
+        result[1] = result[0] + (expectSum - actualSum);//最后计算未出现的
+        
+        return result;
+    }
+}
+
+/*
+时间复杂度:O(n)
+空间复杂度:O(1)
 */
 
