@@ -40,4 +40,4 @@
 |:---|---|-----|--------|----|----------|----|-----|---|
 |✔️ |[No.026](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|Remove Duplicates from Sorted Array|[Solution](./026/Code.java)|[Note](./026/Note.text)|Easy|O(n)|O(1)|Two points|
 |✔️ |[No.027](https://leetcode.com/problems/remove-element/)|Remove Element|[Solution](./027/Code.java)|[Note](./027/Node.text)|Easy|O(n)|O(1)|Two points|
-|✔️ |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(n)||
+|❓ |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(n)||
