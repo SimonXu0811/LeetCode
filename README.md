@@ -41,4 +41,9 @@
 |✔️ |[No.026](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|Remove Duplicates from Sorted Array|[Solution](./026/Code.java)|[Note](./026/Note.text)|Easy|O(n)|O(1)|Two points|
 |✔️ |[No.027](https://leetcode.com/problems/remove-element/)|Remove Element|[Solution](./027/Code.java)|[Note](./027/Node.text)|Easy|O(n)|O(1)|Two points|
 |✔️ |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(n)❓||
-|✔️ | [No.118](https://leetcode.com/problems/pascals-triangle/)|Pascals-triangle|[Solution](./118/Code.java)|[Note](./118/Note.text)|Easy|O(n^2)|O(1)| |
+|✔️ | [No.118](https://leetcode.com/problems/pascals-triangle/)|Pascals‘ Triangle|[Solution](./118/Code.java)|[Note](./118/Note.text)|Easy|O(n^2)|O(1)| |
+|✔️ |[No.119](https://leetcode.com/problems/pascals-triangle-ii/)|Pascal's Triangle II|[Solution](./119/Code.java)|[Note](./119/Note.text)|Easy|O(n^2)|O(1)||
+|✔️ |[No.121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)|Best Time to Buy and Sell Stock|[Solution](./121/Code.java)|[Note](./121/Note.text)|Easy|O(n)|O(1)|Array|
+|✔️ |[No.169](https://leetcode.com/problems/majority-element/)|Majority Element|[Solution](./169/Code.java)|[Note](./169/Note.text)|Easy|O(n)|O(1)||
+|✔️ |[No.189](https://leetcode.com/problems/rotate-array/)|Rotate Array|[Solution](./189/Code.java)|[Note](./189/Note.text)|Easy|O(n)|O(1)||
+|✔️ |[No.905](https://leetcode.com/problems/sort-array-by-parity/)|Sort Array By Parity|[Solution](./905/Code.java)|[Note](./905/Note.text)|Easy|O(n)|O(1)||
