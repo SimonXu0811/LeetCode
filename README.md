@@ -47,3 +47,4 @@
 |✔️ |[No.169](https://leetcode.com/problems/majority-element/)|Majority Element|[Solution](./169/Code.java)|[Note](./169/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.189](https://leetcode.com/problems/rotate-array/)|Rotate Array|[Solution](./189/Code.java)|[Note](./189/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.905](https://leetcode.com/problems/sort-array-by-parity/)|Sort Array By Parity|[Solution](./905/Code.java)|[Note](./905/Note.text)|Easy|O(n)|O(1)||
+
