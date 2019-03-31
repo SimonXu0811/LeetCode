@@ -47,4 +47,11 @@
 |✔️ |[No.169](https://leetcode.com/problems/majority-element/)|Majority Element|[Solution](./169/Code.java)|[Note](./169/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.189](https://leetcode.com/problems/rotate-array/)|Rotate Array|[Solution](./189/Code.java)|[Note](./189/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.905](https://leetcode.com/problems/sort-array-by-parity/)|Sort Array By Parity|[Solution](./905/Code.java)|[Note](./905/Note.text)|Easy|O(n)|O(1)||
-
+|✔️ |[No.896](https://leetcode.com/problems/monotonic-array/)|Monotonic Array|[Solution](./896/Code.java)|[Note](./896/Note.text)|Easy|O(n)|O(1)||
+|🔒 |[No.243](https://leetcode.com/problems/shortest-word-distance/)|Shortest Word Distance|Solution|Note|Easy| | ||
+|✔️ |[No.448](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)|Find All Numbers Disappeared in an Array|[Solution](./448/Code.java)|[Note](./448/Note.text)|Easy|O(n)|O(1)||
+|✔️ |[No.821](https://leetcode.com/problems/shortest-distance-to-a-character/)|Shortest Distance to a Character|[Solution](./821/Code.java)|[Note](./821/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.001](https://leetcode.com/problems/two-sum/)|Two Sum|[Solution](./001/Code.java)|[Note](./001/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Two Sum II|[Solution](./167/Code.java)|[Note](./167/Note.text)|Easy|O(n)|O(1)||
+|🔒 |[No.170](https://leetcode.com/problems/two-sum-iii-data-structure-design/)|Two Sum III|Solution|Note|Easy| | ||
+|✔️ |[No.922](https://leetcode.com/problems/sort-array-by-parity-ii/)|Sort Array By Parity II|[Solution](./922/Code.java)|[Note](./922/Note.text)|Easy|O(n)|O(1)|two pointer|
