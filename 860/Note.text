@@ -1,0 +1,93 @@
+自己的思路
+
+创建两个临时变量，一个用来储存5元纸币的个数，一个用来储存10元纸币的个数
+如果收款是5元，那么五元的纸币加一
+如果收款是10元，那么找5元，五元纸币减一 十元纸币加一
+如果收款是20元就分两种情况，一种是找一张十元一张五元，所以五元十元纸币各减一；第二种是如果没有十元纸币，就找三张5元的，五元纸币减三
+只要有一个纸币数为负就不符合题意了
+
+下面是自己的代码
+class Solution {
+    public boolean lemonadeChange(int[] bills) {
+        if(bills[0] != 5) return false;//一开始不是5肯定找不出
+        int count5 = 1;//手里一开始肯定有一张5元
+        int count10 = 0;//手里一开始肯定没有10元
+        for(int i = 1; i < bills.length; i++){//遍历数组，计算手中的零钱数
+            if(bills[i] == 5){//收五元就五元纸币加一
+                count5++;
+            }else if(bills[i] == 10){
+                count5--;
+                count10++;
+            }else if(bills[i] == 20){
+                if(count10 == 0){
+                    count5-=3;
+                }else{
+                    count10--;
+                    count5--;
+                }
+            }
+            if(count5 < 0 || count10 < 0){//一个不符合就false
+                return false;
+            }
+            
+        }
+        return true;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，其他的都是O(1)的条件比较，所以时间复杂度为O(n)
+
+空间复杂度分析
+唯一的临时空间就是一开始创建的count5和count10，所以有2两个临时空间，是常数级
+所以空间复杂度就是O(1)
+
+
+
+
+别人的思路
+创建一个空间为2的数组res用来保存5元和10元的零钱数，再创建一个flag来标记是否合法
+如果收款为5元，那么res[0]+1 flag为true
+如果收款为10元，如果flag不为true，那么就返回false，否则res[0]-1 res[1]+1，flag为true
+如果收款为20，判断res[1]>=1&&res[0]>=1||res[0]>=3，否则flag为false
+最后flag为false就返回false
+
+代码
+class Solution2 {
+    public boolean lemonadeChange(int[] bills) {
+        int[] res = new int[2];
+        for (int i: bills) {
+            switch (i) {//用switch代替了if语句
+                case 5:
+                    res[0]++;
+                    break;
+                case 10:
+                    if (res[0] <= 0) return false;
+                    res[0]--;
+                    res[1]++;
+                    break;
+                case 20:
+                    boolean flag = false;
+                    if (res[0] >= 1 && res[1] >= 1) {
+                        flag = true;
+                        res[0]--;
+                        res[1]--;
+                    } else if (res[0] >= 3) {
+                        flag = true;
+                        res[0] -= 3;
+                    }
+                    if (!flag) return false;
+                    break;
+            }
+        }
+        return true;
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，查看每个元素的值，然后后面都是O(1)的条件语句
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+创建了三个空间，一个保存flag，两个保存零钱的个数，所以空间为T(3)
+转成高阶无穷小就为O(1)
