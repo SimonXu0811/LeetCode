@@ -1,0 +1,56 @@
+自己的思路
+先创建一个临时的数组，把数组内填满零，然后将原数组遍历，遇到非零的填进新的数组里
+最后再复制一下数组。
+
+自己的的代码
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int[] res = new int[nums.length];
+        Arrays.fill(res,0);
+        int j = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != 0){
+                res[j] = nums[i];
+                j++;
+            }
+        }
+       for(int i = 0; i < nums.length; i++){
+           nums[i] = res[i];
+       }
+    }
+}
+
+时间复杂度分析
+遍历了两次数组，第一次将非零数组填进临时的数组，所用的时间为T(n)
+第二次遍历数组，将临时的数据复制进去，所用的时间为T(n)
+两个遍历不嵌套，所以所用的总时间为T(n)=T(n)+T(n)
+转成高阶无穷小:O(n)
+
+空间复杂度分析
+创建了一个临时数组res，借用了n个临时的空间，所以空间复杂度为:O(n)
+
+
+别人的思路1
+双指针法，用一个指针遍历到第一个零元素，第二个指针移动到非零元素，然后讲第二个指针的值复制到第一个指针上，
+然后将第二个指针上的元素附为0
+
+代码
+public void moveZeroes(int[] nums) {
+        int p1=0,p2=p1+1,len=nums.length;
+        while(p1<len&&p2<len){
+            if(nums[p1]!=0){
+                p1++;
+            }//找第一个零元素
+            else if(nums[p2]!=0){//找第二个非零元素
+                nums[p1++]=nums[p2];//复制给第一个指针
+                nums[p2]=0;//第二个归零
+            }
+            p2++;
+        }
+    }
+    
+时间复杂度分析
+循环了一次，双指针遍历完了一遍的数组，所用的时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的临时空间，所以空间复杂度为:O(1)
