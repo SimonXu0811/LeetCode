@@ -1,0 +1,135 @@
+自己的思路
+首先创建一个临时数组，用来保存每个位置与最近的1的距离。
+首先从头向后遍历，先计算出每个元素与前一个1之间的距离；
+然后从后向前遍历，计算出每个元素与后一个之间的距离，然后取最小值
+最后遍历一遍距离的数组，取出最大值
+
+自己的代码
+class Solution {
+    public int maxDistToClosest(int[] seats) {
+        int[] dis = new int[seats.length];
+        
+        int pre = Integer.MIN_VALUE/2;
+        for(int i = 0; i < seats.length; i++){//用来计算与前一个1之间的距离
+            if(seats[i] == 1) pre = i;
+            dis[i] = i - pre;
+        }
+        
+        pre = Integer.MAX_VALUE/2;
+        for(int i = seats.length - 1; i >= 0; i--){//用来计算与后一个1之间的距离
+            if(seats[i] == 1) pre = i;
+            dis[i] = Math.min(pre - i, dis[i]);
+        }
+        
+        int max=0;
+        for(int i = 0; i < seats.length; i++){//找出数组中的最大值
+            if(max < dis[i]){
+                max = dis[i];
+            }
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+遍历了三遍数组，第一遍是从前向后遍历，所用时间为T(n)
+第二遍从后向前遍历，所用时间为T(n)
+第三部遍历找最大值，所用时间为T(n)
+三个循环都不嵌套，所以总时间为T(n)=T(n)+T(n)+T(n)
+转成高阶无穷小为:O(n)
+
+空间复杂度
+创建了一个dis的数组用来储存与1的距离，所用空间为T(n)
+然后创建了一个pre用来记录1出现的位置，所用空间为T(1)
+创建了一个max用来记录最大值，所用空间为T(1)
+所以三个的总空间为T(n)=T(n)+T(1)+T(1)
+转成高阶无穷小为:O(n)
+
+
+
+别人的思路1
+创建两个数组，left用来记录元素与左边1的距离，right用来计算与右边1的距离
+遍历left数组，如果元素=1，left中该元素的位置记为0，然后后面的非1元素位置记为逐后加1，因为距离越来越远
+同样的遍历right数组，非1元素位置记为逐前加1
+然后遍历原数组，索引到非1元素时，取left和rihgt中的最小值，然后最后返回各个最小值中最大的一个
+
+代码
+class Solution {
+    public int maxDistToClosest(int[] seats) {
+        int N = seats.length;
+        int[] left = new int[N], right = new int[N];
+        Arrays.fill(left, N);//先填充数组
+        Arrays.fill(right, N);
+
+        for (int i = 0; i < N; ++i) {
+            if (seats[i] == 1) left[i] = 0;
+            else if (i > 0) left[i] = left[i-1] + 1;//逐后加一
+        }
+
+        for (int i = N-1; i >= 0; --i) {
+            if (seats[i] == 1) right[i] = 0;
+            else if (i < N-1) right[i] = right[i+1] + 1;//逐前加一
+        }
+
+        int ans = 0;
+        for (int i = 0; i < N; ++i)
+            if (seats[i] == 0)
+                ans = Math.max(ans, Math.min(left[i], right[i]));//取出各个最小值中最大的那个
+        return ans;
+    }
+}
+
+时间复杂度分析
+遍历三遍数组，第一遍left时所用的时间为T(n)
+第二遍right所用的时间为T(n)
+第三遍原数组，所用的时间为T(n)
+所以总的所用时间为T(n)=T(n)+T(n)+T(n)
+转成高阶无穷小为O(n)
+
+空间复杂度分析
+创建了一个left数组记录左边的距离所用空间为T(n)
+创建了right数组，记录右边的距离所用空间为T(n)
+创建ans取值，空间为T(1)
+所以总空间为T(n)=T(n)+T(n)+T(1)
+转成高阶无穷小为O(n)
+
+
+
+别人的思路2
+利用双指针，pre记录左边的1，next记录右边的1 ，然后取i-pre和next-i的最小值，再从最小值中取最大
+先从左向右遍历数组，找到第一个1记录为i 然后第一个前面的就是从数组长度开始减，中间的记left=i-pre
+然后遍历过程中将next也移动，找到第二个1，然后记right=next-i
+最后max(ans, min(left, right))
+
+代码
+class Solution {
+    public int maxDistToClosest(int[] seats) {
+        int N = seats.length;
+        int prev = -1, future = 0;
+        int ans = 0;
+
+        for (int i = 0; i < N; ++i) {//开始遍历全数组
+            if (seats[i] == 1) {//找到左边的1
+                prev = i;
+            } else {
+                while (future < N && seats[future] == 0 || future < i)
+                    future++;//同时找右边的1
+
+                int left = prev == -1 ? N : i - prev;//然后计算与左边1的差值
+                int right = future == N ? N : future - i;//计算与右边1的差值
+                ans = Math.max(ans, Math.min(left, right));
+            }
+        }
+
+        return ans;
+    }
+}
+
+时间复杂度分析
+一开始遍历数组找左边1的位置，所用时间为T(n)
+然后再遍历过程中while循环找后一个指针的位置，所用时间是常数级T(k)
+两个嵌套，所以所用总时间为T(n)=T(k)*T(n)
+转成高阶无穷小就为:O(n)
+
+空间复杂度分析
+没有用到额外的临时空间，所以空间复杂度就为:O(1)
