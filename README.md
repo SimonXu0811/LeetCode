@@ -68,4 +68,4 @@
 | |[No.011](https://leetcode.com/problems/container-with-most-water/submissions/)|Container With Most Water|[Solution](./011/Code.java)|[Note](./011/Note.text)|Medium|O(n)|O(1)|two pointer|
 | |[No.904](https://leetcode.com/problems/fruit-into-baskets/)|Fruit Into Baskets|[Solution](./904/Code.java)|[Note](./904/Note.text)|Medium|O(n)|O(1)|two pointer|
 | |[No.674](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|Longest Continuous Increasing Subsequence|[Solution](./674/Code.java)|[Note](./674/Note.text)|Easy|O(n)|O(1)||
-| |No.031|Next Permutation|[Solution](./031/Code.java)|[Note](./031/Note.text)|Medium|O(nlogn)|O(1)||
+| |[No.031](https://leetcode.com/problems/next-permutation/)|Next Permutation|[Solution](./031/Code.java)|[Note](./031/Note.text)|Medium|O(nlogn)|O(1)||
