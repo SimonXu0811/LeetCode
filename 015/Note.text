@@ -1,0 +1,37 @@
+思路就是把三数之和转成两数之和做，先取一个数nums[i]，那么剩下的两数之和就是target = - nums[i]
+然后再用双指针法遍历数组，并且要避免那些已经出现过的书，因为这样就会产生重复的数组。
+如果两数之和大于target 那么最右的向左遍历，如果小于target，那么最左的向右遍历
+
+代码
+ public List<List<Integer>> threeSum(int[] a) {
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(a);
+        
+        for(int i = 0; i < a.length; i++) {//先遍历数组，然后假设这个数为一个值，转成两数之和
+            if(i > 0 && a[i] == a[i-1]) continue;
+            int l = i + 1, h = a.length - 1, target = -a[i];
+            while(l < h) {//双指针法，如果加起来大于target，右边减一，小于target，就左边加一
+                if(l != i + 1 && a[l] == a[l-1]) l++;
+                else {
+                    int temp = a[l]+a[h];
+                    if(temp == target) {
+                        res.add(new ArrayList<>(Arrays.asList(a[i], a[l++], a[h--])));
+                    } else if(temp > target) {
+                        h--;
+                    } else {
+                        l++;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    
+时间复杂度分析
+第一次遍历数组，所用的时间为T(n)
+第二个双指针法，左边和右边总共遍历了一遍数组，所以所用时间为T(n)
+两个循环嵌套，所以所用的总时间为T(n)=T(n)*T(n)
+转成高阶无穷小为:O(n^2)
+
+空间复杂度分析
+没有用到额外的临时空间，所以空间复杂度就为O:(1)
