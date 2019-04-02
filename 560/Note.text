@@ -1,0 +1,67 @@
+ 自己的思路
+ 用两个循环做，一个用来判断起始的头
+ 第二个从起始处一直连续的向后加，一直加到等于k值
+ 如果等于那么次数加一，一直到遍历结束
+ 
+ 自己的代码
+ class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int res = 0;
+        for(int i = 0; i < nums.length; i++){//确定一个头值
+            int sum = 0;
+            for(int j = i; j < nums.length; j++){
+                sum += nums[j];//从头值开始向后加
+                if(sum == k){
+                   res ++;//如果等就次数加一
+            }
+            }
+            
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+用了两个循环，第一个遍历了整个数组，所以所用的时间为:T(n)
+第二个从i开始遍历到数组尾部，所用的时间为T(n-i)
+两个循环嵌套，所以所用的总时间为:T(n)=T(n)*T(n-i)
+转成高阶无穷小就为:O(n^2)
+
+空间复杂度分析
+就用到了res，sum，i这三个临时空间，所以空间所用的是常数级的
+空间复杂度为:O(1)
+
+
+别人的思路
+二分搜索法，利用hashmap保存
+在hashmap保存时，以sum和为key，出现的次数为value。
+在搜索数值时，以sum - k作为条件，因为每个从头向后加的值都可以表示为sum - k
+假设我的k值是5，前面的数之和为sum1=3，后面的数之和sum2=8。 那么在sum1到sum2之间的所有数之和就是k
+所以，可以表示为sum2-k来看是否前面出现过sum1，如果有，中间连续的数相加一定为k
+然后如果出现过了就count+1，没有就继续查找
+
+别人的代码
+public class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int count = 0, sum = 0;
+        HashMap < Integer, Integer > map = new HashMap < > ();
+        map.put(0, 1);//先保存0，记录第一次出现
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (map.containsKey(sum - k))//如果有，那么久count加上出现的次数
+                count += map.get(sum - k);
+            map.put(sum, map.getOrDefault(sum, 0) + 1);//把从前向后的sum加进hashmap中
+        }
+        return count;
+    }
+}
+
+时间复杂度分析
+遍历一遍数组，把sum记作所有数之和，所用的时间为T(n)
+在hashmap中查找所花的时间为T(1)
+两个嵌套，所以所用的总时间为T(n)=T(n)*T(1)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+每次保存sum到hashmap中，都会调用一次临时储存空间保存，总共保存了n个空间
+所以空间复杂度为:O(n)
