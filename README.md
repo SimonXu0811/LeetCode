@@ -70,9 +70,9 @@
 |✔️ |[No.674](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|Longest Continuous Increasing Subsequence|[Solution](./674/Code.java)|[Note](./674/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.031](https://leetcode.com/problems/next-permutation/)|Next Permutation|[Solution](./031/Code.java)|[Note](./031/Note.text)|Medium|O(nlogn)|O(1)||
 |🔒 |[No.422](https://leetcode.com/problems/valid-word-square/)|Valid Word Square|Solution|Note|Easy|O(n^2)|O(1)||
-| |[No.349](https://leetcode.com/problems/intersection-of-two-arrays/submissions/)|Intersection of Two Arrays|[Solution](./349/Code.java)|[Note](./349/Note.text)|Easy|O(n)|O(1)||
+|✔️ |[No.349](https://leetcode.com/problems/intersection-of-two-arrays/submissions/)|Intersection of Two Arrays|[Solution](./349/Code.java)|[Note](./349/Note.text)|Easy|O(n)|O(n)||
 | |[No.724](https://leetcode.com/problems/find-pivot-index/)|Find Pivot Index|[Solution](./724/Code.java)|[Note](./724/Note.text)|Easy|O(n)|O(1)||
 | |[No.747](https://leetcode.com/problems/largest-number-at-least-twice-of-others/)|Largest Number At Least Twice of Others|[Solution](./747/Code.java)|[Note](./747/Note.text)|Easy|O(n)|O(1)||
-| |[No.498]|Diagonal Traverse|[Solution](./498/Code.java)|[Note](./498/Note.text)|Medium|O(n)|O(n)||
+| |[No.498](https://leetcode.com/problems/diagonal-traverse/)|Diagonal Traverse|[Solution](./498/Code.java)|[Note](./498/Note.text)|Medium|O(n)|O(n)||
 | |[No.561](https://leetcode.com/problems/array-partition-i/)|Array Partition I|[Solution](./561/Code.java)|[Note](./561/Note.text)|Easy|O(nlogn)|O(1)||
 | |[No.485](https://leetcode.com/problems/max-consecutive-ones/)|Max Consecutive Ones|[Solution](./485/Code.java)|[Note](./485/Note.text)|Easy|O(n)|O(1)||
