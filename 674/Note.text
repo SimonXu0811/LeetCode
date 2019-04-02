@@ -1,0 +1,58 @@
+自己的思路
+便利一次数组，将遍历到的元素做为起始点的index
+然后调用找递增数组的方法，从index开始向后遍历，找到第一个递减的元素，然后取两个元素之间索引的差值
+最后取出最大值
+
+自己的代码
+class Solution {
+    public int findLengthOfLCIS(int[] nums) {
+        int max = 0;
+        for(int index = 0; index < nums.length; index++){//将遍历元素做为索引
+        int length = findLength(nums, index);//调用找长度的函数
+        max = Math.max(max, length);//取最大值
+        }
+        return max;
+    }
+    
+    private int findLength(int[] nums, int index){
+        for(int i = index; i < nums.length - 1 ; i++){//开始找递减元素
+            if(nums[i+1] <= nums[i]){
+                return i - index + 1;//找出这个子数组的长度
+            }
+        }
+        return nums.length - index;
+    }
+}
+
+时间复杂度分析
+第一次遍历数组，所用的时间为T(n)
+然后调用方法，然后从index开始遍历一次数组，所用的时间为T(n-i)
+最后所用的时间为T(n)=T(n)*T(n-i)
+转成高阶无穷小为:O(n^2)
+
+空间复杂度分析
+就创建了临时常数空间，所以所用的空间复杂度为:O(1)
+
+
+
+别人的思路
+滑动窗口思想，创建一个指针，从头开始遍历数组，记录到第一个的递减数
+记录递减数所在的索引，然后计算出长度，取最大值
+
+别人的代码
+class Solution {
+    public int findLengthOfLCIS(int[] nums) {
+        int ans = 0, anchor = 0;
+        for (int i = 0; i < nums.length; ++i) {//从头向后遍历数组
+            if (i > 0 && nums[i-1] >= nums[i]) anchor = i;//记录递减数的索引
+            ans = Math.max(ans, i - anchor + 1);//取最大值
+        }
+        return ans;
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，所以所用的时间复杂度为:O(n)
+
+空间复杂度分析
+创建了3个临时变量，所用空间为常数级，所以空间复杂度为:O(1)
