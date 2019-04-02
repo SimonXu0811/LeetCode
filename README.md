@@ -60,4 +60,4 @@
 |✔️ |[No.849](https://leetcode.com/problems/maximize-distance-to-closest-person/)|Maximize Distance to Closest Person|[Solution](./849/Code.java)|[Note](./849/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.840](https://leetcode.com/problems/magic-squares-in-grid/)|Magic Squares In Grid|[Solution](./840/Code.java)|[Note](./840/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.283](https://leetcode.com/problems/move-zeroes/)|Move Zeroes|[Solution](./283/Code.java)|[Note](./283/Note.text)|Easy|O(n)|O(1)||
-|✔️ |[No.015](https://leetcode.com/problems/3sum/)|3sum|[Solution](./015/Code.java)|[Note](./015/Note.text)|Easy|O(n^2)|O(n)||
+|✔️ |[No.015](https://leetcode.com/problems/3sum/)|3sum|[Solution](./015/Code.java)|[Note](./015/Note.text)|Medium|O(n^2)|O(n)||
