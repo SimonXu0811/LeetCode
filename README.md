@@ -64,7 +64,7 @@
 |✔️ |[No.209](https://leetcode.com/problems/minimum-size-subarray-sum/)|Minimum Size Subarray Sum|[Solution](./209/Code.java)|[Note](./209/Note.text)|Medium|O(n)|O(1)|two pointer|
 |✔️ |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(n)|prefix sum|
 |🔒 |[No.325](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|Maximum Size Subarray Sum Equals k|Solution|Note|Medium|O(n)|O(n)|prefix sum|
-| |[No.930](https://leetcode.com/problems/binary-subarrays-with-sum/)|Binary Subarrays With Sum|[Solution](./930/Code.java)|[Note](./930/Note.text)|Medium|O(n)|O(n)|prefix sum|
+|✔️ |[No.930](https://leetcode.com/problems/binary-subarrays-with-sum/)|Binary Subarrays With Sum|[Solution](./930/Code.java)|[Note](./930/Note.text)|Medium|O(n)|O(1)|three pointer|
 | |[No.011](https://leetcode.com/problems/container-with-most-water/submissions/)|Container With Most Water|[Solution](./011/Code.java)|[Note](./011/Note.text)|Medium|O(n)|O(1)|two pointer|
 | |[No.904](https://leetcode.com/problems/fruit-into-baskets/)|Fruit Into Baskets|[Solution](./904/Code.java)|[Note](./904/Note.text)|Medium|O(n)|O(1)|two pointer|
 | |[No.674](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|Longest Continuous Increasing Subsequence|[Solution](./674/Code.java)|[Note](./674/Note.text)|Easy|O(n)|O(1)||
