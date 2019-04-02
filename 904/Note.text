@@ -1,0 +1,103 @@
+我的思路
+首先先标记一个index，从index开始向后遍历
+再找两种水果，把index所处的记为fruit1， index后面第一个不同的值记作fruit2
+然后遍历长度，从index开始遍历，tree元素中满足等于fruit1和fruit2中任意一个，那么长度加一
+然后再找最大的长度
+
+我的代码
+class Solution {
+    public int fruit1,fruit2, index = 0,length, max = -1;    
+    public int totalFruit(int[] tree) {
+        while(index < tree.length){//遍历每个索引
+        findFruit(tree, index);//先判断水果的种类
+        length = findLength(tree, index);//找出能采摘树的长度
+        max = findMax(length);//取出最大值
+        index++;
+        }
+        return max;
+    }
+    
+    private void findFruit(int[] tree, int index){
+        fruit1 = tree[index];
+        for(int i = index + 1; i < tree.length; i++){
+            if(tree[i] != fruit1){//找出与fruit1第一个不同的元素，记为fruit2
+                fruit2 = tree[i];
+                return;
+            }
+        }
+    }
+    
+    private int findLength(int[] tree, int index){
+        int l = 0;
+        for(int i = index; i < tree.length; i++){//从索引开始向后遍历
+            if(tree[i] == fruit1||tree[i] == fruit2){//如果满足任意一个，那么长度加一
+                l++;
+            }else if(tree[i] != fruit1 || tree[i] != fruit2){//出现第三个元素就结束
+                return length = l;
+            }
+        }
+        return length = l;
+    }
+    
+    private int findMax(int length){
+        return Math.max(max,length);//取最大值
+    }
+}
+
+时间复杂度分析
+第一次遍历数组，所用的时间为T(n)
+然后调用第一个方法，平均所用的时间为T(n)
+调用第二个方法，平均所用时间为T(n)
+调用第三个方法，比较大小所用时间为T(1)
+所用的总时间为T(n)=T(n)*T(n)*T(n)*T(1)
+转成高阶无穷小就为:O(n^3)
+
+空间复杂度分析
+创建了五个临时空间，所以储存空间是常数级的
+所以空间复杂度就为:O(1)
+
+
+
+
+别人的思路
+用三指针，一个用来标记第一个元素，还有一个用来标记第一个不同的元素，并将他们保存在set中，还有一个向后遍历
+如果set的值超过了三，就表示有三个元素，那么把set中先进的元素remove掉， 第一个指针向后遍历到不同的元素
+然后计算出两个指针之间的差值，取出最大值
+
+别人的代码
+class Solution {
+    public int totalFruit(int[] tree) {
+        if (tree.length < 1) {
+            return tree.length;
+        }
+        int beg = 0;//第一个指针，用来标记第一个元素
+        int end = 0;//这个指针用来标记第二个元素
+        int max = 0;
+        int prev = -1;//prev指针用来遍历
+        HashSet hash = new HashSet();//保存水果的种类
+        
+        for (int i=0; i<tree.length; i++) {
+            
+            if (!hash.contains(tree[i])) {
+                if (hash.size() >= 2) {//多余两种就删除
+                    hash.remove(tree[prev-1]);
+                    beg = prev;
+                }
+                hash.add(tree[i]);
+            }
+            if (i == 0 || tree[prev] != tree[i]) {
+                prev = i;
+            }
+            end = i;
+            max = (end - beg) > max ? end-beg : max;
+        }
+        return max + 1;
+    }
+}
+
+时间复杂度分析
+三个指针总共遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用到了额外的hashset保存数据，借用了n个空间，n取决于n的种类
+所以空间复杂度为:O(n)
