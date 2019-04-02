@@ -1,0 +1,76 @@
+自己的思路
+暴力算法，如果数组为空，则返回0
+设一个最小距离变量
+遍历数组，将第一个值作为一个答案，然后找到后面的值相加是否能大于s
+如果有一个数直接等于或超过s，就返回1
+如果满足就保存距离比较出最小值
+如果所有相加都不满足条件，那么就返回0
+
+自己的代码
+class Solution {
+    public int minSubArrayLen(int s, int[] nums) {
+        if(nums.length <= 0) return 0;//临界条件
+        
+        int min = Integer.MAX_VALUE/2;//保存最小值
+
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] == s) return 1;
+            int sum = 0;
+            for(int j = i; j < nums.length; j++){//向后加，一直找到大于s的值
+                sum += nums [j];
+                
+                if(sum >= s){
+                    min = Math.min(min, j - i + 1);//取一个最小值
+                }
+                
+                }
+            }
+                return (min != Integer.MAX_VALUE/2) ? min : 0;//如果没有大于的就返回0
+        }
+}
+
+时间复杂度分析
+遍历了两次数组，第一次遍历了全数组，所以所用时间为T(n)
+第二次遍历了i之后的数组，所以所用时间为T(n-i)
+两次循环嵌套，所以总时间为T(n)=T(n)*T(n-i)
+转成高阶无穷小就为:O(n^2)
+
+空间复杂度分析
+没有用到额外的临时空间，所以空间复杂度为:O(1)
+
+
+别人的思路1
+用双指针法，先从前向后加到sum >= s
+然后再逐个的sum减，减到子数组的极限
+然后记录子数组的值，最后再取出一个最小值
+
+别人的代码
+class Solution {
+    public int minSubArrayLen(int s, int[] nums) {
+        if(nums.length <= 0) return 0;
+        
+        int min = Integer.MAX_VALUE/2;
+        int sum = 0;
+        int left = 0;
+        
+        for(int i = 0; i < nums.length; i++){
+            sum += nums[i];//从前向后加
+            while(sum >= s){
+                min = Math.min(min ,i + 1 - left);//取出子数列的最小值
+                sum -= nums[left++];//找到子数列的极限
+            }
+        }
+        
+                return (min != Integer.MAX_VALUE/2) ? min : 0;//如果都不满足，那就返回0
+        }
+}
+
+时间复杂度分析
+遍历一次数组，所用的时间为T(n)
+然后利用指针找到最小值，所用时间为常数级O(1)
+所以所用的总时间为T(n)=T(n)*O(1)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+用到了三个额外的临时空间保存，所以空间复杂度为：O（1）
+
