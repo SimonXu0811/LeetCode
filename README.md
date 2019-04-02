@@ -40,7 +40,7 @@
 |:---|---|-----|--------|----|----------|----|-----|---|
 |✔️ |[No.026](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|Remove Duplicates from Sorted Array|[Solution](./026/Code.java)|[Note](./026/Note.text)|Easy|O(n)|O(1)|Two points|
 |✔️ |[No.027](https://leetcode.com/problems/remove-element/)|Remove Element|[Solution](./027/Code.java)|[Note](./027/Node.text)|Easy|O(n)|O(1)|Two points|
-|✔️ |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(n)❓||
+|✔️ |[No.066](https://leetcode.com/problems/plus-one/)|Plus One|[Solution](./066/Code.java)|[Note](./066/Note.text)|Easy|O(n)|O(n)||
 |✔️ | [No.118](https://leetcode.com/problems/pascals-triangle/)|Pascals‘ Triangle|[Solution](./118/Code.java)|[Note](./118/Note.text)|Easy|O(n^2)|O(1)| |
 |✔️ |[No.119](https://leetcode.com/problems/pascals-triangle-ii/)|Pascal's Triangle II|[Solution](./119/Code.java)|[Note](./119/Note.text)|Easy|O(n^2)|O(1)||
 |✔️ |[No.121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)|Best Time to Buy and Sell Stock|[Solution](./121/Code.java)|[Note](./121/Note.text)|Easy|O(n)|O(1)|Array|
@@ -62,7 +62,7 @@
 |✔️ |[No.283](https://leetcode.com/problems/move-zeroes/)|Move Zeroes|[Solution](./283/Code.java)|[Note](./283/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.015](https://leetcode.com/problems/3sum/)|3sum|[Solution](./015/Code.java)|[Note](./015/Note.text)|Medium|O(n^2)|O(n)||
 |✔️ |[No.209](https://leetcode.com/problems/minimum-size-subarray-sum/)|Minimum Size Subarray Sum|[Solution](./209/Code.java)|[Note](./209/Note.text)|Medium|O(n)|O(1)|two pointer|
-|✔️ |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(1)|prefix sum|
+|✔️ |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(n)|prefix sum|
 |🔒 |[No.325](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|Maximum Size Subarray Sum Equals k|Solution|Note|Medium|O(n)|O(n)|prefix sum|
 | |[No.930](https://leetcode.com/problems/binary-subarrays-with-sum/)|Binary Subarrays With Sum|[Solution](./930/Code.java)|[Note](./930/Note.text)|Medium|O(n)|O(n)|prefix sum|
 | |[No.011](https://leetcode.com/problems/container-with-most-water/submissions/)|Container With Most Water|[Solution](./011/Code.java)|[Note](./011/Note.text)|Medium|O(n)|O(1)|two pointer|
