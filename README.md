@@ -61,9 +61,9 @@
 |✔️ |[No.840](https://leetcode.com/problems/magic-squares-in-grid/)|Magic Squares In Grid|[Solution](./840/Code.java)|[Note](./840/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.283](https://leetcode.com/problems/move-zeroes/)|Move Zeroes|[Solution](./283/Code.java)|[Note](./283/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.015](https://leetcode.com/problems/3sum/)|3sum|[Solution](./015/Code.java)|[Note](./015/Note.text)|Medium|O(n^2)|O(n)||
-| |[No.209](https://leetcode.com/problems/minimum-size-subarray-sum/)|Minimum Size Subarray Sum|[Solution](./209/Code.java)|[Note](./209/Note.text)|Medium|O(n)|O(1)|two pointer|
-| |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(1)|prefix sum|
-| |[No.325](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|Maximum Size Subarray Sum Equals k|[Solution](./325/Code.java)|[Note](./325/Note.text)|Medium|O(n)|O(n)|prefix sum|
+|✔️ |[No.209](https://leetcode.com/problems/minimum-size-subarray-sum/)|Minimum Size Subarray Sum|[Solution](./209/Code.java)|[Note](./209/Note.text)|Medium|O(n)|O(1)|two pointer|
+|✔️ |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(1)|prefix sum|
+|🔒 |[No.325](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|Maximum Size Subarray Sum Equals k|Solution|Note|Medium|O(n)|O(n)|prefix sum|
 | |[No.930](https://leetcode.com/problems/binary-subarrays-with-sum/)|Binary Subarrays With Sum|[Solution](./930/Code.java)|[Note](./930/Note.text)|Medium|O(n)|O(n)|prefix sum|
 | |[No.011](https://leetcode.com/problems/container-with-most-water/submissions/)|Container With Most Water|[Solution](./011/Code.java)|[Note](./011/Note.text)|Medium|O(n)|O(1)|two pointer|
 | |[No.904](https://leetcode.com/problems/fruit-into-baskets/)|Fruit Into Baskets|[Solution](./904/Code.java)|[Note](./904/Note.text)|Medium|O(n)|O(1)|two pointer|
