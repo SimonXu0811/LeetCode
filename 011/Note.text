@@ -1,0 +1,61 @@
+自己的思路
+两个循环，一个从左边开始向右遍历，另一个从右边开始向左遍历
+将两个指针取最小值，然后计算面积
+将每一个面积比较，取出最大的值
+
+自己的代码
+class Solution {
+    public int maxArea(int[] height) {
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < height.length; i++){//从左开始向右遍历
+            int j= height.length - 1;//从右开始向左
+            while(j > i){
+                int area = (Math.min(height[i], height[j])) * (j-i);//计算每一个面积
+                max = Math.max(max,area);//取出最大值
+                j--;
+            }
+            
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+第一次遍历了整个数组，所以所用时间为T(n)
+第二次遍历了n-i个数，所以所用的时间为T(n-i)
+两个循环嵌套，所以所用的总时间为T(n)=T(n)*T(n-i)
+转成高阶无穷小为:O(n^2)
+
+空间复杂度分析
+就创建了四个临时空间，所以是常数级的，空间复杂度就为:O(1)
+
+
+
+别人的思路
+双指针法，一指针从左开始，一个指针从右开始
+左指针不能超过右指针
+如果左边的边比右边的低，那么左边移动；不然就右边移动
+目的就是让两个边长足够接近
+
+别人的代码
+public class Solution {
+    public int maxArea(int[] height) {
+        int maxarea = 0, l = 0, r = height.length - 1;//一个左指针，一个右指针
+        while (l < r) {
+            maxarea = Math.max(maxarea, Math.min(height[l], height[r]) * (r - l));
+            if (height[l] < height[r])//取短边移动，让两个长度足够接近
+                l++;
+            else
+                r--;
+        }
+        return maxarea;
+    }
+}
+
+时间复杂度分析
+用了一个循环，左右两个指针加起来遍历了一遍数组
+所以时间复杂度就为:O(n)
+
+空间复杂度分析
+总共创建了三个临时的储存空间，常数级
+所以空间复杂度为:O(1)
