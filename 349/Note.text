@@ -1,0 +1,63 @@
+自己的思路
+设置两个set用来分别保存nums1和nums2中的元素，在set保存时，会直接将相同的元素跳过
+然后调用retain的方法，相同的保留，不同的删除
+再创建一个和set一样大小的数组
+把set的值复制进去
+
+自己的代码
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+        for(int i : nums1) set1.add(i);
+        for(int i : nums2) set2.add(i);//分别保存nums1和nums2的数据
+        
+        set1.retainAll(set2);//保留相同的删除不同的
+        
+        int[] res = new int[set1.size()];//设置为相同元素的个数
+        int index = 0;
+        for(int i : set1) res[index++] = i;//复制进数组
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了三次数组，在retain时耗费的时间复杂度为:O(m+n)
+其他的遍历时间都为T(n)
+互相都不嵌套，所以总的时间复杂度为:O(n+m)
+
+空间复杂度分析
+最坏的情况下就是两个数组都互不相等，所以需要m+n个空间来retain
+所以空间复杂度就为:O(m+n)
+
+
+别人的思路
+创建一个set，将小的那个数组添加到set中
+然后遍历大的数组，查看是否有相同值，如果有那么就添加到另一个set中
+然后创建数组，将set的值复制进去
+
+别人的代码
+class Solution{
+public int[] intersection(int[] nums1, int[] nums2) {
+    int M = nums1.length, N = nums2.length, k = 0;
+    Set<Integer> res = new HashSet<>(), set = new HashSet<>();//一个保存小数组 一个保存相同值
+    if(M <= N) {
+        for(int i: nums1) set.add(i);
+        for(int i=0; i < N; i++) {
+            if(set.contains(nums2[i])) res.add(nums2[i]);//有相同的加进去
+        }
+    } else {
+        return intersection(nums2,nums1);
+    }
+    int[] ans = new int[res.size()];//创建数组，把set的值复制进去
+    for(int i: res)
+        ans[k++] = i;
+    return ans;
+}
+}
+
+时间复杂度分析
+遍历了两次，两个循环都不嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+创建了两个set一个数组，最坏的情况就是所有数都相等，所以空间复杂度就为:O(n)
