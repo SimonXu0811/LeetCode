@@ -1,0 +1,104 @@
+自己的思路
+二重循环，第一次遍历从头向后，把值作为起始点
+第二次遍历从起始点开始，如果找到相等的就count加一，没有就继续遍历到数组底
+
+自己的代码
+class Solution {
+    public int numSubarraysWithSum(int[] A, int S) {
+        int count = 0;
+           for(int i = 0; i < A.length; i++){//以i为头
+                int sum = 0;
+                for(int j = i; j < A.length; j++){//从头一直遍历到尾部
+                    sum += A[j];
+                    if(sum == S){//如果出现相等就加
+                        count++;
+                    }
+                    
+                }
+           }
+        return count;
+    }
+}
+
+时间复杂度分析
+第一次遍历从0开始遍历了整个数组，所以所用的时间为:T(n)
+第二次遍历从i开始到数组结束，所用时间为:T(n-i)
+两个循环嵌套，所以所用的总时间为:T(n)=T(n)*T(n-i)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+所用到的临时空间就count，i，j，sum四个，是常数级的，所以空间复杂度为:O(1)
+
+
+别人的思路1
+用hashmap保存数组该索引处，向前所有的值之和
+然后以sum+S为目标值去查找，如果有，那么就是存在的count就等于它出现的次数
+
+别人的代码
+class Solution {
+    public int numSubarraysWithSum(int[] A, int S) {
+        int N = A.length;
+        int[] P = new int[N + 1];
+        for (int i = 0; i < N; ++i)
+            P[i+1] = P[i] + A[i];//改索引等于前面索引的值之和
+
+        Map<Integer, Integer> count = new HashMap();
+        int ans = 0;
+        for (int x: P) {
+            ans += count.getOrDefault(x, 0);
+            count.put(x+S, count.getOrDefault(x+S, 0) + 1);//找到该数加上目标是否存在，有就次数加1 
+        }
+
+        return ans;
+    }
+}
+
+时间复杂度分析
+两次遍历，第一次是将数组的前i项和加到新建数组p中，所用时间为T(n+1)
+第二次是遍历p，保存在hashmap中，得到出现的次数，所用时间为T(n+1)
+hashmap中的查询时间为T(1)
+两个循环不嵌套，所以所用的总时间为T(n)=T(n+1)+T(n+1)*T(1)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+用到了n+1个数组空间，用来纯存前i个数之和，所用的空间为T(n+1)
+用到了n+1个hashmap空间，所用的空间为T(n+1)
+所以用到的总空间就为T(n)=T(n+1)+T(n+1)
+转成高阶无穷小为:O(n)
+
+
+别人的思路2
+用三指针法，创建一个iLo，创建一个iHi指针，使得在[iLo,iHi]区间内的值之和就是要找的S
+
+别人的代码
+class Solution {
+    public int numSubarraysWithSum(int[] A, int S) {
+        int iLo = 0, iHi = 0;
+        int sumLo = 0, sumHi = 0;
+        int ans = 0;
+
+        for (int j = 0; j < A.length; ++j) {
+            // While sumLo is too big, iLo++
+            sumLo += A[j];
+            while (iLo < j && sumLo > S)
+                sumLo -= A[iLo++];
+
+            // While sumHi is too big, or equal and we can move, iHi++
+            sumHi += A[j];
+            while (iHi < j && (sumHi > S || sumHi == S && A[iHi] == 0))
+                sumHi -= A[iHi++];
+
+            if (sumLo == S)
+                ans += iHi - iLo + 1;
+        }
+
+        return ans;
+    }
+}
+
+时间复杂度分析
+遍历了整个数组，其他的都是指针的移动，所以时间复杂度为:O(n)
+
+空间复杂度分析
+只创建了6个临时的变量，所以空间复杂度为常数级
+所以空间复杂度为:O(1)
