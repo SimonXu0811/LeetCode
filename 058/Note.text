@@ -1,0 +1,55 @@
+自己的思路
+将s字符串以空格分割，然后去掉分割后的空格
+返回最后一个数组元素的长度
+
+自己的代码
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String[] str = s.trim().split(" ");//分割字符串
+        return str[str.length-1].length();//返回长度
+    }
+}
+
+时间复杂度分析
+调用了trim遍历了一次字符串，所用时间为T(n)
+调用了split遍历了一次字符串，所用时间为T(n)
+两个方法不嵌套，所以所用的总时间为T(n)=T(n)+T(n)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+创建了一个额外的数组用来保存各个字符串的值，所以空间复杂度为:O(n)
+
+
+别人的思路
+从后向前遍历，如果遇到的字符不是空格，那么继续想起，如果为空格，判断是否是末尾的空格，还是遍历过字符的空格
+如果是末尾的那么继续直到遇到第二个空格
+
+别人的代码
+ class Solution {
+    public int lengthOfLastWord(String s) {
+    int len = s.length()-1;
+    int ans = 0;
+    boolean consume = true;//判断是否是末尾的
+    while (len >= 0) {
+        if (s.charAt(len) != ' ') {//不是空格就向前，长度加一
+            len--;
+            ans++;
+            if (consume)
+                consume = false;//这时后面遇到的空格就不是末尾空格了
+        }
+        else if (consume)//如果是末尾空格的话，就继续向前
+            len--;
+        else
+            break;
+    }
+    
+    return ans;
+}
+}
+
+时间复杂度分析
+就遍历了一次字符串长度，所以时间复杂度为:T(n)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂度为:O(1)
