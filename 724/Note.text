@@ -1,0 +1,41 @@
+自己的思路
+从前向后遍历数组，如果前面的和等于后面的和，那么就返回索引，不然就返回-1
+
+自己的代码
+class Solution {
+    public int pivotIndex(int[] nums) {
+        for(int i = 0; i < nums.length; i++){
+            if(findsum(nums,i)){//找前后和的对比
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    private boolean findsum(int[] nums, int index){
+        int left = 0, right = 0;
+        for(int i = 0; i <= index; i++){//前半部分的和
+            left += nums[i];
+        }
+        
+        for(int i = index; i < nums.length; i++){//后半部分的和
+            right += nums[i];
+        }
+        return left==right;//返回是否相等
+    }
+}
+
+时间复杂度分析
+第一次遍历了一个数组，所用时间为T(n)
+然后调用方法，又各自遍历了一遍数组，所用的时间为T(n)+T(n)
+两个方法嵌套，所以所用的总时间为T(n)=T(n)*(T(n)+T(n))
+转成高阶无穷小就为:O(n^2)
+
+空间复杂度分析
+没有用到其他额外的空间，都是只创建了常数级的参数，所以空间复杂度为: O(1)
+
+
+
+别人的思路
+先创建两个变量记为sum和leftsum，然后计算出整个数组sum的值
+之后再遍历数组
