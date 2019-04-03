@@ -1,7 +1,7 @@
 # LeetCode
 
-- [x] BitManipulation
-- [ ] Array
+- [x] [BitManipulation](#bit-manipulation)
+- [ ] [Array](#array)
 - [ ] String 
 - [ ] Linked List
 - [ ] Stack
