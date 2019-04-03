@@ -1,0 +1,76 @@
+自己的思路
+首先创建两个变量，一个为max，一个为index
+遍历数组，首先找到最大值，和最大值的索引
+然后再遍历数组，将原数组每个元素变为两倍
+然后再遍历数组，判断最大值是否大于除本身索引外其他的元素
+
+自己的代码
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int max = 0;
+        int index = 0;
+        
+        for(int i = 0; i < nums.length; i++){//找到最大值以及它的索引
+            if(max < nums[i]){
+                max= nums[i];
+                index = i;
+        }
+        }
+        
+        for(int i = 0; i < nums.length; i++){//将原数组的值变为两倍
+            nums[i] *= 2;
+        }
+        
+        for(int i = 0; i < nums.length; i++){//判断除本身索引外是否都比转换后的元素大
+            if(i == index){
+                continue;
+            }
+            if(max < nums[i]){
+                return -1;
+            }
+        }
+        return index;
+    }
+}
+
+时间复杂度分析
+总共遍历了三次数组，但是三次遍历都不嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+就创建了常数级的临时变量，所以空间复杂度为:O(1)
+
+
+别人的思路
+思路和上面大致一样，都是线性扫描，但是对于代码更加优化了
+
+别人的代码
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int maxIndex = 0;
+        for (int i = 0; i < nums.length; ++i) {//找最大值及索引
+            if (nums[i] > nums[maxIndex])
+                maxIndex = i;
+        }
+        for (int i = 0; i < nums.length; ++i) {//比较
+            if (maxIndex != i && nums[maxIndex] < 2 * nums[i])
+                return -1;
+        }
+        return maxIndex;
+    }
+}
+
+时间复杂度分析
+两次遍历都不嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的变量，所以空间复杂度为:O(1)
+
+
+
+
+
+
+
+
+
+
