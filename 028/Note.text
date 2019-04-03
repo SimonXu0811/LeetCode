@@ -1,0 +1,43 @@
+自己的思路
+就是找到第一个出现字符串的索引
+
+自己的代码
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+}
+
+时间复杂度
+在内置算法中，indexOf的时间复杂度为O(m*n）
+
+空间复杂度
+只用到了常数级的空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+用循环进行对比，用到了substring的方法
+以长度为查询字符串的长度进行遍历，如果相等就返回起始的i，没有就返回-1
+
+别人的代码
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if(needle.length()>haystack.length())
+            return -1;
+        if(needle == null)
+            return 0;
+        
+        for(int i = 0; i <= haystack.length() - needle.length(); i++){//从头开始遍历
+            if(haystack.substring(i , i + needle.length()).equals(needle)){//查询substring是否相等
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+时间复杂度
+就用到了一个循环，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂度就为:O(1)
