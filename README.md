@@ -93,7 +93,7 @@
 ||[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
 ||[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n * k)|O(1)|String|
 ||[No.680](https://leetcode.com/problems/valid-palindrome-ii/)|Valid Palindrome II|[Solution](./680/Code.java)|[Note](./680/Note.text)|Easy|O(n)|O(1)|String|
-||[No.681](https://leetcode.com/problems/next-closest-time/)|Next Closest Time|[Solution](./681/Code.java)|[Note](./681/Note.text)|Easy|O(4^4)|O(1)|DFS|
+|🔒 |No.681|Next Closest Time|Solution|Note|Easy|O(4^4)|O(1)|DFS|
 ||[No.771](https://leetcode.com/problems/jewels-and-stones/)|Jewels and Stones|[Solution](./771/Code.java)|[Note](./771/Note.text)|Easy|O(n)|O(n)||
 ||[No.482](https://leetcode.com/problems/license-key-formatting/)|License Key Formatting|[Solution](./482/Code.java)|[Note](./482/Note.text)|Easy|O(n)|O(n)||
 ||[No.344](https://leetcode.com/problems/increasing-triplet-subsequence/)|Reverse String|[Solution](./344/Code.java)|[Note](./344/Note.text)|Easy|O(n)|O(1)||
