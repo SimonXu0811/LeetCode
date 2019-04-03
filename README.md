@@ -2,7 +2,7 @@
 
 - [x] [BitManipulation](#bit-manipulation)
 - [x] [Array](#array)
-- [ ] String 
+- [ ] [String](#string) 
 - [ ] Linked List
 - [ ] Stack
 - [ ] Recursion 
