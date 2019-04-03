@@ -48,12 +48,12 @@
 |✔️ |[No.189](https://leetcode.com/problems/rotate-array/)|Rotate Array|[Solution](./189/Code.java)|[Note](./189/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.905](https://leetcode.com/problems/sort-array-by-parity/)|Sort Array By Parity|[Solution](./905/Code.java)|[Note](./905/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.896](https://leetcode.com/problems/monotonic-array/)|Monotonic Array|[Solution](./896/Code.java)|[Note](./896/Note.text)|Easy|O(n)|O(1)||
-|🔒 |[No.243](https://leetcode.com/problems/shortest-word-distance/)|Shortest Word Distance|Solution|Note|Easy| | ||
+|🔒 |No.243|Shortest Word Distance|Solution|Note|Easy| | ||
 |✔️ |[No.448](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)|Find All Numbers Disappeared in an Array|[Solution](./448/Code.java)|[Note](./448/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.821](https://leetcode.com/problems/shortest-distance-to-a-character/)|Shortest Distance to a Character|[Solution](./821/Code.java)|[Note](./821/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.001](https://leetcode.com/problems/two-sum/)|Two Sum|[Solution](./001/Code.java)|[Note](./001/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Two Sum II|[Solution](./167/Code.java)|[Note](./167/Note.text)|Easy|O(n)|O(1)||
-|🔒 |[No.170](https://leetcode.com/problems/two-sum-iii-data-structure-design/)|Two Sum III|Solution|Note|Easy| | ||
+|🔒 |No.170|Two Sum III|Solution|Note|Easy| | ||
 |✔️ |[No.922](https://leetcode.com/problems/sort-array-by-parity-ii/)|Sort Array By Parity II|[Solution](./922/Code.java)|[Note](./922/Note.text)|Easy|O(n)|O(1)|two pointer|
 |✔️ |[No.867](https://leetcode.com/problems/transpose-matrix/)|Transpose Matrix|[Solution](./868/Code.java)|[Note](./868/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.860](https://leetcode.com/problems/lemonade-change/)|Lemonade Change|[Solution](./860/Code.java)|[Note](./860/Note.text)|Easy|O(n)|O(n)||
@@ -63,13 +63,13 @@
 |✔️ |[No.015](https://leetcode.com/problems/3sum/)|3sum|[Solution](./015/Code.java)|[Note](./015/Note.text)|Medium|O(n^2)|O(n)||
 |✔️ |[No.209](https://leetcode.com/problems/minimum-size-subarray-sum/)|Minimum Size Subarray Sum|[Solution](./209/Code.java)|[Note](./209/Note.text)|Medium|O(n)|O(1)|two pointer|
 |✔️ |[No.560](https://leetcode.com/problems/subarray-sum-equals-k/)|Subarray Sum Equals k|[Solution](./560/Code.java)|[Note](./560/Note.text)|Medium|O(n)|O(n)|prefix sum|
-|🔒 |[No.325](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|Maximum Size Subarray Sum Equals k|Solution|Note|Medium|O(n)|O(n)|prefix sum|
+|🔒 |No.325|Maximum Size Subarray Sum Equals k|Solution|Note|Medium|O(n)|O(n)|prefix sum|
 |✔️ |[No.930](https://leetcode.com/problems/binary-subarrays-with-sum/)|Binary Subarrays With Sum|[Solution](./930/Code.java)|[Note](./930/Note.text)|Medium|O(n)|O(1)|three pointer|
 |✔️ |[No.011](https://leetcode.com/problems/container-with-most-water/submissions/)|Container With Most Water|[Solution](./011/Code.java)|[Note](./011/Note.text)|Medium|O(n)|O(1)|two pointer|
 |✔️ |[No.904](https://leetcode.com/problems/fruit-into-baskets/)|Fruit Into Baskets|[Solution](./904/Code.java)|[Note](./904/Note.text)|Medium|O(n)|O(1)|two pointer|
 |✔️ |[No.674](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|Longest Continuous Increasing Subsequence|[Solution](./674/Code.java)|[Note](./674/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.031](https://leetcode.com/problems/next-permutation/)|Next Permutation|[Solution](./031/Code.java)|[Note](./031/Note.text)|Medium|O(nlogn)|O(1)||
-|🔒 |[No.422](https://leetcode.com/problems/valid-word-square/)|Valid Word Square|Solution|Note|Easy|O(n^2)|O(1)||
+|🔒 |No.422|Valid Word Square|Solution|Note|Easy|O(n^2)|O(1)||
 |✔️ |[No.349](https://leetcode.com/problems/intersection-of-two-arrays/submissions/)|Intersection of Two Arrays|[Solution](./349/Code.java)|[Note](./349/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.724](https://leetcode.com/problems/find-pivot-index/)|Find Pivot Index|[Solution](./724/Code.java)|[Note](./724/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.747](https://leetcode.com/problems/largest-number-at-least-twice-of-others/)|Largest Number At Least Twice of Others|[Solution](./747/Code.java)|[Note](./747/Note.text)|Easy|O(n)|O(1)||
