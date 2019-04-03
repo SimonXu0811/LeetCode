@@ -1,0 +1,45 @@
+思路
+先判断最边上的情况，如果是奇数的话，就向右或者向下移动
+对于行来说，如果i没有到最右边，那就向右移动，如果到了最后边，那就向下移动
+对于列来说，如果j没有到最下边，那么就向下移动，如果到了最下边，那就向右移动
+对于中间考虑，如果是行是偶数，那么就i--;j++,从右上到左下
+如果行是奇数，那么久i++;j--，从左下到右上
+
+代码
+class Solution {
+    public int[] findDiagonalOrder(int[][] matrix) {
+        if (matrix.length==0)return new int[0];
+        int n = matrix[0].length;
+        int m = matrix.length;
+        int [] res = new int[m * n];//新建数组保存
+        int k=0;
+        boolean down = false;//默认为false，一奇一偶交替
+        for (int i=0,j=0; i<n && j<m;){//遍历整个矩阵
+            res[k]=matrix[j][i];
+            k++;
+            if (down){
+                if (j==m-1){i++;down = false;}//到了最底下，就向右走
+                else if (i==0){j++;down = false;}//否则向下走
+                else {//中间部分是从右上到左下
+                    j++; i--;
+                }
+            } else {
+                if (j==0 && i<n-1){i++;down = true;}//最上层就向右走
+                else if (i==n-1){j++;down = true;}//到了最右就向下走
+                else {//中间部分从左下到右上
+                    j--; i++;
+                }    
+            }
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，所用的时间为T(n*m)
+然后其他都是时间为1的条件判断
+所以所用的总时间为T(n)=T(n*m)*T(1)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+创建了一个一维数组，用来保存矩阵的数据，所以空间复杂度为:O(n)
