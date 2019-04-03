@@ -1,0 +1,28 @@
+自己的思路
+要使两两组合取最小值的和最大，那么就是要让这两个数组够接近
+那就想排序数组，然后两两组合取前一个数，再加起来
+
+自己的代码
+class Solution {
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);//先排序
+        int res = 0;
+        for(int i = 0; i < nums.length; i += 2){//两两组合取前一个
+            res += nums[i];
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+用了一次内置函数归并排序，所用的时间为T(nlogn)
+又遍历了一次数组，所用的时间为T(n/2)
+两个循环不嵌套，所以所用的总时间为T(n)=T(nlogn)+T(n/2)
+转成高阶无穷小为:O(nlogn)
+
+空间复杂度分析
+没有用到其他的临时空间，所以空间复杂度为:O(1)
+
+
+
+
