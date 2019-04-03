@@ -89,7 +89,7 @@
 ||[No.165](https://leetcode.com/problems/compare-version-numbers/)|Compare Version Numbers|[Solution](./165/Code.java)|[Note](./165/Note.text)|Easy|O(n)|O(n)||
 ||[No.434](https://leetcode.com/problems/number-of-segments-in-a-string/)|Number of Segments in a String|[Solution](./434/Code.java)|[Note](./434/Note.text)|Easy|O(n)|O(1)||
 ||[No.443](https://leetcode.com/problems/string-compression/)|String Compression|[Solution](./443/Code.java)|[Note](./443/Note.text)|Easy|O(n)|O(1)|many pointer|
-||[No.459](https://leetcode.com/problems/repeated-substring-pattern/|Repeated Substring Pattern)|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
+||[No.459](https://leetcode.com/problems/repeated-substring-pattern/)|Repeated Substring Pattern|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
 ||[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
 ||[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n * k)|O(1)|String|
 ||[No.680](https://leetcode.com/problems/valid-palindrome-ii/)|Valid Palindrome II|[Solution](./680/Code.java)|[Note](./680/Note.text)|Easy|O(n)|O(1)|String|
