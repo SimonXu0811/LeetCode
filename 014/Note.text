@@ -1,0 +1,73 @@
+自己的思路
+先取第一个元素作为公共前缀
+然后遍历数组，从第二个元素开始，如果公共前缀不存在，那么就删除一个字符，知道出现了最长的公共字符串
+然后继续遍历第三个，同样的方法找到最长的公共字符串
+如果公共前缀被删空了，那就返回空
+
+自己的代码
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if(strs.length == 0) return "";
+        String s = strs[0];//将第一个元素作为公共字符串
+        for(String S : strs){//遍历数组，判断最长公共字符串
+            while(S.indexOf(s) != 0){//一直删到有相同的前缀
+                s = s.substring(0,s.length()-1);//没有就删一个
+                if(s.isEmpty()){//删空就停止
+                    return "";
+                }
+            }
+        }
+        return s;
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，最好的情况就是一次都不用删，那么时间复杂度就为:O(n)
+最坏的情况就是要全删，字符串最大长度为是常数级的，所以时间复杂度也为:O(n)
+所以时间复杂度就为:O(n)
+
+空间复杂度分析
+就创建了一个临时的变量作为公共的前缀，常数级，所以空间复杂度为:O(1)
+
+
+别人的思路
+二分法判断
+先取出一个字符串的最小长度，做为二分的highBound 因为公共前缀再长都不会比最小的字符串长度长
+然后借用二分法的思想，从中间开始，如果从头到中间都是公共前缀那么再判断high那半边，如果不是判断low那半边
+最后找到值使得公共前缀长度最长
+
+别人的代码
+public String longestCommonPrefix(String[] strs) {
+    if (strs == null || strs.length == 0)
+        return "";
+    int minLen = Integer.MAX_VALUE;
+    for (String str : strs)
+        minLen = Math.min(minLen, str.length());//找出一个最短字符串长度
+    int low = 1;//从头开始
+    int high = minLen;//到最小的长度
+    while (low <= high) {//二分法
+        int middle = (low + high) / 2;
+        if (isCommonPrefix(strs, middle))//如果是那就看上半边
+            low = middle + 1;
+        else//不是就下半边
+            high = middle - 1;
+    }
+    return strs[0].substring(0, (low + high) / 2);//找到最长的公共字符串
+}
+
+private boolean isCommonPrefix(String[] strs, int len){
+    String str1 = strs[0].substring(0,len);//返回字符串的长度
+    for (int i = 1; i < strs.length; i++)
+        if (!strs[i].startsWith(str1))//判断是否为前缀
+            return false;
+    return true;
+}
+
+时间复杂度分析
+用到了二分的思想，便遍历了数组中所有字符串的长度和，所以时间复杂度就为:O(nlogn)
+
+空间复杂度分析
+用到的只有常数级变量，所以空间复杂度就为:O(1)
+
+
+
