@@ -76,3 +76,36 @@
 |✔️ |[No.498](https://leetcode.com/problems/diagonal-traverse/)|Diagonal Traverse|[Solution](./498/Code.java)|[Note](./498/Note.text)|Medium|O(n)|O(n)||
 |✔️ |[No.561](https://leetcode.com/problems/array-partition-i/)|Array Partition I|[Solution](./561/Code.java)|[Note](./561/Note.text)|Easy|O(nlogn)|O(1)||
 |✔️ |[No.485](https://leetcode.com/problems/max-consecutive-ones/)|Max Consecutive Ones|[Solution](./485/Code.java)|[Note](./485/Note.text)|Easy|O(n)|O(1)||
+
+## String
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|:---|---|-----|--------|----|----------|----|-----|---|
+||[No.014](https://leetcode.com/problems/longest-common-prefix/)|Longest Common Prefix|[Solution](./014/Code.java)|[Note](./014/Note.text)|Easy|O(n)|O(1)|String|
+||[No.028](https://leetcode.com/problems/implement-strstr/)|Implement strStr()|[Solution](./028/Code.java)|[Note](./028/Note.text)|Easy|O(n + k)|O(1)|kmp|
+||[No.038](https://leetcode.com/problems/count-and-say/)|Count and Say|[Solution](./038/Code.java)|[Note](./038/Note)|Easy|O(n * 2)|O(1)|iteration|
+||[No.058](https://leetcode.com/problems/length-of-last-word/)|Length of Last Word|[Solution](./058/Code.java)|[Note](./058/Note.text)|Easy|O(n)|O(1)|count from back|
+||[No.067](https://leetcode.com/problems/add-binary/)|Add Binary|[Solution](./067/Code.java)|[Note](./067/Note.text)|Easy|O(n)|O(1)|construction number|
+||[No.125](https://leetcode.com/problems/valid-palindrome/)|Valid Palindrome|[Solution](./125/Code.java)|[Note](./125/Note.text)|Easy|O(n)|O(n)||
+||[No.165](https://leetcode.com/problems/compare-version-numbers/)|Compare Version Numbers|[Solution](./165/Code.java)|[Note](./165/Note.text)|Easy|O(n)|O(n)||
+||[No.434](https://leetcode.com/problems/number-of-segments-in-a-string/)|Number of Segments in a String|[Solution](./434/Code.java)|[Note](./434/Note.text)|Easy|O(n)|O(1)||
+||[No.443](https://leetcode.com/problems/string-compression/)|String Compression|[Solution](./443/Code.java)|[Note](./443/Note.text)|Easy|O(n)|O(1)|many pointer|
+||[No.459](https://leetcode.com/problems/repeated-substring-pattern/|Repeated Substring Pattern)|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
+||[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
+||[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n * k)|O(1)|String|
+||[No.680](https://leetcode.com/problems/valid-palindrome-ii/)|Valid Palindrome II|[Solution](./680/Code.java)|[Note](./680/Note.text)|Easy|O(n)|O(1)|String|
+||[No.681](https://leetcode.com/problems/next-closest-time/)|Next Closest Time|[Solution](./681/Code.java)|[Note](./681/Note.text)|Easy|O(4^4)|O(1)|DFS|
+||[No.771](https://leetcode.com/problems/jewels-and-stones/)|Jewels and Stones|[Solution](./771/Code.java)|[Note](./771/Note.text)|Easy|O(n)|O(n)||
+||[No.482](https://leetcode.com/problems/license-key-formatting/)|License Key Formatting|[Solution](./482/Code.java)|[Note](./482/Note.text)|Easy|O(n)|O(n)||
+||[No.344](https://leetcode.com/problems/increasing-triplet-subsequence/)|Reverse String|[Solution](./344/Code.java)|[Note](./344/Note.text)|Easy|O(n)|O(1)||
+||[No.412](https://leetcode.com/problems/fizz-buzz/)|Fizz Buzz|[Solution](./412/Code.java)|[Note](./412/Note.text)|Easy|O(n)|O(1)||
+||[No.005](https://leetcode.com/problems/longest-palindromic-substring/)|Longest Palindromic Substring|[Solution](./005/Code.java)|[Note](./005/Note.text)|Medium|O(n^2)|O(1)||
+||[No.819](https://leetcode.com/problems/most-common-word/)|Most Common Word|[Solution](./819/Code.java)|[Note](./819/Note.text)|Easy|O(n)|O(n)||
+||[No.929](https://leetcode.com/problems/unique-email-addresses/)|Unique Email Addresses|[Solution](./929/Code.java)|[Note](./929/Note.text)|Easy|O(n^2)|O(n)||
+||[No.535](https://leetcode.com/problems/continuous-subarray-sum/)|Encode and Decode TinyURL|[Solution](./535/Code.java)|[Note](./535/Note.text)|Meduim|O(n)|O(n)||
+|🔒 |No.271|Encode and Decode Strings|Solution|Note|Meduim|O(n)|O(n)||
+||[No.003](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|Longest Substring Without Repeating Characters|[Solution](./003/Code.java)|[Note](./003/Note.text)|Meduim|O(n)|O(n)||
+|🔒|No.293|Flip Game|Solution|Note|Easy|O(n)|O(n)||
+|🔒|No.604| Design Compressed String Iterator|Solution|Note|Easy|O(n)|O(n)|Iterator|
+||[No.008](https://leetcode.com/problems/string-to-integer-atoi/)| String to Integer (atoi)|[Solution](./008/Code.java)|[Note](./008/Note.text)|Meduim|O(n)|O(n)||
+||[No.151](https://leetcode.com/problems/reverse-words-in-a-string/)| Reverse Words in a String|[Solution](./151/Code.java)|[Note](./151/Note.text)|Meduim|O(n)|O(n)||
+||[No.557](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| Reverse Words in a String III|[Solution](./557/Code.java)|[Note](./557/Note.text)|Easy|O(n)|O(1)||
