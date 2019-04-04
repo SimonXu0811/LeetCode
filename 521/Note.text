@@ -1,0 +1,65 @@
+自己的思路
+挑出一个比较大的数判断它的子字符串
+前面一个指针从0开始，后面一个指针从最后开始向前推
+如果在另一个中没有索引， 那么就是indexOf == -1的情况，就可以保存这个子字符串的长度
+最后取一个最大值即可
+
+自己的代码
+class Solution {
+    public int findLUSlength(String a, String b) {
+        int la = a.length();
+        int lb = b.length();
+        int max = 0;
+        
+        if(la > lb){//判断一个最大的字符串，做为索引
+        for(int i = 0; i <=la; i++){//从前向后遍历，把每个字符当作一个子字符串的头
+            for(int j = la; j >= i; j--){//从后向前遍历，找到每个头的子字符串
+                if(b.indexOf(a.substring(i,j)) == -1){//如果没有遍历到，那么就保存长度，取最大值
+                    max = Math.max(max,j-i);
+                }
+            }
+        }
+            
+       }
+        else{//另一个相同的
+            for(int i = 0; i <= lb; i++){
+            for(int j = lb; j >= i; j--){
+                if(a.indexOf(b.substring(i,j)) == -1){
+                    max = Math.max(max,j-i);
+                    break;
+                }
+            }
+        }
+        }
+        return max == 0? -1 : max;//如果子字符串都是，或者说两个字符相同的话，那么久返回-1
+    }
+}
+
+时间复杂度分析
+遍历了两次数组，两个嵌套，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+只用到了三个常数级的变量，所以空间复杂度为:O(1)
+
+
+
+别人的思路
+如果两个字符串相等，那么就返回-1
+如果两个字符串不相等，那就返回一个最大的长度
+如果两个字符串长度相等，那么要么两个相等返回-1，要么两个不等返回长度即可
+
+别人的代码
+public class Solution {
+    public int findLUSlength(String a, String b) {
+        if (a.equals(b))//相等就肯定没有
+            return -1;
+        return Math.max(a.length(), b.length());//不相等，那么最长的那个肯定不是公共子字符串
+    }
+}
+
+时间复杂度分析
+就比较了一下两个的长度，所以遍历的次数取决于两个字符串最小的长度，如果遍历完另一个还有，那么另一个肯定就是最长的
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用的额外的储存空间，所以空间复杂度为:O(1)
