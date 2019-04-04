@@ -1,0 +1,85 @@
+思路1
+创建一个数组，每一个索引就用来保存每一行的字符串，然后按照字符串来添加
+比如nRow = 3, s = "PAYPALISHIRING" 那么根据定义来看，首先是竖着的
+索引0:       索引1:       索引2:
+     P            A           Y
+接下来就是回上去，回上去的个数取决于nRow，为nRow-2个，所以回上去就是
+                  P
+接着又是竖下去
+    A             L           I
+接着又是横着的
+                  S
+然后又是竖着的
+    H             I            R
+最后一个横着的
+                  I
+最后一个数着的
+    N             G
+可以看见就是把竖着的Z横过来了
+所以索引0就是PAHN
+索引1就是APLSIIG
+索引2就是YIR
+最后加一起就行
+
+代码
+class Solution {
+    public String convert(String s, int nRows) {
+    char[] c = s.toCharArray();//先转换成数组的形式
+    int len = c.length;
+    StringBuffer[] sb = new StringBuffer[nRows];//创建一个数组，用来添加字符串
+    for (int i = 0; i < sb.length; i++) sb[i] = new StringBuffer();//设为数组
+    
+    int i = 0;
+    while (i < len) {//一直遍历到数组结束
+        for (int idx = 0; idx < nRows && i < len; idx++) //竖着的情况，就是每次遍历nRow次
+            sb[idx].append(c[i++]);//把字符加到对应的每一行的索引处
+        for (int idx = nRows-2; idx >= 1 && i < len; idx--) //升回来的情况，升回来的个数计算就是nRow - 2，索引要从后先前
+            sb[idx].append(c[i++]);//然后加到每一行的索引处
+    }
+    for (int idx = 1; idx < sb.length; idx++)
+        sb[0].append(sb[idx]);//最后加到一起
+    return sb[0].toString();
+}
+}
+
+时间复杂度分析
+遍历的次数就是该字符串的总长度，没有重复遍历，添加完所有的字符也就结束了，所以时间复杂度为:O(n)
+
+空间复杂的分析
+借助到了临时的储存空间，空间占用就是字符串的长度加上了nRow，所以空间复杂的就是:O(n)
+    
+    
+
+    
+思路2
+计算各个行的字符串的索引，然后一行一行的添加，
+第一行的就是K（2nRow-2）
+最后一行就是K（2nRow-2）+nRow-1
+空间的就是k(2⋅numRows−2)+i and (k+1)(2⋅numRows−2)−i(k+1)(2⋅numRows−2)−i.
+
+代码
+class Solution {
+    public String convert(String s, int numRows) {
+
+        if (numRows == 1) return s;
+
+        StringBuilder sb = new StringBuilder();
+        int n = s.length();
+        int len = 2 * numRows - 2;//索引每次加的len
+
+        for (int i = 0; i < numRows; i++) {//逐行的添加
+            for (int j = 0; j + i < n; j += len) {//每次添加len的区间
+                sb.append(s.charAt(j + i));
+                if (i != 0 && i != numRows - 1 && j + len - i < n)//对于中间的来说
+                    sb.append(s.charAt(j + len - i));//添加进这一行的字符串
+            }
+        }
+        return sb.toString();
+    }
+}
+    
+时间复杂度分析
+就遍历了一次字符串，所以所用的时间为:O(n)
+
+空间复杂的分析
+创建sb保存字符串的内容，所以所用的空间就为字符串的长度，所以空间复杂度就为:O(n)
