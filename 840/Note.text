@@ -77,38 +77,44 @@ class Solution {
 暴力算法，先判断grid[r+1][c+1]是否等于5，然后逐行遍历查看是否等于15，再逐列查看是否等于15,再判断两个对角线是否为15
 
 别人的代码
-class Solution {
-    public int numMagicSquaresInside(int[][] grid) {
-        int R = grid.length, C = grid[0].length;
-        int ans = 0;
-        for (int r = 0; r < R-2; ++r)
-            for (int c = 0; c < C-2; ++c) {
-                if (grid[r+1][c+1] != 5) continue;  // 如果不等那就下一个3*3矩阵
-                if (magic(grid[r][c], grid[r][c+1], grid[r][c+2],
-                          grid[r+1][c], grid[r+1][c+1], grid[r+1][c+2],
-                          grid[r+2][c], grid[r+2][c+1], grid[r+2][c+2]))//调用矩阵中每个元素的值
-                    ans++;
-            }
-
-        return ans;
-    }
-
-    public boolean magic(int... vals) {
-        int[] count = new int[16];//矩阵内元素只可能从0-15，所以创建长度为16的数组
-        for (int v: vals) count[v]++;
-        for (int v = 1; v <= 9; ++v)//判断是否9个元素有空元素或者重复元素
-            if (count[v] != 1)
-                return false;
-
-        return (vals[0] + vals[1] + vals[2] == 15 &&
-                vals[3] + vals[4] + vals[5] == 15 &&
-                vals[6] + vals[7] + vals[8] == 15 &&
-                vals[0] + vals[3] + vals[6] == 15 &&
-                vals[1] + vals[4] + vals[7] == 15 &&
-                vals[2] + vals[5] + vals[8] == 15 &&
-                vals[0] + vals[4] + vals[8] == 15 &&
-                vals[2] + vals[4] + vals[6] == 15);//必须全部满足条件每行每列每个对角线都为15
-    }
+class Solution{
+	public int  numMagicSquaresInside (int[][] grid) {
+		int R = grid.length;
+		int C = grid[0].length;
+		int res = 0;
+		
+		for(int r = 0; r < R - 2; r++) {
+			for(int c = 0; c < C - 2; c++) {//遍历所有的顶点，从顶点开始扩展
+				if(grid[r+1][c+1] != 5) {//如果中间数不为5，那么不合法，所以下一个矩阵
+					continue;
+				}
+				if(helper(grid[r][c],grid[r][c+1],grid[r][c+2],
+				          grid[r+1][c],grid[r+1][c+1],grid[r+1][c+2],
+				          grid[r+2][c],grid[r+2][c+1],grid[r+2][c+2])){//将每个值调用，判断合法性
+					res++;
+				}
+			}
+		}
+		return res;
+	}
+	
+	private boolean helper(int ... vals) {
+		int[] counter = new int [16];//由于元素的大小只会从0-15，所以创建一个长度为16的数组
+		for(int v : vals) counter[v]++;//将出现的元素大小记录
+		for(int i = 1; i <= 9; i++) {//判断9个数中是否为0或为10 或者重复出现5
+			if(counter[i] != 1) {
+				return false;
+			}
+		}
+		return (vals[0]+vals[1]+vals[2] == 15&&
+				vals[3]+vals[4]+vals[5] == 15&&
+				vals[6]+vals[7]+vals[8] == 15&&
+				vals[0]+vals[3]+vals[6] == 15&&
+				vals[1]+vals[4]+vals[7] == 15&&
+				vals[2]+vals[5]+vals[8] == 15&&
+				vals[0]+vals[4]+vals[8] == 15&&
+				vals[2]+vals[4]+vals[6] == 15);//每个行列对角线都需要满足
+	}
 }
 
 时间复杂度分析
