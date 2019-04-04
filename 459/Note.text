@@ -1,0 +1,41 @@
+思路
+首先既然是重复数组，那么最长的子字符串长度一定是length/2
+然后开始用分治思想，从一开始遍历到length/2
+由于要重复，那么子字符串的长度一定能把该字符串分为等长的几个小部分
+那么子字符串的长度n一定满足length/2 % n == 0
+然后以这个为substring（0，n+1)接着检查剩下的所有数组(n+1,2n+1)……
+一直满足到整个的字符串长度
+
+代码
+class Solution {
+    public boolean repeatedSubstringPattern(String s) {
+        if(s == null || s.length() == 0) return true;//边界条件
+        
+        int n = s.length();
+        for(int len = 1; len <= n/2; len++){ //这个子字符串长度最长只能是length/2
+            if(n % len != 0) continue; //这个子字符串一定能将整个字符串等分
+            
+            String pattern = s.substring(0, len); //获取子字符串
+            int i = len; //找到紧接着的第二个子字符串的区间
+            int j = i + len - 1; //第二个子字符串的结尾
+            while(j < n){//然后不能超过字符的长度
+                String substr = s.substring(i, j + 1);
+                if(!pattern.equals(substr)) break; 如果只要有一个不相等，那么直接跳出循环进行下一个字符串的判断
+                i += len;
+                j += len;
+            }
+            if(i == n) return true;//遍历完了就结束
+        }
+        return false;
+    }
+}
+
+时间复杂度分析
+都考虑最坏的情况
+第一个循环遍历了一般的数组，那么所用的时间为T(n/2)
+中间的遍历的次数取决于字符串的长度和次数，最坏的情况就是都遍历到最后一个了不满足，那么所用的时间就为T(n/len)
+所以所用的总时间就为T(n)=T(n/2)*T(n/len)
+转成高阶无穷小就为O(n^2)
+
+空间复杂度分析
+再循环中不断用到了临时的变量，所以空间复杂度就为O(n)
