@@ -83,7 +83,7 @@
 |✔️ |[No.014](https://leetcode.com/problems/longest-common-prefix/)|Longest Common Prefix|[Solution](./014/Code.java)|[Note](./014/Note.text)|Easy|O(n)|O(1)|String|
 |✔️ |[No.028](https://leetcode.com/problems/implement-strstr/)|Implement strStr()|[Solution](./028/Code.java)|[Note](./028/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.038](https://leetcode.com/problems/count-and-say/)|Count and Say|[Solution](./038/Code.java)|[Note](./038/Note.text)|Easy|O(1)|O(1)|iteration|
-||[No.058](https://leetcode.com/problems/length-of-last-word/)|Length of Last Word|[Solution](./058/Code.java)|[Note](./058/Note.text)|Easy|O(n)|O(1)|count from back|
+|✔️ |[No.058](https://leetcode.com/problems/length-of-last-word/)|Length of Last Word|[Solution](./058/Code.java)|[Note](./058/Note.text)|Easy|O(n)|O(1)|count from back|
 ||[No.067](https://leetcode.com/problems/add-binary/)|Add Binary|[Solution](./067/Code.java)|[Note](./067/Note.text)|Easy|O(n)|O(1)|construction number|
 ||[No.125](https://leetcode.com/problems/valid-palindrome/)|Valid Palindrome|[Solution](./125/Code.java)|[Note](./125/Note.text)|Easy|O(n)|O(n)||
 ||[No.165](https://leetcode.com/problems/compare-version-numbers/)|Compare Version Numbers|[Solution](./165/Code.java)|[Note](./165/Note.text)|Easy|O(n)|O(n)||
