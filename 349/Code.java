@@ -1,10 +1,10 @@
 class Solution{
 public int[] intersection(int[] nums1, int[] nums2) {
-    int M = nums1.length, N = nums2.length, k = 0;
+    int l1 = nums1.length, l2 = nums2.length, k = 0;
     Set<Integer> res = new HashSet<>(), set = new HashSet<>();//一个保存小数组 一个保存相同值
-    if(M <= N) {
+    if(l1 <= l2) {
         for(int i: nums1) set.add(i);
-        for(int i=0; i < N; i++) {
+        for(int i=0; i < l2; i++) {
             if(set.contains(nums2[i])) res.add(nums2[i]);//有相同的加进去
         }
     } else {
