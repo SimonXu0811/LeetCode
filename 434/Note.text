@@ -1,0 +1,43 @@
+自己的思路
+首先将字符串两端的空格去掉，如果发现是空元素，那么直接返回0
+接着用split分割，其中用到正则的思路"\\s+" 无论中间有多少个空格都去掉，单纯用split(" ")会依旧保留空格
+最后返回数组的长度
+
+自己的代码
+class Solution {
+    public int countSegments(String s) {
+        String temp = s.trim();//去掉首尾的空格
+        if(temp.length() == 0) return 0;//如果为空字符串，就返回0
+        return temp.split("\\s+").length;//根据空格分裂
+    }
+}
+
+时间复杂度分析
+在split是用了循环遍历了整个字符串，所以所用的时间就为:O(n)
+
+空间复杂度分析
+split划分的时候借用了数组来储存临时的变量，所以空间复杂度就为:O(n)
+
+
+
+别人的思路
+遍历一次字符串，如果为起始点，或者说前一个是空格 并且后一个不是空格，那么就算一个字符
+
+别人的代码
+class Solution {
+    public int countSegments(String s) {
+        int count = 0;//计算字符片段的次数
+        for(int i = 0; i < s.length(); i++){//遍历字符串
+            if((i == 0 || s.charAt(i - 1) == ' ') && s.charAt(i) != ' '){//前一个为空格，后一个不为空格
+                count ++;
+            }
+        }
+        return count;
+    }
+}
+
+时间复杂度分析
+就遍历了一次字符串，循环的次数取决于字符串的长度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+原地算法，没有用到额外的储存空间，所以空间复杂度为:O(1)
