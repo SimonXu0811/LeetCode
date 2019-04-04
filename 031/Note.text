@@ -18,7 +18,7 @@ public class Solution {
             }
             swap(nums, i, j);//交换
         }
-        reverse(nums, i + 1);//都满足就收为交换
+        reverse(nums, i + 1);//都满足就全部旋转，比如54321，下一个数就是12345
     }
 
     private void reverse(int[] nums, int start) {
