@@ -84,13 +84,13 @@
 |✔️ |[No.028](https://leetcode.com/problems/implement-strstr/)|Implement strStr()|[Solution](./028/Code.java)|[Note](./028/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.038](https://leetcode.com/problems/count-and-say/)|Count and Say|[Solution](./038/Code.java)|[Note](./038/Note.text)|Easy|O(1)|O(1)|iteration|
 |✔️ |[No.058](https://leetcode.com/problems/length-of-last-word/)|Length of Last Word|[Solution](./058/Code.java)|[Note](./058/Note.text)|Easy|O(n)|O(1)|count from back|
-||[No.067](https://leetcode.com/problems/add-binary/)|Add Binary|[Solution](./067/Code.java)|[Note](./067/Note.text)|Easy|O(n)|O(1)|construction number|
-||[No.125](https://leetcode.com/problems/valid-palindrome/)|Valid Palindrome|[Solution](./125/Code.java)|[Note](./125/Note.text)|Easy|O(n)|O(n)||
-||[No.165](https://leetcode.com/problems/compare-version-numbers/)|Compare Version Numbers|[Solution](./165/Code.java)|[Note](./165/Note.text)|Easy|O(n)|O(n)||
-||[No.434](https://leetcode.com/problems/number-of-segments-in-a-string/)|Number of Segments in a String|[Solution](./434/Code.java)|[Note](./434/Note.text)|Easy|O(n)|O(1)||
-||[No.443](https://leetcode.com/problems/string-compression/)|String Compression|[Solution](./443/Code.java)|[Note](./443/Note.text)|Easy|O(n)|O(1)|many pointer|
-||[No.459](https://leetcode.com/problems/repeated-substring-pattern/)|Repeated Substring Pattern|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
-||[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
+|✔️ |[No.067](https://leetcode.com/problems/add-binary/)|Add Binary|[Solution](./067/Code.java)|[Note](./067/Note.text)|Easy|O(n)|O(1)|construction number|
+|✔️ |[No.125](https://leetcode.com/problems/valid-palindrome/)|Valid Palindrome|[Solution](./125/Code.java)|[Note](./125/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.165](https://leetcode.com/problems/compare-version-numbers/)|Compare Version Numbers|[Solution](./165/Code.java)|[Note](./165/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.434](https://leetcode.com/problems/number-of-segments-in-a-string/)|Number of Segments in a String|[Solution](./434/Code.java)|[Note](./434/Note.text)|Easy|O(n)|O(1)||
+|✔️ |[No.443](https://leetcode.com/problems/string-compression/)|String Compression|[Solution](./443/Code.java)|[Note](./443/Note.text)|Easy|O(n)|O(1)|many pointer|
+|✔️ |[No.459](https://leetcode.com/problems/repeated-substring-pattern/)|Repeated Substring Pattern|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
+|✔️ |[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
 ||[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n * k)|O(1)|String|
 ||[No.680](https://leetcode.com/problems/valid-palindrome-ii/)|Valid Palindrome II|[Solution](./680/Code.java)|[Note](./680/Note.text)|Easy|O(n)|O(1)|String|
 |🔒 |No.681|Next Closest Time|Solution|Note|Easy|O(4^4)|O(1)|DFS|
