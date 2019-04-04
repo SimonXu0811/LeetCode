@@ -1,0 +1,87 @@
+自己的思路
+对比版本号就是每个点之前的数进行对比，首先看总版本号，然后看后面的各个小的版本号
+然后对比时，需要默认的把开头的0去掉
+
+自己的代码
+class Solution {
+    public int compareVersion(String version1, String version2) {
+        String[] s1 = version1.split("\\.");//首先根据.来区分version1的各个区间
+        String[] s2 = version2.split("\\.");//再根据.来区分version2的各个区间
+        int length = s1.length > s2.length ? s1.length : s2.length;//取一个最大的长度而不取最短的+1是因为省略的是默认为0，不然1.1和1.1.0.0.1就无法比较了
+        for(int i = 0 ; i < length; i++){//开始一个一个版本信息对比
+            int a = i < s1.length ? Integer.valueOf(s1[i]) : 0;//如果有就是转成数字比较，如果没有那么就是0
+            int b = i < s2.length ? Integer.valueOf(s2[i]) : 0;
+            
+            if(a > b) return 1;//比较
+            if(a < b) return -1;
+        }
+        return 0;
+    }
+}
+
+时间复杂度分析
+首先split区分就便利了字符串，所以两个split的总时间就是2T(n)
+然后一个一个信息对比所用的总时间就是T(n)
+在比较时把字符串转成整数所用时间为T(n)
+所以总时间就为T(n)=T(n)+T(n)*T(n)
+转成高阶无穷小就为:O(n^2)
+
+空间复杂度分析
+创建了两个临时的数组，用来保存两个字符串的总长度，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用两个指针分别指两个版本，如果遍历到.那么就下一个，然后点于点之间的数字进行对比
+为了避免出现Integer.valueOf()的出现，可以val*10+integer，这样也把前面的0取消了
+最后进行对比，移动指针
+
+别人的代码
+class Solution {
+    public static int compareVersion(String version1, String version2) {
+        int l1 = version1.length(), l2 = version2.length();//判断长度，如果没有了，那么后面的都等于0
+        int l = 0, r = 0;//两个指针分别指version1和version2
+        int val1 = 0, val2 = 0;//两个点之间的值初始为1
+        while(l<l1 || r<l2){//直到两个都没有
+            while(l < l1 && version1.charAt(l) != '.'){//找到两个点之间的数字
+                val1 = 10 * val1 + (version1.charAt(l) - '0');//避免开头0的出现
+                l++;//移动指针
+            }
+            
+            while(r < l2 && version2.charAt(r) != '.'){
+                val2 = 10*val2 + (version2.charAt(r) - '0');
+                r++;
+            }
+            
+            if(val1 > val2) return 1;
+            else if(val1 < val2) return -1;//判断
+            else{//比较值初始化，然后移动指针
+                val1 = 0;
+                val2 = 0;
+                l++;
+                r++;
+            }
+        }
+        return 0;
+    }
+}
+
+时间复杂度分析
+两个指针分别遍历了两个字符串，所用的时间取决于最大的长度，所用时间为T(n)
+然后中间版本号的对比相比于字符串的长度会是常数级的k，所以所用时间为T(kn)
+所以用的总时间就为T(n)=T(n)*T(k)
+转成高阶无穷小就为:O(kn)
+
+空间复杂度分析
+创建了六个临时变量，所以所用的空间为常数级的:O(1)
+
+
+
+
+
+
+
+
+
+
+
