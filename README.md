@@ -55,7 +55,7 @@
 |✔️ |[No.167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Two Sum II|[Solution](./167/Code.java)|[Note](./167/Note.text)|Easy|O(n)|O(1)||
 |🔒 |No.170|Two Sum III|Solution|Note|Easy| | ||
 |✔️ |[No.922](https://leetcode.com/problems/sort-array-by-parity-ii/)|Sort Array By Parity II|[Solution](./922/Code.java)|[Note](./922/Note.text)|Easy|O(n)|O(1)|two pointer|
-|✔️ |[No.867](https://leetcode.com/problems/transpose-matrix/)|Transpose Matrix|[Solution](./868/Code.java)|[Note](./868/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.867](https://leetcode.com/problems/transpose-matrix/)|Transpose Matrix|[Solution](./867/Code.java)|[Note](./867/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.860](https://leetcode.com/problems/lemonade-change/)|Lemonade Change|[Solution](./860/Code.java)|[Note](./860/Note.text)|Easy|O(n)|O(n)||
 |✔️ |[No.849](https://leetcode.com/problems/maximize-distance-to-closest-person/)|Maximize Distance to Closest Person|[Solution](./849/Code.java)|[Note](./849/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.840](https://leetcode.com/problems/magic-squares-in-grid/)|Magic Squares In Grid|[Solution](./840/Code.java)|[Note](./840/Note.text)|Easy|O(n)|O(1)||
