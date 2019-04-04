@@ -1,0 +1,64 @@
+思路
+首先创建两个指针，一个指针index用来遍历整个数组，一个指针res用来记录保存的索引
+遍历数组，将index的那个值记错是currentChar，然后向后遍历数组，如果相等count++，index++，如果不等就停止
+然后res保存currentChar，如果count！= 1 那么把res++ 定位count
+第一次结束之后index就为另一个新的字符，接着开始新的遍历
+
+代码
+class Solution{
+    public int compress(char[] chars) {
+        int res = 0, index = 0;//两个指针，一个表示新的索引，一个遍历数组
+        while(index < chars.length){
+            char currentChar = chars[index];//把索引临时保存为一个字符
+            int count = 0;
+            while(index < chars.length && chars[index] == currentChar){//相等就一直加，一直到新的字符
+                index++;
+                count++;
+            }
+            chars[res++] = currentChar;//新地址保存之前的临时字符
+            if(count != 1)
+                for(char c : Integer.valueOf(count).toString().toCharArray())//如果count不为1的话那么就保存count，每一位只能储存一个值，所以count要先转成数组，再放进去 
+                    chars[res++] = c;
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+第一次while循环的次数取决于了不同字符的种类，所以时间为T(k)
+第二个for循环取决于index后面的长度，所以时间为T(length - index)
+所用的总时间为T(n)=T(k)*T(length - index)
+转成高阶无穷小就为:O(n^2)
+
+空间复杂度分析
+每次循环都用到了临时的变量currentChar，所以空间复杂度为:O(n)
+
+
+思路2
+不创建临时储存空间，而是将第二个指针向后移动到不同元素的前一个，这样count的次数就是后一个指针减开始指针加1
+
+代码
+class Solution {
+    public int compress(char[] chars) {
+        int node = 0, res = 0;//两个指针，一个用来保存char，一个用来保存新的地址
+        for (int index = 0; index < chars.length; index++) {//遍历数组
+            if (index + 1 == chars.length || chars[index + 1] != chars[index]) {//一直到倒数第二个或者说后一个是不同的元素
+                chars[res++] = chars[node];//将char储存进新地址
+                if (index > node) {//如果长度超过1
+                    for (char c: ("" + (read - node + 1)).toCharArray()) {//将count加进数组里，一个地址只存一位数字
+                        chars[write++] = c;
+                    }
+                }
+                node = index + 1;//将node指向新的char
+            }
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+就遍历完了一次的数组，中间的虽然有遍历，但是每次遍历结束之后外层循环都是从中间遍历完的那个地址继续向后，所以总共循环的次数也就是数组的总长度
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+空间就创建了三个指针用来做临时变量，所以空间复杂度就为:O(1)
