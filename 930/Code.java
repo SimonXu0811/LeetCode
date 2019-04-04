@@ -1,22 +1,20 @@
 class Solution {
     public int numSubarraysWithSum(int[] A, int S) {
-        int iLo = 0, iHi = 0;
-        int sumLo = 0, sumHi = 0;
+        int iL = 0, iH = 0;
+        int sumL = 0, sumH = 0;
         int ans = 0;
 
-        for (int j = 0; j < A.length; ++j) {
-            // While sumLo is too big, iLo++
-            sumLo += A[j];
-            while (iLo < j && sumLo > S)
-                sumLo -= A[iLo++];
+        for (int j = 0; j < A.length; ++j) {//如果sum太大了，那么就移动low
+            sumL += A[j];
+            while (iL < j && sumL > S)
+                sumL -= A[iL++];
 
-            // While sumHi is too big, or equal and we can move, iHi++
-            sumHi += A[j];
-            while (iHi < j && (sumHi > S || sumHi == S && A[iHi] == 0))
-                sumHi -= A[iHi++];
+            sumH += A[j];
+            while (iH < j && (sumH > S || sumH == S && A[iH] == 0))//如果sum太大了，或者等于5或者等于0，那么就移动high
+                sumH -= A[iH++];
 
-            if (sumLo == S)
-                ans += iHi - iLo + 1;
+            if (sumL == S)//最后找到两个索引的距离差
+                ans += iH - iL + 1;
         }
 
         return ans;
