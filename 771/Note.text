@@ -1,0 +1,78 @@
+ 自己的思路
+ 首先将jewelry保存在hashset中，由于种类是唯一的 ，所以不用担心重复
+ 然后再遍历字符串，看在stone中重复出现了多少次
+ 
+ 自己的代码
+ class Solution {
+    public int numJewelsInStones(String J, String S) {
+        HashSet<Character> set = new HashSet<>();//创建一个hashset用来保存jewelry
+        int res = 0;
+        for(char j : J.toCharArray()) set.add(j);//把字符串中的值都加进去
+        for(char s : S.toCharArray()){//如果有重复的次数就加一
+           if(set.contains(s)){
+               res++;
+           }
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了两次字符串，都没有嵌套，所以所用的时间就为:O(n)
+
+空间复杂度分析
+借用了hashset来保存，所借用的空间取决于jewelry的长度，所以空间复杂度为:O(n)
+
+
+
+别人的思路1
+用indexOf查找，遍历s中的每个字符，在j中的index不为-1，那么就代表出现了一次，count++
+
+别人的代码
+class Solution {
+   public static int numJewelsInStones(String J, String S) {
+       int res=0;
+       for(char c : S.toCharArray()){//遍历S的所有字符
+           if(J.indexOf(c) != -1){//如果在J中出现了，那么就次数加一
+               res++;
+           }
+       }
+       return res;
+   }
+}
+
+时间复杂度分析
+遍历了一次字符串，所以所用的时间就为:O(n)
+
+空间复杂度分析
+由于借用了一次数组进行保存，借用的额外空间取决于S的长度，所以空间复杂度为:O(n)
+
+
+
+
+别人的思路2
+创建一个128位的数组，用来储存jewelry中的种类，因为a-z字母代表的数字是58 A-Z也是58，所以用这个来保存
+然后遍历J，所有出现就设为true
+再遍历S，如果遍历到是true，那么就次数加一
+
+别人的代码
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        boolean[]  arr = new boolean[128];//用来保存所有的种类
+        int count = 0;
+        for(int i = 0;i<J.length();i++){//判断是否出现，如果出现过了，那么就为true
+           arr[J.charAt(i)] = true;
+        }
+        for(int j = 0;j<S.length();j++){//判断是否存在，如果有，那么就次数加一
+           if(arr[S.charAt(j)])
+               count ++;
+        }
+        return count;
+    }
+}
+
+时间复杂度分析
+遍历了两次字符串，没有嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+创建了128位数组，常数级，所以空间复杂度为:O(1)
