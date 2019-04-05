@@ -31,27 +31,3 @@ public String licenseKeyFormatting(String S, int K) {
 
 空间复杂度分析
 用到了sb做为临时的储存空间，所以借用了s个临时空间，空间复杂度为:O(n)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
