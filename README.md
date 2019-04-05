@@ -96,9 +96,9 @@
 |🔒 |No.681|Next Closest Time|Solution|Note|Easy|O(4^4)|O(1)|DFS|
 |✔️|[No.771](https://leetcode.com/problems/jewels-and-stones/)|Jewels and Stones|[Solution](./771/Code.java)|[Note](./771/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.482](https://leetcode.com/problems/license-key-formatting/)|License Key Formatting|[Solution](./482/Code.java)|[Note](./482/Note.text)|Easy|O(n)|O(n)||
-||[No.344](https://leetcode.com/problems/reverse-string/)|Reverse String|[Solution](./344/Code.java)|[Note](./344/Note.text)|Easy|O(n)|O(1)||
-||[No.412](https://leetcode.com/problems/fizz-buzz/)|Fizz Buzz|[Solution](./412/Code.java)|[Note](./412/Note.text)|Easy|O(n)|O(1)||
-||[No.005](https://leetcode.com/problems/longest-palindromic-substring/)|Longest Palindromic Substring|[Solution](./005/Code.java)|[Note](./005/Note.text)|Medium|O(n^2)|O(1)||
+|✔️|[No.344](https://leetcode.com/problems/reverse-string/)|Reverse String|[Solution](./344/Code.java)|[Note](./344/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.412](https://leetcode.com/problems/fizz-buzz/)|Fizz Buzz|[Solution](./412/Code.java)|[Note](./412/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.005](https://leetcode.com/problems/longest-palindromic-substring/)|Longest Palindromic Substring|[Solution](./005/Code.java)|[Note](./005/Note.text)|Medium|O(n^2)|O(1)||
 ||[No.819](https://leetcode.com/problems/most-common-word/)|Most Common Word|[Solution](./819/Code.java)|[Note](./819/Note.text)|Easy|O(n)|O(n)||
 ||[No.929](https://leetcode.com/problems/unique-email-addresses/)|Unique Email Addresses|[Solution](./929/Code.java)|[Note](./929/Note.text)|Easy|O(n^2)|O(n)||
 ||[No.535](https://leetcode.com/problems/continuous-subarray-sum/)|Encode and Decode TinyURL|[Solution](./535/Code.java)|[Note](./535/Note.text)|Meduim|O(n)|O(n)||
