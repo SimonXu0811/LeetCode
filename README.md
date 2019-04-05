@@ -91,7 +91,7 @@
 |✔️ |[No.443](https://leetcode.com/problems/string-compression/)|String Compression|[Solution](./443/Code.java)|[Note](./443/Note.text)|Easy|O(n)|O(1)|many pointer|
 |✔️ |[No.459](https://leetcode.com/problems/repeated-substring-pattern/)|Repeated Substring Pattern|[Solution](./459/Code.java)|[Note](./459/Note.text)|Easy|O(n)|O(1)|kmp|
 |✔️ |[No.006](https://leetcode.com/problems/zigzag-conversion/)|ZigZag Conversion|[Solution](./006/Code.java)|[Note](./006/Note.text)|Meduim|O(n * k)|O(1)|String|
-|✔️|[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n * k)|O(1)|String|
+|✔️|[No.521](https://leetcode.com/problems/longest-uncommon-subsequence-i/)|Longest Uncommon Subsequence I|[Solution](./521/Code.java)|[Note](./521/Note.text)|Easy|O(n)|O(1)|String|
 ||[No.680](https://leetcode.com/problems/valid-palindrome-ii/)|Valid Palindrome II|[Solution](./680/Code.java)|[Note](./680/Note.text)|Easy|O(n)|O(1)|String|
 |🔒 |No.681|Next Closest Time|Solution|Note|Easy|O(4^4)|O(1)|DFS|
 ||[No.771](https://leetcode.com/problems/jewels-and-stones/)|Jewels and Stones|[Solution](./771/Code.java)|[Note](./771/Note.text)|Easy|O(n)|O(n)||
