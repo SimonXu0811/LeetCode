@@ -1,0 +1,33 @@
+自己的思路
+暴力算法，从1一直遍历到n
+如果能被3整除不能被5整除，就是Fizz
+如果被5整除不能被3整除，就是Buzz
+如果两个都能整除，那就是FizeBuzz
+如果都不行就是数字
+
+自己的代码
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> list = new ArrayList<>();//返回的类型
+        for(int i = 1; i <= n ; i++){
+            if(i%3 == 0 && i%5 != 0){//能被3整除，不能被5整除，Fizz
+                list.add("Fizz");
+                continue;
+            }else if(i%3 !=0 && i%5 == 0){//能被5整除，不能被3整除，Buzz
+                list.add("Buzz");
+                continue;
+            }else if(i%3 == 0 && i%5 == 0){//能被5和3都整除，FizzBuzz
+                list.add("FizzBuzz");
+                continue;
+            }
+            list.add(""+i);//都不行，那就是原数字
+        }
+        return list;
+    }
+}
+
+时间复杂度分析
+就遍历了一次从1～n，索引时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂度为:O(1)
