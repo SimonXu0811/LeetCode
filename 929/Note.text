@@ -1,0 +1,30 @@
+自己的思路
+对于地址的判断只要修改前面的字符就行@后面的域名地址不需要管，只要比较前面的名称就行
+对于名称只要删掉+后面的字符，以及去掉。即可
+最后保存进set里， 由于重复会覆盖报错，所以不用担心重复项 
+
+自己的代码
+class Solution {
+    public int numUniqueEmails(String[] emails) {
+        Set<String> set = new HashSet<>();//用来保存最终的结果
+        
+        for(String s : emails){
+            String local = s.substring(0,s.indexOf("@"));//从@开始分开考虑
+            String address = s.substring(s.indexOf("@"));
+            
+            if(local.contains("+")){//如果有+号那么加号后面的去掉
+                local = local.substring(0,local.indexOf("+"));
+            }
+            
+            local = local.replaceAll("\\.","");//忽略.号
+            set.add(local+address);
+        }
+        return set.size();
+    }
+}
+
+时间复杂度分析
+遍历了整个数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用set来保存不同的元素，所以空间复杂度为:O(n)
