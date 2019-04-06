@@ -1,0 +1,36 @@
+思路
+首先将字符串操作，把字符串中的非字母项全部转换成“，”，然后转成小写用split分割成数组
+然后对banned操作，把它加进字符串里，这样在计算字符串中单词出现的次数时,就可以避免banned中的字符
+然后从map中获取出现的次数，找到最大值，和对应的key
+
+代码
+class Solution {
+    public String mostCommonWord(String paragraph, String[] banned) {
+        int max = 0;
+        String res = "";//对应的最大值的key，和value
+        
+        String[] s = paragraph.replaceAll("\\W+" , ",").toLowerCase().split("\\,");//去掉非字母项，转成小写，分割字符串
+        HashSet<String> set = new HashSet<>(Arrays.asList(banned));//加进set中为了避免出现banned字符
+        HashMap<String,Integer> count = new HashMap<>();//map它、用来计数
+        
+        for(String str : s){
+            if(str.length() > 0){
+            if(!set.contains(str)){//避免了banned字符
+                count.put(str,count.getOrDefault(str,0) + 1);//如果出现过了，那么就在value处+1而不是创建一个新的链表覆盖
+                if(count.get(str) > max){//找到一个最大值
+                max = count.get(str);
+                res = str;
+            }
+            }
+            }
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了一遍set一遍map，所用的时间取决于了string中的单词数和banned中的单词数
+所以时间复杂度就为:O(m+n)
+
+空间复杂度分析
+用set保存banned的单词数，用map保存string中的单词数，所以空间复杂度就为:O(m+n)
