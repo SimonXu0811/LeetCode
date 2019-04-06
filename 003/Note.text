@@ -1,0 +1,71 @@
+自己的思路
+借用set来做，首先遍历一遍字符串，把第一次遍历到的数做为是开头
+然后从起始点向后遍历，如果set中不存在，那么就加进去
+一旦存在就获取长度返回，开始下一个起始点
+
+自己的代码
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int max = 0;
+        if(s.length() == 0) return 0;//边界条件
+        
+        for(int i = 0; i < s.length(); i++){
+            Set<Character> set = new HashSet<>();//设置set来查看长度
+            set.add(s.charAt(i));
+            for(int j = i + 1; j < s.length(); j++){
+                if(!set.contains(s.charAt(j))){//如果不存在就加进去
+                    set.add(s.charAt(j));
+                }
+                else{//存在了就取最大的长度
+                    max = Math.max(max,set.size());
+                    break;
+                }
+                max = Math.max(max,set.size());
+            }
+            max = Math.max(max,set.size());//如果到最后都没有重复的，就再取一次最大值
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+遍历了两次字符串，第一次是遍历了所有的字符串，所以所用时间为T(n)
+第二次遍历了起始点向后的字符串，所以所用时间为:T(n-i)
+两个循环不嵌套，所以所用的总时间为:T(n)=T(n)*T(n-i)
+转成高阶无穷小为:O(n^2)
+
+空间复杂度分析
+就用了set储存长度，每次换起始点都借用一次set，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+滑动窗口思想，首先创建两个指针和一个hashset，如果从i起始点开始，j向外扩展，字符长度就是j-i
+如果set中本来存在了，那么就把起始点所小，直到删除那个相同的字符
+
+别人的代码
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int max = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            if (!set.contains(s.charAt(j))){//如果不存在相同的，那么就添加进去，然后取字符串的长度
+                set.add(s.charAt(j++));
+                max = Math.max(max, j - i);
+            }
+            else {//如果存在相同的了，那么就从起始点开始减，一直减掉那个相同的元素为止
+                set.remove(s.charAt(i++));
+            }
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+最坏的情况就是最后一个与倒数第二个是重复的，那么j窗口滑倒了s的位置，i窗口也要滑倒s-1的位置才能删除
+所以所用的最大时间为T(n)=T(s)+T(s-1)
+转成高阶无穷小就为:O(n)
+
+空间复杂度分析
+最多就是借用s个临时空间保存，所以空间复杂度为O(n）
