@@ -106,7 +106,7 @@
 |✔️|[No.003](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|Longest Substring Without Repeating Characters|[Solution](./003/Code.java)|[Note](./003/Note.text)|Meduim|O(n)|O(n)||
 |🔒|No.293|Flip Game|Solution|Note|Easy|O(n)|O(n)||
 |🔒|No.604| Design Compressed String Iterator|Solution|Note|Easy|O(n)|O(n)|Iterator|
-|✔️|[No.008](https://leetcode.com/problems/string-to-integer-atoi/)| String to Integer (atoi)|[Solution](./008/Code.java)|[Note](./008/Note.text)|Meduim|O(n)|O(n)||
+|✔️|[No.008](https://leetcode.com/problems/string-to-integer-atoi/)| String to Integer (atoi)|[Solution](./008/Code.java)|[Note](./008/Note.text)|Meduim|O(n)|O(1)||
 |✔️|[No.151](https://leetcode.com/problems/reverse-words-in-a-string/)| Reverse Words in a String|[Solution](./151/Code.java)|[Note](./151/Note.text)|Meduim|O(n)|O(n)||
 |✔️|[No.557](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| Reverse Words in a String III|[Solution](./557/Code.java)|[Note](./557/Note.text)|Easy|O(n)|O(n)||
 
