@@ -1,0 +1,59 @@
+自己的思路
+加密就是在字符串后面加一个a
+解密就是把字符串后的a删掉
+
+自己的代码
+public class Codec {
+
+    // Encodes a URL to a shortened URL.
+    public String encode(String longUrl) {//加密就是末尾加个“a"
+        return longUrl+"a";
+    }
+
+    // Decodes a shortened URL to its original URL.
+    public String decode(String shortUrl) {//解密就是把末尾的去掉
+        return shortUrl.substring(0,shortUrl.length()-1);
+    }
+}
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.decode(codec.encode(url));
+
+时间复杂度分析
+就常数级的增减，所以时间复杂度为:O(1)
+
+空间复杂度
+把最后一位删除了，所以空间复杂度为:O(1)
+
+
+
+别人的思路
+用hash表和hash值来储存，把key值记做是加密后的值，value就是未加密的
+需要加密就返回key，需要解密就返回value
+
+别人的代码
+public class Codec {
+
+	private HashMap<String, String> map = new HashMap<String, String>();
+
+	public String encode(String longUrl) {//加密就返回key值
+        map.put("encode" + longUrl.hashCode(), longUrl);
+        return "encode" + longUrl.hashCode();
+    }
+
+    public String decode(String shortUrl) {//解密就返回value
+        return map.get(shortUrl);
+    }
+}
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.decode(codec.encode(url));
+
+时间复杂度分析
+时间复杂度根据hashmap的添加和查找，所以时间复杂度为:O(1)
+
+空间复杂度分析
+用到了hash表保存 就用了一个地址的长度
+所以空间复杂度为:O(1)
