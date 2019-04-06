@@ -99,7 +99,7 @@
 |✔️|[No.344](https://leetcode.com/problems/reverse-string/)|Reverse String|[Solution](./344/Code.java)|[Note](./344/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.412](https://leetcode.com/problems/fizz-buzz/)|Fizz Buzz|[Solution](./412/Code.java)|[Note](./412/Note.text)|Easy|O(n)|O(1)||
 |✔️|[No.005](https://leetcode.com/problems/longest-palindromic-substring/)|Longest Palindromic Substring|[Solution](./005/Code.java)|[Note](./005/Note.text)|Medium|O(n^2)|O(1)||
-|✔️|[No.819](https://leetcode.com/problems/most-common-word/)|Most Common Word|[Solution](./819/Code.java)|[Note](./819/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.819](https://leetcode.com/problems/most-common-word/)|Most Common Word|[Solution](./819/Code.java)|[Note](./819/Note.text)|Easy|O(m+n)|O(m+n)||
 |✔️|[No.929](https://leetcode.com/problems/unique-email-addresses/)|Unique Email Addresses|[Solution](./929/Code.java)|[Note](./929/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.535](https://leetcode.com/problems/encode-and-decode-tinyurl/)|Encode and Decode TinyURL|[Solution](./535/Code.java)|[Note](./535/Note.text)|Meduim|O(1)|O(1)||
 |🔒 |No.271|Encode and Decode Strings|Solution|Note|Meduim|O(n)|O(n)||
