@@ -101,7 +101,7 @@
 |✔️|[No.005](https://leetcode.com/problems/longest-palindromic-substring/)|Longest Palindromic Substring|[Solution](./005/Code.java)|[Note](./005/Note.text)|Medium|O(n^2)|O(1)||
 ||[No.819](https://leetcode.com/problems/most-common-word/)|Most Common Word|[Solution](./819/Code.java)|[Note](./819/Note.text)|Easy|O(n)|O(n)||
 ||[No.929](https://leetcode.com/problems/unique-email-addresses/)|Unique Email Addresses|[Solution](./929/Code.java)|[Note](./929/Note.text)|Easy|O(n^2)|O(n)||
-||[No.535](https://leetcode.com/problems/continuous-subarray-sum/)|Encode and Decode TinyURL|[Solution](./535/Code.java)|[Note](./535/Note.text)|Meduim|O(n)|O(n)||
+||[No.535](https://leetcode.com/problems/encode-and-decode-tinyurl)/|Encode and Decode TinyURL|[Solution](./535/Code.java)|[Note](./535/Note.text)|Meduim|O(n)|O(n)||
 |🔒 |No.271|Encode and Decode Strings|Solution|Note|Meduim|O(n)|O(n)||
 ||[No.003](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|Longest Substring Without Repeating Characters|[Solution](./003/Code.java)|[Note](./003/Note.text)|Meduim|O(n)|O(n)||
 |🔒|No.293|Flip Game|Solution|Note|Easy|O(n)|O(n)||
