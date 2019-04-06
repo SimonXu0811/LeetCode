@@ -1,0 +1,86 @@
+自己的思路
+首先对字符串进行处理，先去掉头尾的空格
+然后根据空格分割字符串成数组
+从后向前遍历数组，用sb来保存单词+空格
+最后再去掉最后尾部的空格
+
+自己的代码
+class Solution {
+    public String reverseWords(String s) {
+        s = s.trim();//去掉首尾的空格
+        String[] temp = s.split("\\s+");//根据空格分割字符串
+        StringBuilder sb = new StringBuilder();//临时保存新的字符
+        for(int i = temp.length - 1; i >= 0; i--){//从后向前遍历
+                sb.append(temp[i]);//保存单词
+                sb.append(" ");//保存空格
+        }
+        return sb.toString().trim();//最后去掉尾部的空格
+    }
+}
+
+时间复杂度分析
+遍历了一遍字符串，所以所用的时间为:O(n）
+
+空间复杂度分析
+就用了sb用来临时保存新的字符串，所以所用的空间取决于字符串的长度，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+首先旋转整个字符串
+然后依次的旋转整个字符
+最后去掉多余的空格
+
+别人的代码
+public class Solution {
+  
+  public String reverseWords(String s) {
+    if (s == null) return null;
+    
+    char[] a = s.toCharArray();
+    int n = a.length;
+    
+    reverse(a, 0, n - 1);//旋转整个字符串
+    reverseWords(a, n);//旋转所有字符
+    return cleanSpaces(a, n);//清空空格
+  }
+  
+  void reverseWords(char[] a, int n) {
+    int i = 0, j = 0;
+      
+    while (i < n) {
+      while (i < j || i < n && a[i] == ' ') i++; //跳过空格不动
+      while (j < i || j < n && a[j] != ' ') j++; //保留非空格的
+      reverse(a, i, j - 1);                      //旋转整个字符
+    }
+  }
+  
+  String cleanSpaces(char[] a, int n) {//晴空多余的空格
+    int i = 0, j = 0;
+      
+    while (j < n) {
+      while (j < n && a[j] == ' ') j++;             
+      while (j < n && a[j] != ' ') a[i++] = a[j++]; 
+      while (j < n && a[j] == ' ') j++;             //跳过空格
+      if (j < n) a[i++] = ' ';                      //只留下一个空格
+    }
+  
+    return new String(a).substring(0, i);//去掉末尾空格
+  }
+  
+  // reverse a[] from a[i] to a[j]
+  private void reverse(char[] a, int i, int j) {
+    while (i < j) {//旋转整个单词
+      char t = a[i];
+      a[i++] = a[j];
+      a[j--] = t;
+    }
+  }
+  
+}
+
+时间复杂度分析
+每次掉用方法都做了一次循环，所以时间复杂度为:O(n)
+
+空间复杂度分析
+借用了数组表示字符串，所以临时空间取决于字符串的长度，所以所用的空间为:O(n)
