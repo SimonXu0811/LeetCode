@@ -1,0 +1,24 @@
+自己的思路
+首先将字符串通过空格分割成数组
+然后把数组中的元素一个一个的旋转
+最后通过sb组合
+
+自己的代码
+class Solution {
+    public String reverseWords(String s) {
+        String[] temp = s.trim().split("\\s+");//将字符串通过空格分割
+        StringBuilder res = new StringBuilder();//保存临时的新字符串
+        for(int i = 0; i < temp.length; i++){//一个一个元素进行旋转
+            StringBuilder s1 = new StringBuilder(temp[i]);//通过sb旋转
+            res.append(s1.reverse());
+            res.append(" ");//每个添加空格
+        }
+        return res.toString().trim();
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，所用的时间复杂度为:O(n)
+
+空间复杂度分析
+借用了sb临时保存字符串，所用的空间就是字符串的长度，所以空间复杂度为:O(n)
