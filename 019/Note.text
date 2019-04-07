@@ -1,0 +1,82 @@
+自己的思路
+首先先遍历一遍长度，获取长度l
+然后计算出需要删掉的位置前一个需要遍历多长，为l-n
+然后遍历到那个长度，删除即可
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+    ListNode cur = new ListNode(0);//创建一个新的头，防止删除第一个
+    cur.next = head;//加进新的链表
+    int length  = 0;
+    ListNode first = head;//复制链表进行计算长度
+    while (first != null) {
+        length++;
+        first = first.next;
+    }
+    length -= n;//计算出目标的前一个的长度位置
+    first = cur;//再复制一次，遍历到那个计算出的位置
+    while (length > 0) {
+        length--;
+        first = first.next;
+    }
+    first.next = first.next.next;//删除
+    return cur.next;
+}
+}
+
+时间复杂度分析
+遍历了两次，一次是总长度l，还有一次是计算出的l-n，所以总时间就为T(n)=T(l)+T(l-n)
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+就创建了三个临时的变量，所以是常数级，空间复杂度为:O(1)
+
+
+
+别人的思路
+创建两个指针，一个指针first首先移动n个位置，然后两个指针一起移动一直到first到最后
+那么第二个指针的剩余的位置就是n个位置
+然后再删除
+
+别人的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+    ListNode cur = new ListNode(0);
+    cur.next = head;//防止要删除的就是head
+    ListNode first = cur;//第一个指针
+    ListNode second = cur;//第二个指针
+    for (int i = 1; i <= n + 1; i++) {//首先将第一个指针移动n个位置
+        first = first.next;
+    }
+    while (first != null) {//然后一起移动，直到第一个指针到最后，这样第二个指针还剩n个位置
+        first = first.next;
+        second = second.next;
+    }
+    second.next = second.next.next;//删除节点
+    return cur.next;
+}
+}
+
+时间复杂度分析
+第一个指针移动了l个位置，第二个指针移动了l-n个位置
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的空间，所以空间复杂度为:O(1)
