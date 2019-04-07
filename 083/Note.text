@@ -1,0 +1,32 @@
+自己的思路
+遍历整个链表，如果这一个与后一个相等，那么就跳过
+如果不等，那么就继续向后遍历
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode cur = head;//用来移动指针
+        while(cur != null && cur.next != null){//如果不为空或者后面还有数的话
+            if(cur.val ==  cur.next.val){//如果这个与后面那个相等
+                cur.next = cur.next.next;//跳过
+            }else{
+                cur = cur.next;//否则继续遍历
+            }
+        }
+        return head;
+    }
+}
+
+时间复杂度分析
+遍历整个链表，所以所用的时间复杂度为:O(n)
+
+空间复杂度分析
+原地算法，没有用到额外的临时空间，所以空间复杂度为:O(1)
