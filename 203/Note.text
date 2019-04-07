@@ -1,0 +1,62 @@
+自己的思路
+遍历整个链表，如果遇到相同的元素就删除
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode node = new ListNode(0);//创建一个dum链表，防止第一个元素要删除
+         node.next = head;//把head加进去
+        ListNode cur = node;//用cur去删除元素
+        while(cur.next != null){//遍历整个链表
+            if(cur.next.val == val){//如果值是要删除的值的话
+                cur.next = cur.next.next;//删除操作
+            }else{
+                cur = cur.next;//否则继续向后遍历
+            }
+        }
+        return node.next;
+    }
+}
+
+时间复杂度分析
+就遍历了一次链表，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到其他额外的储存空间，所以空间复杂度为:O(1)
+
+
+
+
+别人的思路
+用递归算法，如果值相同，那么就直接删除遍历下一个
+
+别人的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;//直到遍历到最后
+        head.next = removeElements(head.next, val);//递归遍历
+        return head.val == val ? head.next : head;//如果值相同，那么就删除否则返回到递归上一层
+}
+}
+
+时间复杂度分析
+遍历完了一次数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂的为:O(1)
