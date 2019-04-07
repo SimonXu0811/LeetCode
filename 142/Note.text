@@ -1,0 +1,46 @@
+自己的思路
+用快慢两个指针一个速度为1，一个速度为2
+如果两个相等了，那么再遍历一次找到慢指针的index
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+           ListNode slow = head;//慢指针
+           ListNode fast = head;//快指针
+        
+           while (fast!=null && fast.next!=null){//是循坏的链表
+              fast = fast.next.next;//速度为2
+              slow = slow.next;//速度为1
+                    
+              if (fast == slow){//如果有相等的了
+                  ListNode slow2 = head; 
+                  while (slow2 != slow){//再遍历一次找到索引
+                      slow = slow.next;
+                      slow2 = slow2.next;
+              }
+               return slow;
+          }
+        }
+      return null;
+    }
+}
+
+时间复杂度分析
+遍历了两次链表，一次是找到相等的，一次是找到相等之后找索引
+所以总时间为T(n)=T(n)*T(k),k为索引
+最好的情况就是k是常数级的，最坏的情况就是k为l的长度
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
