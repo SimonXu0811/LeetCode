@@ -1,0 +1,50 @@
+思路
+首先判断长度，因为在相交之后，后面的长度一定是相等的
+然后判断元素是否相同，相同就返回
+
+代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    int lenA = length(headA), lenB = length(headB);//遍历找长度
+    while (lenA > lenB) {//长度长的就向后遍历
+        headA = headA.next;
+        lenA--;
+    }
+    while (lenA < lenB) {
+        headB = headB.next;
+        lenB--;
+    }
+    while (headA != headB) {//找到相同相交的那个点
+        headA = headA.next;
+        headB = headB.next;
+    }
+    return headA;
+}
+
+private int length(ListNode node) {//遍历到最后找长度
+    int length = 0;
+    while (node != null) {
+        node = node.next;
+        length++;
+    }
+    return length;
+}
+}
+
+时间复杂度分析
+遍历了两次链表，一次是找长度，一次是找相交点
+两个遍历都不嵌套所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到临时的储存空间，所以空间复杂度为:O(1)
