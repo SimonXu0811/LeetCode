@@ -1,0 +1,69 @@
+自己的思路
+两个两个的遍历链表 如果不为空或者下一个不为空，那么就交换两个的值
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode cur = head;//用来遍历链表
+        while(cur != null && cur.next != null){//如果相邻两个都不为空，那么交换
+            int temp = cur.val;
+            cur.val = cur.next.val;
+            cur.next.val = temp;
+            cur =  cur.next.next;
+        }
+        return head;
+    }
+}
+
+时间复杂度分析
+总共遍历了一遍链表的长度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+每两个交换就创建一个临时的整数储存，所以所用的空间为T(n/2)
+转成高阶无穷小就为:O(n)
+
+
+
+别人的思路
+三指针法，第一个指针指向cur，第二个指针first指向cur.next,第三个指针second指向cur.next.next
+然后cur的指针指向second，second指向first，first指向second.next
+
+别人的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;//0->A->B->C->D
+    ListNode current = dummy;//临时链表用来储存第一个指针0
+    while (current.next != null && current.next.next != null) {
+        ListNode first = current.next;//第二个指针A
+        ListNode second = current.next.next;//第三个指针B
+        first.next = second.next;//指向第三个指针后面A->C
+        current.next = second;//头指针指向第三个指针0->B
+        current.next.next = first;//B->A
+        current = current.next.next;//移动第一个指针C
+    }
+    return dummy.next;
+}
+}
+
+时间复杂度
+整个遍历了一个链表，所以时间复杂度为:O(n)
+
+空间复杂度
+每次交换都要穿件临时指针，所以空间复杂度为:O(n)
