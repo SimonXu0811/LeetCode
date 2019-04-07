@@ -1,0 +1,38 @@
+自己的思路
+三个指针，A->B->C->D->E->F->null
+首先创建一个pre指向的是前面一个指针，初始为null
+然后创建一个cur指针表示当先
+然后一个temp指向后面的
+第一次旋转让 cur指向前面的那个pre就形成了 null(pre)<-A(cur) B(temp)->C->D->E->F->null
+然后先前的pre就向后移动，cur也向后移动
+接着开始第二个
+null<-A(pre)<-B(cur) C(temp)->D->E->F->null
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode pre = null;//初始节点
+        ListNode cur = head;//当前节点
+        while(cur != null){//一直遍历到最后
+            ListNode temp = cur.next;//后一个节点
+            cur.next = pre;//链接的旋转
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
+}
+
+时间复杂度分析
+遍历了一遍的链表，所以时间复杂度为:O(n)
+
+空间复杂的分析
+没有用到额外的临时空间，所以空间复杂度为:O(1)
