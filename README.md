@@ -3,7 +3,7 @@
 - [x] [BitManipulation](#bit-manipulation)
 - [x] [Array](#array)
 - [x] [String](#string) 
-- [ ] [Linked List](#linked-List)
+- [x] [Linked List](#linked-List)
 - [ ] Stack
 - [ ] Recursion 
 - [ ] Queue 
@@ -121,9 +121,9 @@
 |✔️|[No.237](https://leetcode.com/problems/delete-node-in-a-linked-list/)|Delete Node in a Linked List|[Solution](./237/Code.java)|[Note](./237/Note.text)|Easy|O(1)|O(1)|tricky,del|
 |✔️|[No.234](https://leetcode.com/problems/palindrome-linked-list/)|Palindrome Linked List|[Solution](./234/Code.java)|[Note](./234/Note.text)|Meduim|O(n)|O(1)|slow,quick pointer|
 |✔️|[No.206](https://leetcode.com/problems/reverse-linked-list/)|Reverse Linked List|[Solution](./206/Code.java)|[Note](./206/Note.text)|Easy|O(n)|O(1)|reverse|
-||[No.002](https://leetcode.com/problems/add-two-numbers/)|Add Two Numbers|[Solution](./002/Code.java)|[Note](./002/Note.text)|Medium|O(n)|O(n)||
-||[No.019](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|Remove Nth Node From End of List|[Solution](./019/Code.java)|[Note](./019/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
-||[No.141](https://leetcode.com/problems/linked-list-cycle/)|Linked List Cycle|[Solution](./141/Code.java)|[Note](./141/Note.text)|Easy|O(n)|O(1)|quick slow pointer|
-||[No.142](https://leetcode.com/problems/linked-list-cycle-ii/)|Linked List CycleII|[Solution](./142/Code.java)|[Note](./142/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
-||[No.023](https://leetcode.com/problems/merge-k-sorted-lists/)|Merge k Sorted Lists|[Solution](./023/Code.java)|[Note](./023/Note.text)|Hard|O(knlogn)|O(n)||
-||[No.138](https://leetcode.com/problems/copy-list-with-random-pointer/)|Copy List with Random Pointer|[Solution](./138/Code.java)|[Note](./138/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.002](https://leetcode.com/problems/add-two-numbers/)|Add Two Numbers|[Solution](./002/Code.java)|[Note](./002/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.019](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|Remove Nth Node From End of List|[Solution](./019/Code.java)|[Note](./019/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
+|✔️|[No.141](https://leetcode.com/problems/linked-list-cycle/)|Linked List Cycle|[Solution](./141/Code.java)|[Note](./141/Note.text)|Easy|O(n)|O(1)|quick slow pointer|
+|✔️|[No.142](https://leetcode.com/problems/linked-list-cycle-ii/)|Linked List CycleII|[Solution](./142/Code.java)|[Note](./142/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
+|✔️|[No.023](https://leetcode.com/problems/merge-k-sorted-lists/)|Merge k Sorted Lists|[Solution](./023/Code.java)|[Note](./023/Note.text)|Hard|O(knlogn)|O(n)||
+|✔️|[No.138](https://leetcode.com/problems/copy-list-with-random-pointer/)|Copy List with Random Pointer|[Solution](./138/Code.java)|[Note](./138/Note.text)|Medium|O(n)|O(n)||
