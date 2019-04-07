@@ -1,0 +1,98 @@
+自己的思路
+创建一个新的临时链表用来保存head
+然后将head进行旋转，判断两个链表是否值相同
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    ListNode temp;
+    
+    public boolean isPalindrome(ListNode head) {
+        if(head == null)return true;//空的话就为true
+        temp = head;//用来保存head
+        return recurse(head);//旋转判断是否相同
+    }
+    
+    public boolean recurse(ListNode node){
+        if(node.next==null){//从最后开始
+            return temp.val==node.val;//判断是否相等
+        }
+        if(recurse(node.next)){//继续向后找
+            temp=temp.next;//向中间移动
+            return temp.val==node.val;判断中间的是否相同
+        }
+        return false;
+    }
+    
+}
+
+时间复杂度分析
+遍历了两遍链表，所以所用的时间为T(2n)，转成高阶无穷小为:O(n)
+
+空间复杂度分析
+借用了temp链表用来保存，所以所用的空间为:O(n)
+
+
+
+别人的思路
+用快慢两个指针，一个是一个一个遍历，一个是一个隔着一个遍历，这样快指针到最后了慢指针一定在中间
+然后从慢指针为界限，一个向后一个向前，去比较两个值是否相同
+
+别人的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+    ListNode fast = head, slow = head;//快慢两个指针
+    while (fast != null && fast.next != null) {//一个+1一个+2
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    if (fast != null) { //如果是奇数的话，那么就再加一个
+        slow = slow.next;
+    }
+    slow = reverse(slow);//从慢指针为界限，后半部分旋转，前半部分正常遍历
+    fast = head;
+    
+    while (slow != null) {
+        if (fast.val != slow.val) {//如果值不等就false
+            return false;
+        }
+        fast = fast.next;//继续移动
+        slow = slow.next;
+    }
+    return true;
+}
+
+public ListNode reverse(ListNode head) {
+    ListNode prev = null;
+    while (head != null) {//A->B->C->D->E
+        ListNode next = head.next;//B
+        head.next = prev;pre //A->null
+        prev = head;
+        head = next;//B->A
+    }
+    return prev;
+}
+}
+
+时间复杂度分析
+总共遍历了两次链表，一次是找中间值，一次是两两比较
+所以所用的时间为T(2n)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂度为:O(1)
