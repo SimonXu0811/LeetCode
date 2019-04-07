@@ -1,0 +1,24 @@
+自己的思路
+把后面的值复制到当前节点，然后删除后面一个节点
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;//复制后面的值到当前节点
+        node.next = node.next.next;//删除后面的节点
+    }
+}
+
+时间复杂度分析
+单纯的两步操作，一个复制一个删除，所以时间复杂度为:O(1)
+
+空间复杂度分析
+没有用到临时的储存空间，所以时间复杂度为:O(1)
