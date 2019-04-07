@@ -113,10 +113,10 @@
 ## Linked List
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-||[No.021](https://leetcode.com/problems/merge-two-sorted-lists/)|Merge Two Sorted Lists|[Solution](./021/Code.java)|[Note](./021/Note.text)|Easy|O(n)|O(1)|guard node|
-||[No.024](https://leetcode.com/problems/swap-nodes-in-pairs/)|Swap Nodes in Pairs |[Solution](./024/Code.java)|[Note](./024/Note.text)|Medium|O(n)|O(1)|watch end|
-||[No.083](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)|Remove Duplicates from Sorted List|[Solution](./083/Code.java)|[Note](./083/Note.text)|Easy|O(n)|O(1)|two pointer|
-||[No.160](https://leetcode.com/problems/intersection-of-two-linked-lists/)|Intersection of Two Linked Lists|[Solution](./160/Code.java)|[Note](./160/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.021](https://leetcode.com/problems/merge-two-sorted-lists/)|Merge Two Sorted Lists|[Solution](./021/Code.java)|[Note](./021/Note.text)|Easy|O(n)|O(n)|guard node|
+|✔️|[No.024](https://leetcode.com/problems/swap-nodes-in-pairs/)|Swap Nodes in Pairs |[Solution](./024/Code.java)|[Note](./024/Note.text)|Medium|O(n)|O(n)|watch end|
+|✔️|[No.083](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)|Remove Duplicates from Sorted List|[Solution](./083/Code.java)|[Note](./083/Note.text)|Easy|O(n)|O(1)|two pointer|
+|✔️|[No.160](https://leetcode.com/problems/intersection-of-two-linked-lists/)|Intersection of Two Linked Lists|[Solution](./160/Code.java)|[Note](./160/Note.text)|Easy|O(n)|O(1)||
 ||[No.203](https://leetcode.com/problems/remove-linked-list-elements/)|Remove Linked List Elements|[Solution](./203/Code.java)|[Note](./203/Note.text)|Easy|O(n)|O(1)||
 ||[No.237](https://leetcode.com/problems/delete-node-in-a-linked-list/)|Delete Node in a Linked List|[Solution](./237/Code.java)|[Note](./237/Note.text)|Easy|O(1)|O(1)|tricky,del|
 ||[No.234](https://leetcode.com/problems/palindrome-linked-list/)|Palindrome Linked List|[Solution](./234/Code.java)|[Note](./234/Note.text)|Meduim|O(1)|O(1)|slow,quick pointer|
