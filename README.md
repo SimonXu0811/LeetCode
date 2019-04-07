@@ -117,10 +117,10 @@
 |✔️|[No.024](https://leetcode.com/problems/swap-nodes-in-pairs/)|Swap Nodes in Pairs |[Solution](./024/Code.java)|[Note](./024/Note.text)|Medium|O(n)|O(n)|watch end|
 |✔️|[No.083](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)|Remove Duplicates from Sorted List|[Solution](./083/Code.java)|[Note](./083/Note.text)|Easy|O(n)|O(1)|two pointer|
 |✔️|[No.160](https://leetcode.com/problems/intersection-of-two-linked-lists/)|Intersection of Two Linked Lists|[Solution](./160/Code.java)|[Note](./160/Note.text)|Easy|O(n)|O(1)||
-||[No.203](https://leetcode.com/problems/remove-linked-list-elements/)|Remove Linked List Elements|[Solution](./203/Code.java)|[Note](./203/Note.text)|Easy|O(n)|O(1)||
-||[No.237](https://leetcode.com/problems/delete-node-in-a-linked-list/)|Delete Node in a Linked List|[Solution](./237/Code.java)|[Note](./237/Note.text)|Easy|O(1)|O(1)|tricky,del|
-||[No.234](https://leetcode.com/problems/palindrome-linked-list/)|Palindrome Linked List|[Solution](./234/Code.java)|[Note](./234/Note.text)|Meduim|O(1)|O(1)|slow,quick pointer|
-||[No.206](https://leetcode.com/problems/reverse-linked-list/)|Reverse Linked List|[Solution](./206/Code.java)|[Note](./206/Note.text)|Easy|O(n)|O(1)|reverse|
+|✔️|[No.203](https://leetcode.com/problems/remove-linked-list-elements/)|Remove Linked List Elements|[Solution](./203/Code.java)|[Note](./203/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.237](https://leetcode.com/problems/delete-node-in-a-linked-list/)|Delete Node in a Linked List|[Solution](./237/Code.java)|[Note](./237/Note.text)|Easy|O(1)|O(1)|tricky,del|
+|✔️|[No.234](https://leetcode.com/problems/palindrome-linked-list/)|Palindrome Linked List|[Solution](./234/Code.java)|[Note](./234/Note.text)|Meduim|O(n)|O(1)|slow,quick pointer|
+|✔️|[No.206](https://leetcode.com/problems/reverse-linked-list/)|Reverse Linked List|[Solution](./206/Code.java)|[Note](./206/Note.text)|Easy|O(n)|O(1)|reverse|
 ||[No.002](https://leetcode.com/problems/add-two-numbers/)|Add Two Numbers|[Solution](./002/Code.java)|[Note](./002/Note.text)|Medium|O(n)|O(1)||
 ||[No.019](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|Remove Nth Node From End of List|[Solution](./019/Code.java)|[Note](./019/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
 ||[No.141](https://leetcode.com/problems/linked-list-cycle/)|Linked List Cycle|[Solution](./141/Code.java)|[Note](./141/Note.text)|Easy|O(n)|O(1)|quick slow pointer|
