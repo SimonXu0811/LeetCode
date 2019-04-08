@@ -4,7 +4,7 @@
 - [x] [Array](#array)
 - [x] [String](#string) 
 - [x] [Linked List](#linked-List)
-- [ ] [Stack](#stack)
+- [x] [Stack](#stack)
 - [ ] Recursion 
 - [ ] Queue 
 - [ ] Binary Tree
@@ -131,15 +131,15 @@
 ## Stack
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-||[No.020](https://leetcode.com/problems/valid-parentheses/)|Valid Parentheses|[Solution](./020/Code.java)|[Note](./020/Note.text)|Easy|O(n)|O(1)||
-||[No.844](https://leetcode.com/problems/backspace-string-compare/)|Backspace String Compare|[Solution](./844/Code.java)|[Note](./844/Note.text)|Easy|O(M+N)|O(1)||
-||[No.155](https://leetcode.com/problems/min-stack/)|Min Stack|[Solution](./155/Code.java)|[Note](./155/Note.text)|Easy|O(1)|O(1)||
-||[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(n)|O(1)||
-||[No.232](https://leetcode.com/problems/implement-queue-using-stacks/)|Implement Queue using Stacks|[Solution](./232/Code.java)|[Note](./232/Note.text)|Easy|O(n)|O(1)||
-||[No.682](https://leetcode.com/problems/baseball-game/)|Baseball Game|[Solution](./682/Code.java)|[Note](./682/Note.text)|Easy|O(n)|O(1)||
-||[No.056](https://leetcode.com/problems/merge-intervals/)|Merge Intervals|[Solution](./056/Code.java)|[Note](./056/Note.text)|Medium|O(nlogn)|O(n)||
-||[No.394](https://leetcode.com/problems/decode-string/)|Decode String|[Solution](./394/Code.java)|[Note](./394/Note.text)|Medium|O(n)|O(n)||
-||[No.921](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|Minimum Add to Make Parentheses Valid|[Solution](./921/Code.java)|[Note](./921/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.020](https://leetcode.com/problems/valid-parentheses/)|Valid Parentheses|[Solution](./020/Code.java)|[Note](./020/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.844](https://leetcode.com/problems/backspace-string-compare/)|Backspace String Compare|[Solution](./844/Code.java)|[Note](./844/Note.text)|Easy|O(M+N)|O(1)||
+|✔️|[No.155](https://leetcode.com/problems/min-stack/)|Min Stack|[Solution](./155/Code.java)|[Note](./155/Note.text)|Easy|O(1)|O(1)||
+|✔️|[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.232](https://leetcode.com/problems/implement-queue-using-stacks/)|Implement Queue using Stacks|[Solution](./232/Code.java)|[Note](./232/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.682](https://leetcode.com/problems/baseball-game/)|Baseball Game|[Solution](./682/Code.java)|[Note](./682/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.056](https://leetcode.com/problems/merge-intervals/)|Merge Intervals|[Solution](./056/Code.java)|[Note](./056/Note.text)|Medium|O(nlogn)|O(n)||
+|✔️|[No.394](https://leetcode.com/problems/decode-string/)|Decode String|[Solution](./394/Code.java)|[Note](./394/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.921](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|Minimum Add to Make Parentheses Valid|[Solution](./921/Code.java)|[Note](./921/Note.text)|Medium|O(n)|O(n)||
 |🔒|No.339|Nested List Weight Sum|Solution|Note|Easy|O(n)|O(1)|DFS|
 |🔒|No.716|Max Stack|Solution)|Note|Easy|O(n)|O(1)|DFS|
 
