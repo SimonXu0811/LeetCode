@@ -1,0 +1,43 @@
+自己的思路
+根据题意来看，如果是数字的话，那么就是直接push进数组里
+如果是C的话，就是pop掉最上层的数字
+如果是D的话，就是把peek的值乘2然后push进stack
+如果是+的话，就把最上层的两个提出来，然后相加，最后把这三个值都加进stack中
+
+自己的代码
+class Solution {
+    Stack<Integer> stack = new Stack<>();
+    public int calPoints(String[] ops) {
+        int sum = 0;
+        for(String s : ops){//遍历数字
+            if(s.equals("C")){//如果是C的话，那就pop掉
+                if(!stack.isEmpty()) stack.pop();
+            }else if(s.equals("D")){//如果是D的话就是最顶层的数乘2然后加进stack中
+                stack.push(stack.peek()*2);
+            }else if(s.equals("+")){//如果是+，那就是提出两个数，然后相加，把三个一起放回，但是注意后进先出原则
+                int x = stack.pop();
+                int y =stack.pop();
+                int z = x + y;
+                stack.push(y);
+                stack.push(x);
+                stack.push(z);
+            }else{
+                stack.push(Integer.valueOf(s));//最后是数字，就直接加进去
+            }
+        }
+        while(!stack.isEmpty()){
+            sum += stack.pop();//最后把数字全加起来
+        }
+        return sum;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组用来检查和存放进stack中，所用的时间为T(n)
+遍历了一遍stack，用来把所有的数加起来，所用的时间为T(n)
+所以所用的总时间为T(n)=T(n)+T(n)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+用stack保存了数据，所以最坏的情况就是借用了数组长度的临时储存空间
+所以空间复杂度为:O(n)
