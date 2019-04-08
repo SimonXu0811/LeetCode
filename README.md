@@ -139,7 +139,7 @@
 |✔️|[No.682](https://leetcode.com/problems/baseball-game/)|Baseball Game|[Solution](./682/Code.java)|[Note](./682/Note.text)|Easy|O(n)|O(1)||
 |✔️|[No.056](https://leetcode.com/problems/merge-intervals/)|Merge Intervals|[Solution](./056/Code.java)|[Note](./056/Note.text)|Medium|O(nlogn)|O(n)||
 |✔️|[No.394](https://leetcode.com/problems/decode-string/)|Decode String|[Solution](./394/Code.java)|[Note](./394/Note.text)|Medium|O(n)|O(n)||
-|✔️|[No.921](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|Minimum Add to Make Parentheses Valid|[Solution](./921/Code.java)|[Note](./921/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.921](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|Minimum Add to Make Parentheses Valid|[Solution](./921/Code.java)|[Note](./921/Note.text)|Medium|O(n)|O(1)||
 |🔒|No.339|Nested List Weight Sum|Solution|Note|Easy|O(n)|O(1)|DFS|
 |🔒|No.716|Max Stack|Solution)|Note|Easy|O(n)|O(1)|DFS|
 
