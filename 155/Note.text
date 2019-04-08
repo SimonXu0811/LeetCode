@@ -1,0 +1,48 @@
+自己的思路
+用内置的stack函数做
+MinStack用来创建一个新的stack
+push的时候先判断x是否比min小，如果小的话先把旧的min加进stack，然后再push x
+pop的时候先判断是否是最小值，如果是就pop掉，然后再pop x的值，再就min等于上一个最小值
+top就是stack的peek
+getmin只要返回min即可
+
+自己的代码
+class MinStack {
+    Stack<Integer> stack;
+    int min = Integer.MAX_VALUE;
+    /** initialize your data structure here. */
+    public MinStack() {//初始话栈
+        stack = new Stack<>();
+    }
+    
+    public void push(int x) {//如果x比min小，就把旧的min加进去，然后再加x 最后行成的是x1|min1|x2|min2|x3|min3|
+        if(x <= min){
+            stack.push(min);
+            min = x;
+        }
+        stack.push(x);
+    }
+    
+    public void pop() {
+        if(stack.pop() == min){//如果要删除的x是最小值的话，那么就再pop一次去获取上一次的最小值
+            min = stack.pop();
+        }
+    }
+    
+    public int top() {//直接用stack.peek()
+        return stack.peek();
+    }
+    
+    public int getMin() {//返回最小值
+        return min;
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
