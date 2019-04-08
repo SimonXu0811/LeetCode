@@ -1,0 +1,71 @@
+自己的思路
+用stack做
+如果遇到前一个括号，那么就在stack中push另一半
+这样如果遇到另一半的时候就可以比较stack中的是否一致，如果一致的话，那么就是相符的
+比如遇到了( 那么就在stack中push ） 如果后面一个括号是 ） pop的和后面的一致，所以可以进行下一个
+
+自己的代码
+class Solution {
+    public boolean isValid(String s) {
+	Stack<Character> stack = new Stack<Character>();//用来保存一半的括号
+	for (char c : s.toCharArray()) {//遍历整个字符
+		if (c == '(')//如果遇到前一半括号，那么就保存另一半
+			stack.push(')');
+		else if (c == '{')
+			stack.push('}');
+		else if (c == '[')
+			stack.push(']');
+		else if (stack.isEmpty() || stack.pop() != c)//如果遇到另一半pop出来的不相同，那么就是false
+			return false;
+	}
+	return stack.isEmpty();//如果全匹配了，就返回true
+}
+}
+
+时间复杂度分析
+遍历了整个字符串，所以所用时间就是字符串的长度
+所以所用的时间复杂度为:O(n)
+
+空间复杂度分析
+用了stack保存，所用的空间为l
+然后又将字符串转成了数组，所用的空间为l
+所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用map进行保存一对一对匹配的括号，key为开括号，value为闭合括号
+迭代进行查看，如果是开括号，所以push进stack中，如果是闭合括号那么从map中去获取最上层开括号，作为key得到value
+最后比较一下
+
+别人的代码
+public class Solution {
+        public boolean isValid(String s) {
+            Stack<Character> stack = new Stack<>();//利用stack中的后进先出原理
+            Map<Character, Character> map = new HashMap<>();//map用来保存一对一对的括号
+            map.put('(', ')');
+            map.put('[', ']');
+            map.put('{', '}');
+            for(char c : s.toCharArray()) {//迭代遍历整个字符串
+                if(map.containsKey(c)) {//如果是开括号就加进去
+                    stack.push(c);
+                } else {
+                    if(!stack.isEmpty() && map.get(stack.peek()) == c) {//如果是闭合括号，那么就去获取value的值
+                        stack.pop();//如果一致就可以删除看下一对
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return stack.isEmpty();//如果都成立，就是true
+        }
+}
+
+时间复杂度分析
+遍历了一次字符串所用的时间为T(n)，然后在map中put和get的所用的时间为T(1)
+所以所用的总时间为T(n)=T(n)*T(1)
+转成高阶无穷小为:O(n)
+
+空间复杂度分析
+用了map保存三对括号，然后用stack保存字符串的开括号，临时空间就为l/2
+所有空间复杂度为:O(n)
