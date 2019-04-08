@@ -5,8 +5,8 @@
 - [x] [String](#string) 
 - [x] [Linked List](#linked-List)
 - [x] [Stack](#stack)
-- [ ] Recursion 
-- [ ] Queue 
+- [ ] [Recursion](#recursion)
+- [ ] [Queue](#queue)
 - [ ] Binary Tree
 - [ ] Hash Table
 - [ ] Sort
@@ -131,11 +131,11 @@
 ## Stack
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-|✔️|[No.020](https://leetcode.com/problems/valid-parentheses/)|Valid Parentheses|[Solution](./020/Code.java)|[Note](./020/Note.text)|Easy|O(n)|O(1)||
-|✔️|[No.844](https://leetcode.com/problems/backspace-string-compare/)|Backspace String Compare|[Solution](./844/Code.java)|[Note](./844/Note.text)|Easy|O(M+N)|O(1)||
+|✔️|[No.020](https://leetcode.com/problems/valid-parentheses/)|Valid Parentheses|[Solution](./020/Code.java)|[Note](./020/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.844](https://leetcode.com/problems/backspace-string-compare/)|Backspace String Compare|[Solution](./844/Code.java)|[Note](./844/Note.text)|Easy|O(n)|O(1)||
 |✔️|[No.155](https://leetcode.com/problems/min-stack/)|Min Stack|[Solution](./155/Code.java)|[Note](./155/Note.text)|Easy|O(1)|O(1)||
-|✔️|[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(n)|O(1)||
-|✔️|[No.232](https://leetcode.com/problems/implement-queue-using-stacks/)|Implement Queue using Stacks|[Solution](./232/Code.java)|[Note](./232/Note.text)|Easy|O(n)|O(1)||
+|✔️|[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.232](https://leetcode.com/problems/implement-queue-using-stacks/)|Implement Queue using Stacks|[Solution](./232/Code.java)|[Note](./232/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.682](https://leetcode.com/problems/baseball-game/)|Baseball Game|[Solution](./682/Code.java)|[Note](./682/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.056](https://leetcode.com/problems/merge-intervals/)|Merge Intervals|[Solution](./056/Code.java)|[Note](./056/Note.text)|Medium|O(nlogn)|O(n)||
 |✔️|[No.394](https://leetcode.com/problems/decode-string/)|Decode String|[Solution](./394/Code.java)|[Note](./394/Note.text)|Medium|O(n)|O(n)||
@@ -143,3 +143,27 @@
 |🔒|No.339|Nested List Weight Sum|Solution|Note|Easy|O(n)|O(1)|DFS|
 |🔒|No.716|Max Stack|Solution)|Note|Easy|O(n)|O(1)|DFS|
 
+
+
+## Recursion
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|:---|---|-----|--------|----|----------|----|-----|---|
+||[No.101](https://leetcode.com/problems/symmetric-tree/)|Symmetric Tree|[Solution](./101/Code.java)|[Note](./101/Note.text)|Easy|O(n)|O(h)||
+||[No.872](https://leetcode.com/problems/leaf-similar-trees/)|Leaf-Similar Trees|[Solution](./872/Code.java)|[Note](./872/Note.text)|Easy|O(n)|O(n)||
+||[No.104](https://leetcode.com/problems/maximum-depth-of-binary-tree/)|Maximum Depth of Binary Tree|[Solution](./104/Code.java)|[Note](./104/Note.text)|Easy|O(logn)|O(1)||
+||[No.110](https://leetcode.com/problems/balanced-binary-tree/)|Balanced Binary Tree|[Solution](./110/Code.java)|[Note](./110/Note.text)|Easy|O(logn)|O(1)||
+||[No.111](https://leetcode.com/problems/minimum-depth-of-binary-tree/)|Minimum Depth of Binary Tree|[Solution](./111/Code.java)|[Note](./111/Note.text)|Easy|O(logn)|O(1)||
+||[No.404](https://leetcode.com/problems/sum-of-left-leaves/)|Sum of Left Leaves|[Solution](./404/Code.java)|[Note](./404/Note.text)|Easy|O(logn)|O(1)||
+||[No.669](https://leetcode.com/problems/trim-a-binary-search-tree/)|Trim a Binary Search Tree|[Solution](./669/Code.java)|[Note](./669/Note.text)|Easy|O(logn)|O(1)||
+||[No.671](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/)|Second Minimum Node In a Binary Tree|[Solution](./671/Code.java)|[Note](./671/Note.text)|Easy|O(logn)|O(1)||
+
+
+
+## Queue
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|:---|---|-----|--------|----|----------|----|-----|---|
+||[No.346](https://leetcode.com/problems/moving-average-from-data-stream/)|Moving Average from Data Stream|[Solution](./346/Code.java)|[Note](./346/Note.text)|Easy|O(1)|O(w)||
+||[No.281](https://leetcode.com/problems/zigzag-iterator/)|Zigzag Iterator|[Solution](./281/Code.java)|[Note](./281/Note.text)|Medium|O(n)|O(n)||
+||[No.127](https://leetcode.com/problems/word-ladder/)|Word Ladder|[Solution](./127/Code.java)|[Note](./127/Note.text)|Medium|O(n)|O(n)||
+||[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
+||[No.641](https://leetcode.com/problems/design-circular-deque/)|Design Circular Deque|[Solution](./641/Code.java)|[Note](./641/Note.text)|Medium|O(n)|O(n)||
