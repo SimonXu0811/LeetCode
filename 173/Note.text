@@ -1,0 +1,111 @@
+自己的思路
+就是用stack模拟一个中序遍历二叉搜索树
+唯一的不同就是stack是后进先出的，那么left和right的顺序要交换一下
+然后next就是pop掉一个
+hasnext就是检查stack是否为空，如果为空，那么就是false
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class BSTIterator {
+    Stack<Integer> stack;
+    public BSTIterator(TreeNode root) {
+        stack = new Stack<>();//初始化stack
+        stack = MinOrder(root);//中序遍历
+    }
+    
+    /** @return the next smallest number */
+    public int next() {
+        return stack.pop();//如果要看下一个，那么就pop掉
+    }
+    
+    /** @return whether we have a next smallest number */
+    public boolean hasNext() {
+        return !stack.isEmpty();//如果stack不为空，那么就可以继续遍历
+    }
+    
+    private Stack MinOrder(TreeNode root){
+        if(root == null){//边界条件
+            return stack;
+        }
+        MinOrder(root.right);//stack后进先出，所以要反过来，先搜索右边的存底下
+        stack.push(root.val);//然后根节点
+        MinOrder(root.left);//最后左边的放最上面
+        return stack;
+    }
+}
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator obj = new BSTIterator(root);
+ * int param_1 = obj.next();
+ * boolean param_2 = obj.hasNext();
+ */
+
+时间复杂度分析
+用了递归的方式来遍历整个树，所以所用的时间就是树的高度，所以时间复杂度为:O(h)
+next和hasNext的时间都为O(1)符合题意
+
+空间复杂度分析
+用了stack保存所有的元素，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+next用来中序遍历
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class BSTIterator {
+    
+    Stack<TreeNode> stack =  null ;            
+    TreeNode current = null ;
+    	
+    public BSTIterator(TreeNode root) {
+        current = root;	     
+        stack = new Stack<> ();//先初始化
+    }
+    
+    public boolean hasNext() {//如果stack中还有元素或者说没有遍历到最后的叶子节点
+    	return !stack.isEmpty() || current != null;  
+    }
+    
+    public int next() {//用来中序遍历
+    	while (current != null) {//首先加左节点进去
+    		stack.push(current);
+    		current = current.left ;
+    }		
+    	TreeNode t = stack.pop() ;//然后回溯到上一个节点
+    	current = t.right ;//添加到右节点
+    	return t.val ;//返回子节点的值
+    }
+}
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator obj = new BSTIterator(root);
+ * int param_1 = obj.next();
+ * boolean param_2 = obj.hasNext();
+ */
+
+时间复杂度分析
+hasNext的时间复杂度为:O(1)
+next的时间复杂度提到了:O(h)
+
+空间复杂度分析
+用了stack保存所有的元素，所以空间复杂度为:O(n)
