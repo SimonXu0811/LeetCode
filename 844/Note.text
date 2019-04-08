@@ -1,0 +1,91 @@
+自己的思路
+创建两个stack用来保存S和T
+然后如果遇到#并且stack不为空的话就pop，否则保持为空
+其余的就加进去
+然后对比两个stack如果一样的话就是true
+
+自己的代码
+class Solution {
+    public boolean backspaceCompare(String S, String T) {
+        Stack<Character> stack1 = new Stack<>();//用来分别保存S和T
+        Stack<Character> stack2 = new Stack<>();
+        stack1 = pushIn(S);//将元素放入stack中
+        stack2 = pushIn(T);
+        if(stack1.size() != stack2.size()) return false;//如果大小都不一样那么肯定就不一样了
+        while(!stack1.isEmpty() && !stack2.isEmpty()){//一直迭代
+            if(stack1.pop() != stack2.pop()){//如果有一对元素不同那么就肯定不同
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    private Stack pushIn(String s){
+        Stack<Character> stack = new Stack<>();
+        for(char ch : s.toCharArray()){//遍历这个字符串
+            if(ch == '#'){//如果遇到了#
+                if(stack.isEmpty()){//首先判读是不是空，为空的话就保持空stack
+                    continue;
+                }else{//否则就删除上一个元素
+                    stack.pop();
+                }
+            }else{//其他的元素就正常加进去
+                stack.push(ch);
+            }
+        }
+        return stack;
+    }
+}
+
+时间复杂度分析
+两个stack分别迭代了两次，一次是把元素加进去一次是两两比较
+这几个迭代都不嵌套，所以所用的总时间也就取决于最长的字符串
+所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了两个stack保存，临时空间就是两个字符串的和
+所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用两个指针，分别从指向S和T的末尾
+然后从后向前遍历，如果遇到一个#就记做跳过一次，一直到遇到一个不是#的
+然后跳过遇到#的次数
+然后比较两个字符如果不相等，那么就返回false
+否则全满足就是true
+
+别人的代码
+class Solution {
+    public boolean backspaceCompare(String S, String T) {
+        int i = S.length() - 1, j = T.length() - 1;
+        int skipS = 0, skipT = 0;
+
+        while (i >= 0 || j >= 0) { //字符串中还存在字符
+            while (i >= 0) { 
+                if (S.charAt(i) == '#') {skipS++; i--;}//如果含有#，那就向前遍历，把需要跳过的次数加一
+                else if (skipS > 0) {skipS--; i--;}//如果便利到了下一个非#，就开始跳过
+                else break;
+            }
+            while (j >= 0) { //对T同样操作
+                if (T.charAt(j) == '#') {skipT++; j--;}
+                else if (skipT > 0) {skipT--; j--;}
+                else break;
+            }
+
+            if (i >= 0 && j >= 0 && S.charAt(i) != T.charAt(j))//如果有一个不等，那就是不相等的
+                return false;
+
+            if ((i >= 0) != (j >= 0))//如果有个先结束了，那么就是不等的
+                return false;
+            i--; j--;
+        }
+        return true;
+    }
+}
+
+时间复杂度分析
+遍历了两个字符串，所以所用的时间就是字符串的最大长度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的储存空间，所以空间复杂度为:O(1)
