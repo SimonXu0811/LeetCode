@@ -1,0 +1,62 @@
+自己的思路
+用stack先找出有效的括号数
+从前向后遍历整个字符串，如果遇到开括号，那么push进)
+如果遇到)，并且stack不为空，那么pop掉一个记做合法一个
+一直到结束
+最后只要将字符串的长度减去有效的括号数就行
+
+自己的代码
+class Solution {
+    public int minAddToMakeValid(String S) {
+        int validnum = 0;//记录有效的括号对数
+        Stack<Character> stack = new Stack<>();
+        for(char ch : S.toCharArray()){//遍历字符串
+            if(ch == '('){//如果是开括号，那么保存闭合括号
+                stack.push(')');
+            }
+            if(ch == ')'){//如果遇到了闭合括号
+                if(!stack.isEmpty()){//如果不为空的话，那么就pop掉，记一对有效括号
+                    stack.pop();
+                    validnum++;
+                }
+            }
+        }
+        return S.length() - validnum*2;长度减去有效的括号数，那么就是需要添加的括号数
+    }
+}
+
+时间复杂度分析
+总共遍历了一遍字符串，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用stack保存了括号，并且把字符串转成了数组形式，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+把开括号记做是1，闭合括号记做是-1，然后如果有一对匹配的话 那么就和数为0
+如果前面没有开括号，直接遇到了闭合括号的话，那肯定就是一个不成立的直接次数count加1，然后把记录和值res归0
+这样count就是记录无效闭合括号的次数，res记录无效开括号的次数
+
+别人的代码
+class Solution {
+    public int minAddToMakeValid(String S) {
+        int count = 0, res = 0;//count记录无效的闭合括号，res记录无效的开括号
+        for (int i = 0; i < S.length(); ++i) {
+            res += S.charAt(i) == '(' ? 1 : -1;//如果是开括号就是1，闭合括号就是-1
+            if (res == -1) {//如果是无效的闭合括号的话，count+1，然后res归0
+                count++;
+                res++;
+            }
+        }
+
+        return count + res;//最后两种括号出现的次数相加
+    }
+}
+
+时间复杂度分析
+就迭代了字符串的长度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到临时的额外空间，所以空间复杂度为:O(1)
+       
