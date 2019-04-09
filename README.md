@@ -162,7 +162,7 @@
 ## Queue
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-||[No.346](https://leetcode.com/problems/moving-average-from-data-stream/)|Moving Average from Data Stream|[Solution](./346/Code.java)|[Note](./346/Note.text)|Easy|O(1)|O(w)||
+|🔒|No.346|Moving Average from Data Stream|Solution|Note|Easy|O(1)|O(w)||
 |🔒|No.281|Zigzag Iterator|Solution|Note|Medium|O(n)|O(n)||
 ||[No.127](https://leetcode.com/problems/word-ladder/)|Word Ladder|[Solution](./127/Code.java)|[Note](./127/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
