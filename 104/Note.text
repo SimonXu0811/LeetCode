@@ -1,0 +1,47 @@
+ 自己的思路
+ 用DFS做，一直遍历到左子树的最底下，每递归一次深度就加一
+ 然后遍历右树，一直到最后一个叶子结点，每递归一次深度加一
+ 然后回溯继续遍历其他的，一直到最深处
+ 
+ 自己的代码
+ /**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null) return 0;//如果是空树，那么深度就为0
+        int left = maxDepth(root.left) + 1;//左侧遍历，一直到最底下，如果到了那么就回溯直到到达最深
+        int right = maxDepth(root.right) + 1;//右侧遍历，到叶子结点，然后回溯到最深
+        return(Math.max(left,right));//去左右子树的最大深度值
+    }
+}
+
+时间复杂度分析
+递归思想，递归所用的时间就是树的最大深度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+递归没有占用其他的空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+优化了代码，直接取出左子树的最大深度和右子树的最大深度，然后取最大值
+
+别人的代码
+public int maxDepth(TreeNode root) {
+    if(root==null){//空树
+        return 0;
+    }
+    return 1+Math.max(maxDepth(root.left),maxDepth(root.right));//取出哪个叶子结点还存在的 然后继续向下找
+}
+
+时间复杂度分析
+遍历了最大深度，时间也就和最大的深度有关，所以时间复杂度为:O(n)
+
+空间复杂度分析
+递归没有用到额外的临时空间，所以空间复杂度为:O(1)
