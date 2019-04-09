@@ -1,0 +1,35 @@
+思路
+如果树为空，那么就直接返回
+如果数组的值比区间大，那么直接删掉该数组的所有右子树，因为二叉树右子树比该结点大
+如果数组的值比区间小，那么直接删掉该数的左子树
+然后在区间内，那么继续左右遍历
+直到树中的所有元素都在区间内
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode trimBST(TreeNode root, int L, int R) {
+        if(root == null) return root;//空树
+        if(root.val > R) return trimBST(root.left, L, R);//结点值比区间大，那么删右子树
+        if(root.val < L) return trimBST(root.right, L, R);//结点值比区间小，删左子树
+        
+        root.left = trimBST(root.left, L, R);//继续遍历左子树
+        root.right = trimBST(root.right, L, R);//继续遍历右子树
+        return root;
+    }
+}
+
+时间复杂度分析
+每次递归两个左右子树，然后递归完了所有的元素，所以就是2^T=n，那么T就是logn
+所以空间复杂度为:O(logn)
+
+空间复杂度分析
+没有遇到额外的临时数组，所以空间复杂度为:O(1)
