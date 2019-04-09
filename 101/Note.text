@@ -1,0 +1,64 @@
+思想1
+递归做法，首先判断两个树是否为空，如果一个为空一个不为空，那就返回false
+如果两个都为空，那么就返回true
+然后判断树的值，由于是镜像的，那么就是树的左半边要等于右半边
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return Check(root,root);//调用方法
+    }
+    
+    private boolean Check (TreeNode t1, TreeNode t2){//递归
+        if(t1 == null && t2 == null) return true;//都为空就是镜像的
+        if(t1 == null || t2 ==null) return false;//一空一不空那么肯定不是镜像的
+        
+        return (t1.val == t2.val) && Check(t1.left, t2.right) && Check(t1.right, t2.left);//先左半边DFS，然后回上一层右半边DFS
+    }
+}
+
+时间复杂度分析
+总共遍历了树中的所有元素，递归的次数就是树中的一半元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+把树分成了两个子树，分别保存一边，所以空间复杂度为:O(n)
+
+
+
+思路2
+类比与BFS，首先将根节点保存到链表中，分割成两棵树，然后查看它的左子节点和右子节点，接着以每个节点再细分，遍历每一行
+如果有一对不相同，那么就是false
+
+代码
+public boolean isSymmetric(TreeNode root) {
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);//左树
+    q.add(root);//右树
+    while (!q.isEmpty()) {
+        TreeNode t1 = q.poll();//获取两棵树
+        TreeNode t2 = q.poll();
+        if (t1 == null && t2 == null) continue;//都没有那么继续旁边的节点
+        if (t1 == null || t2 == null) return false;//一个有一个没有，就不是镜像的
+        if (t1.val != t2.val) return false;//如果两个值不相同，那么就返回false
+        q.add(t1.left);//BFS找到每一行的所有节点
+        q.add(t2.right);
+        q.add(t1.right);
+        q.add(t2.left);
+    }
+    return true;
+}
+
+时间复杂度分析
+遍历了所有树中的节点，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用queue保存了所有的元素，所以空间复杂度为:O(n)
