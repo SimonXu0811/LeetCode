@@ -1,0 +1,33 @@
+自己的思路
+用递归的思想找左叶子树，如果root.left不为空，并且左右子节点都为空，那么就是左叶子结点
+然后加上root.left.val就可以，接着继续遍历其他的叶子结点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int sumOfLeftLeaves(TreeNode root) {
+        if(root == null) return 0;
+        int sum = 0;
+        if(root.left != null && root.left.left ==null && root.left.right ==null){//判断是不是叶子结点
+            sum += root.left.val;//如果符合就加起来
+        }else{
+            sum += sumOfLeftLeaves(root.left);//继续遍历下面的结点
+        }
+        sum += sumOfLeftLeaves(root.right);//找右子树
+        return sum;
+    }
+}
+
+时间复杂度分析
+遍历了整棵树，所以时间复杂度为:O(n)
+
+空间复杂度分析
+创建了n个临时遍历，所以空间复杂度为:O(n)
