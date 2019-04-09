@@ -6,6 +6,6 @@ public int maxDepth(TreeNode root) {
 }
 
 /*
-时间复杂度:O(n)
+时间复杂度:O(logn)
 空间复杂度:O(1)
 */
