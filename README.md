@@ -7,7 +7,7 @@
 - [x] [Stack](#stack)
 - [x] [Recursion](#recursion)
 - [ ] [Queue](#queue)
-- [ ] Binary Tree
+- [ ] [Binary Tree](#binary-tree)
 - [ ] Hash Table
 - [ ] Sort
 - [ ] Heap
@@ -167,3 +167,35 @@
 ||[No.127](https://leetcode.com/problems/word-ladder/)|Word Ladder|[Solution](./127/Code.java)|[Note](./127/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
 ||[No.641](https://leetcode.com/problems/design-circular-deque/)|Design Circular Deque|[Solution](./641/Code.java)|[Note](./641/Note.text)|Medium|O(n)|O(n)||
+
+
+## Binary Tree
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|:---|---|-----|--------|----|----------|----|-----|---|
+||[No.226](https://leetcode.com/problems/invert-binary-tree/)|Invert Binary Tree|[Solution](./226/Code.java)|[Note](./226/Note.text)|Easy|O(logn)|O(h)||
+||[No.538](https://leetcode.com/problems/convert-bst-to-greater-tree/)|Convert BST to Greater Tree|[Solution](./538/Code.java)|[Note](./538/Note.text)|Easy|O(n)|O(h)||
+||[No.543](https://leetcode.com/problems/diameter-of-binary-tree/)|Diameter of Binary Tree|[Solution](./543/Code.java)|[Note](./543/Note.text)|Easy|O(n)|O(h)||
+||[No.687](https://leetcode.com/problems/longest-univalue-path/)|Longest Univalue Path|[Solution](./687/Code.java)|[Note](./687/Note.text)|Easy|O(n)|O(h)||
+||[No.897](https://leetcode.com/problems/increasing-order-search-tree/)|Increasing Order Search Tree|[Solution](./897/Code.java)|[Note](./897/Note.text)|Easy|O(n)|O(h)||
+||[No.617](https://leetcode.com/problems/merge-two-binary-trees/)|Merge Two Binary Trees|[Solution](./617/Code.java)|[Note](./617/Note.text)|Easy|O(n)|O(h)||
+||[No.606](https://leetcode.com/problems/construct-string-from-binary-tree/)|Construct String from Binary Tree|[Solution](./606/Code.java)|[Note](./606/Note.text)|Easy|O(n)|O(h)||
+||[No.572](https://leetcode.com/problems/subtree-of-another-tree/)|Subtree of Another Tree|[Solution](./572/Code.java)|[Note](./572/Note.text)|Easy|O(n)|O(h)||
+||[No.563](https://leetcode.com/problems/binary-tree-tilt/)|Binary Tree Tilt|[Solution](./563/Code.java)|[Note](./563/Note.text)|Easy|O(n^2)|||
+||[No.094](https://leetcode.com/problems/binary-tree-inorder-traversal/)|Binary Tree Inorder Traversal|[Solution](./094/Code.java)|[Note](./094/Note.text)|Medium|O(n)|O(n)|Inorder Traversal|
+||[No.112](https://leetcode.com/problems/path-sum/)|Path Sum|[Solution](./112/Code.java)|[Note](./112/Note.text)|Easy|O(n)|O(1)|DFS|
+||[No.257](https://leetcode.com/problems/binary-tree-paths/)|Binary Tree Paths|[Solution](./257/Code.java)|[Note](./257/Note.text)|Easy|O(n)|O(1)|DFS|
+||[No.144](https://leetcode.com/problems/binary-tree-preorder-traversal/)|Binary Tree Preorder Traversal|[Solution](./144/Code.java)|[Note](./144/Note.text)|Medium|O(n)|O(n)|iteration traverse|
+||[No.145](https://leetcode.com/problems/binary-tree-postorder-traversal/)|Binary Tree Postorder Traversal|[Solution](./145/Code.java)|[Note](./145/Note.text)|Hard|O(n)|O(n)|iteration traverse|
+||[No.102](https://leetcode.com/problems/binary-tree-level-order-traversal/)|Binary Tree Level Order Traversal|[Solution](./102/Code.java)|[Note](./102/Note.text)|Medium|O(n)|O(n)|iteration traverse|
+|🔒|No.250|Count Univalue Subtrees|Solution|Note|Medium|O(n)|O(n)||
+||[No.106](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)|Construct Binary Tree from Inorder and Postorder Traversal|[Solution](./106/Code.java)|[Note](./106/Note.text)|Medium|O(n)|O(n)|build tree|
+||[No.105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)|Construct Binary Tree from Inorder and Preorder Traversal|[Solution](./105/Code.java)|[Note](./105/Note.text)|Medium|O(n)|O(n)|build tree|
+||[No.116](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)|Populating Next Right Pointers in Each Node|[Solution](./116/Code.java)|[Note](./116/Cote.text)|Medium|O(n)|O(n)||
+||[No.117](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)|Populating Next Right Pointers in Each Node II|[Solution](./117/Code.java)|[Note](./117/Note.text)|Medium|O(n)|O(n)||
+||[No.236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)|Lowest Common Ancestor of a Binary Tree|[Solution](./236/Code.java)|[Note](./236/Note.text)|Medium|O(n^2)|O(n)||
+||[No.100](https://leetcode.com/problems/same-tree/)|Same Tree|[Solution](./100/Code.java)|[Note](./100/Note.text)|Medium|O(n)|O(1)||
+|🔒|No.314|Binary Tree Vertical Order Traversal|Solution|Note|Medium|O(n)|O(n)||
+||[No.637](https://leetcode.com/problems/average-of-levels-in-binary-tree/)|Average of Levels in Binary Tree|[Solution](./637/Code.java)|[Note](./637/Note.text)|Easy|O(n)|O(n)||
+||[No.103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)|Binary Tree Zigzag Level Order Traversal|[Solution](./103/Code.java)|[Note](./103/Note.text)|Medium|O(n)|O(n)||
+||[No.114](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)|Flatten Binary Tree to Linked List|[Solution](./114/Code.java)|[Note](./114/Note.text)|Medium|O(n)|O(1)|DFS|
+||[No.437](https://leetcode.com/problems/path-sum-iii/)|Path Sum III|[Solution](./437/Code.java)|[Note](./437/Note.text)|Medium|O(nlogn)|O(1)|DFS|
