@@ -5,7 +5,7 @@
 - [x] [String](#string) 
 - [x] [Linked List](#linked-List)
 - [x] [Stack](#stack)
-- [ ] [Recursion](#recursion)
+- [x] [Recursion](#recursion)
 - [ ] [Queue](#queue)
 - [ ] Binary Tree
 - [ ] Hash Table
@@ -148,14 +148,14 @@
 ## Recursion
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |:---|---|-----|--------|----|----------|----|-----|---|
-||[No.101](https://leetcode.com/problems/symmetric-tree/)|Symmetric Tree|[Solution](./101/Code.java)|[Note](./101/Note.text)|Easy|O(n)|O(h)||
-||[No.872](https://leetcode.com/problems/leaf-similar-trees/)|Leaf-Similar Trees|[Solution](./872/Code.java)|[Note](./872/Note.text)|Easy|O(n)|O(n)||
-||[No.104](https://leetcode.com/problems/maximum-depth-of-binary-tree/)|Maximum Depth of Binary Tree|[Solution](./104/Code.java)|[Note](./104/Note.text)|Easy|O(logn)|O(1)||
-||[No.110](https://leetcode.com/problems/balanced-binary-tree/)|Balanced Binary Tree|[Solution](./110/Code.java)|[Note](./110/Note.text)|Easy|O(logn)|O(1)||
-||[No.111](https://leetcode.com/problems/minimum-depth-of-binary-tree/)|Minimum Depth of Binary Tree|[Solution](./111/Code.java)|[Note](./111/Note.text)|Easy|O(logn)|O(1)||
-||[No.404](https://leetcode.com/problems/sum-of-left-leaves/)|Sum of Left Leaves|[Solution](./404/Code.java)|[Note](./404/Note.text)|Easy|O(logn)|O(1)||
-||[No.669](https://leetcode.com/problems/trim-a-binary-search-tree/)|Trim a Binary Search Tree|[Solution](./669/Code.java)|[Note](./669/Note.text)|Easy|O(logn)|O(1)||
-||[No.671](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/)|Second Minimum Node In a Binary Tree|[Solution](./671/Code.java)|[Note](./671/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.101](https://leetcode.com/problems/symmetric-tree/)|Symmetric Tree|[Solution](./101/Code.java)|[Note](./101/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.872](https://leetcode.com/problems/leaf-similar-trees/)|Leaf-Similar Trees|[Solution](./872/Code.java)|[Note](./872/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.104](https://leetcode.com/problems/maximum-depth-of-binary-tree/)|Maximum Depth of Binary Tree|[Solution](./104/Code.java)|[Note](./104/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.110](https://leetcode.com/problems/balanced-binary-tree/)|Balanced Binary Tree|[Solution](./110/Code.java)|[Note](./110/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.111](https://leetcode.com/problems/minimum-depth-of-binary-tree/)|Minimum Depth of Binary Tree|[Solution](./111/Code.java)|[Note](./111/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.404](https://leetcode.com/problems/sum-of-left-leaves/)|Sum of Left Leaves|[Solution](./404/Code.java)|[Note](./404/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.669](https://leetcode.com/problems/trim-a-binary-search-tree/)|Trim a Binary Search Tree|[Solution](./669/Code.java)|[Note](./669/Note.text)|Easy|O(logn)|O(n)||
+|✔️|[No.671](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/)|Second Minimum Node In a Binary Tree|[Solution](./671/Code.java)|[Note](./671/Note.text)|Easy|O(logn)|O(1)||
 
 
 
@@ -165,5 +165,5 @@
 ||[No.346](https://leetcode.com/problems/moving-average-from-data-stream/)|Moving Average from Data Stream|[Solution](./346/Code.java)|[Note](./346/Note.text)|Easy|O(1)|O(w)||
 ||[No.281](https://leetcode.com/problems/zigzag-iterator/)|Zigzag Iterator|[Solution](./281/Code.java)|[Note](./281/Note.text)|Medium|O(n)|O(n)||
 ||[No.127](https://leetcode.com/problems/word-ladder/)|Word Ladder|[Solution](./127/Code.java)|[Note](./127/Note.text)|Medium|O(n)|O(n)||
-||[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
 ||[No.641](https://leetcode.com/problems/design-circular-deque/)|Design Circular Deque|[Solution](./641/Code.java)|[Note](./641/Note.text)|Medium|O(n)|O(n)||
