@@ -166,7 +166,7 @@
 |🔒|No.281|Zigzag Iterator|Solution|Note|Medium|O(n)|O(n)||
 ||[No.127](https://leetcode.com/problems/word-ladder/)|Word Ladder|[Solution](./127/Code.java)|[Note](./127/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.622](https://leetcode.com/problems/design-circular-queue/)|Design Circular Queue|[Solution](./622/Code.java)|[Note](./622/Note.text)|Medium|O(n)|O(n)||
-||[No.641](https://leetcode.com/problems/design-circular-deque/)|Design Circular Deque|[Solution](./641/Code.java)|[Note](./641/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.641](https://leetcode.com/problems/design-circular-deque/)|Design Circular Deque|[Solution](./641/Code.java)|[Note](./641/Note.text)|Medium|O(n)|O(n)||
 
 
 ## Binary Tree
