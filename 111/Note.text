@@ -1,0 +1,26 @@
+思路
+递归遍历，遍历左子树和右子树，每次选取一个小短的子树继续向下遍历
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int minDepth(TreeNode root) {
+    if (root == null) return 0;//空树
+    int L = minDepth(root.left), R = minDepth(root.right);//遍历两棵子树
+    return 1 + (Math.min(L, R) > 0 ? Math.min(L, R) : Math.max(L, R));//挑一个较短的子树继续向下移动
+}
+}
+
+时间复杂度分析
+递归了h个深度，把元素都遍历了挑出了一个较短的，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没次递归都创建了新的变量，递归了n次，所以借用了n次的变量，所以空间复杂度为:O(n)
