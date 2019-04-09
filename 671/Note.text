@@ -1,0 +1,92 @@
+自己的思路
+遍历整棵树，将树中的不重复的元素全部保存在数组中，然后对数组进行排序
+如果长度只有1，那么就返回-1
+如果长度超过一了就返回第二个元素
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<Integer> list = new LinkedList<>();
+    public int findSecondMinimumValue(TreeNode root) {
+        DFS(root);//遍历树
+        int[] arr = new int[list.size()];//转换成数组形式
+        for(int i = 0; i < list.size(); i++){
+            arr[i] = list.get(i);
+        }
+        
+        Arrays.sort(arr);//排序
+        if(list.size() == 1) return -1;//如果只有一个元素，就返回-1
+        return arr[1];//否则就返回第二个元素
+    }
+    
+    private List<Integer> DFS(TreeNode root){
+        if(root == null){//结束条件
+            return list;
+        }
+        if(!list.contains(root.val)){//保存不重复的元素
+           list.add(root.val);
+        }
+        DFS(root.left);
+        DFS(root.right);
+        return list;
+    }
+}
+
+时间复杂度分析
+递归的用时是:O(logn)
+转成数组的时间为:O(n)
+归并排序的时间为:O(nlogn)
+所以时间复杂度为:O(nlogn)
+
+空间复杂度分析
+用了两个数组来储存树中不重复的元素，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用两个元素，一个用来记录最小值，一个用来记录上一个最小值，最后只要返回上一个最小值即可
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    int min1;
+    long ans = Long.MAX_VALUE;
+
+    public void dfs(TreeNode root) {
+        if (root != null) {//非空树
+            if (min1 < root.val && root.val < ans) {//如果该结点的值不是最小值，但是这个值比第二个最小值小，那么第二个最小值就等于这个结点值
+                ans = root.val;
+            } else if (min1 == root.val) {//否则改变最小值
+                dfs(root.left);
+                dfs(root.right);
+            }
+        }
+    }
+    public int findSecondMinimumValue(TreeNode root) {
+        min1 = root.val;
+        dfs(root);
+        return ans < Long.MAX_VALUE ? (int) ans : -1;//如果都相等的话，那么久返回-1
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+保存了n次的min和n次的ans，所以空间复杂度为:O(n)
