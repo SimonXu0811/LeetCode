@@ -1,0 +1,77 @@
+自己的思路
+就是两棵树的叶子节点进行对比，那么就用前序遍历，如果遍历到了叶子节点，那么就加进list中
+然后两个list进行对比即可
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> list1 = new ArrayList<>();//用来储存tree1的叶子节点
+        List<Integer> list2 = new ArrayList<>();//用来储存tree2的叶子节点
+        DFS(root1, list1);//深度优先搜索叶子节点
+        DFS(root2, list2);
+        return list1.equals(list2);//然后判断两个是否相同
+    }
+    
+    private void DFS(TreeNode root, List<Integer> list){
+        if(root == null){
+            return;
+        }
+        if(root.left == null && root.right == null){//如果是叶子节点就加进去
+            list.add(root.val);
+        }
+        DFS(root.left, list);//DFS
+        DFS(root.right, list);
+    }
+}
+
+时间复杂度分析
+遍历了所有树中的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了两个数组保存所有的叶子节点，所以空间复杂度为:O(n)
+
+
+
+
+别人的思路
+用递归的思想，如果是叶子节点，那么就转成String类型加
+如果不是那就继续遍历左右两树，最后再把所有的叶子节点加起来
+最后两棵树的叶子节点比较是否相同
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) { 
+		 return traverse(root1).equals(traverse(root2));//判断两棵树的叶子节点是否相同
+     }
+    
+	private String traverse(TreeNode root){
+		 if(root == null) return "";//如果为空树，那就返回空
+		 if(root.left == null && root.right == null) return root.val+"-";  //把叶子结点的值保存为字符串
+		 return traverse(root.left)+traverse(root.right);//遍历左子树和右子树然后把所有的叶子节点加起来
+    }
+}
+
+时间复杂度分析
+遍历了树中的所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+就用到了字符串保存叶子结点，临时空间为2，所以空间复杂度为:O(1)
+
