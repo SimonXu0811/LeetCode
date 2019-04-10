@@ -1,0 +1,71 @@
+自己的思路
+首先遍历到叶子结点，然后回到上一层交换该结点的左右两个结点
+然后继续向上放回，直到根节点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+    if (root == null) {//如果到根节点，那么开始返回
+        return null;
+    }
+    TreeNode right = invertTree(root.right);//首先到最右层最底下
+    TreeNode left = invertTree(root.left);//遍历到叶子结点
+    root.left = right;//返回开始交换左右结点
+    root.right = left;
+    return root;
+}
+}
+
+时间复杂度分析
+每次都便利两个子节点，所以时间就是2^T = n，T=logn，转成高阶无穷小就为:O(logn)
+
+空间复杂度分析
+最坏的情况就是要保存最高的树的高度，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用queue做，首先加进queue中，然后如果遍历到了就poll出来，把该结点的两个左右节点交换
+接着继续向下遍历，继续交换
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+    if (root == null) return null;
+    Queue<TreeNode> queue = new LinkedList<TreeNode>();//用来临时保存结点
+    queue.add(root);//把结点加进队列中
+    while (!queue.isEmpty()) {
+        TreeNode current = queue.poll();//把当前该结点两两交换
+        TreeNode temp = current.left;
+        current.left = current.right;
+        current.right = temp;
+        if (current.left != null) queue.add(current.left);//然后向下继续遍历
+        if (current.right != null) queue.add(current.right);
+    }
+    return root;
+}
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了队列保存了树的所有高度，所以空间复杂度为:O(n)
