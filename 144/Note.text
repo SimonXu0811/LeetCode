@@ -1,0 +1,73 @@
+自己的思路1
+前序遍历用递归的方式，先根节点，再左节点，再右节点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<Integer> list = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if(root == null){
+            return list;
+        }
+        list.add(root.val);//前序就是先加根几点
+        preorderTraversal(root.left);//然后左右
+        preorderTraversal(root.right);
+        return list;
+    }
+}
+
+时间复杂度分析
+遍历了所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用list保存了所有元素，所以空间复杂度为:O(n)
+
+
+
+
+自己的思路2
+用stack的方式，用非迭代的方法去前序遍历
+因为stack的后进先出原则，所以先遍历的是右节点
+然后再放左节点，最后pop掉
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode node) {
+	List<Integer> list = new LinkedList<Integer>();
+	Stack<TreeNode> rights = new Stack<TreeNode>();
+	while(node != null) {//如果还有其他的元素
+		list.add(node.val);//先加根节点
+		if (node.right != null) {//然后从右节点开始
+			rights.push(node.right);
+		}
+		node = node.left;//然后再开始左节点
+		if (node == null && !rights.isEmpty()) {//开始pop 左节点先出，右节点后出
+			node = rights.pop();
+		}
+	}
+    return list;
+  }
+}
+
+时间复杂度分析
+遍历了所有的树中元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了list和stack去保存树中的元素，所以空间复杂度为:O(n)
