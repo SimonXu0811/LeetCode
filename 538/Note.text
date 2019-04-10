@@ -1,0 +1,100 @@
+自己的思路
+利用中序遍历，先遍历到最后侧的最后一个数
+创建sum = 最后一个数，然后让sum等于该数加上下一个数
+再赋值过去
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    int sum = 0;
+    public TreeNode convertBST(TreeNode root) {
+        midOrder(root);//后序遍历
+        return root;
+    }
+    
+    private TreeNode midOrder(TreeNode root){
+        if(root == null){//如果到了叶子结点，开始返回
+            return root;
+        }
+        midOrder(root.right);//先遍历到最右侧的叶子结点
+        sum += root.val;
+        root.val = sum;//然后赋值加上后一个的值
+        midOrder(root.left);//一值遍历到最左侧
+        return root;
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+每次都调用了sum作为临时变量，所以空间复杂度为:O(n)
+
+
+别人的思路
+由于是二叉树，所以右侧节点永远是最大的，那么就从右侧节点开始加起来
+所以就构造函数去判断是否有后继的更小的节点，如果没有右子树，那么就开始找左子树
+否则就从根节点向下迭代
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    private TreeNode getSuccessor(TreeNode node) {
+        TreeNode succ = node.right;
+        while (succ.left != null && succ.left != node) {//去找最小的节点
+            succ = succ.left;
+        }
+        return succ;
+    }
+
+    public TreeNode convertBST(TreeNode root) {
+        int sum = 0;
+        TreeNode node = root;
+
+        while (node != null) {
+            if (node.right == null) {//如果没有右子树的话，那么就直接从上向下遍历加起来
+                sum += node.val;
+                node.val = sum;
+                node = node.left;
+            }
+            else {//如果有右树的话，那么就先找到最右下角的一个子节点
+                TreeNode succ = getSuccessor(node);
+                if (succ.left == null) {//如果只有左子树的话，就直接加过去
+                    succ.left = node;
+                    node = node.right;
+                }
+                else {//如果有左子树的话，那么就从右开始加等到左下方
+                    succ.left = null;
+                    sum += node.val;
+                    node.val = sum;
+                    node = node.left;
+                }
+            }
+        }
+        
+        return root;
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到其他的临时空间，所以空间复杂度为:O(1)
