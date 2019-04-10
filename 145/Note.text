@@ -1,0 +1,72 @@
+自己的思路1
+用递归的方式，先遍历左右，最后再将根节点加进去
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<Integer> list = new ArrayList<>();
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if(root == null){
+            return list;
+        }
+        postorderTraversal(root.left);//左右
+        postorderTraversal(root.right);
+        list.add(root.val);//加入根节点
+        return list;
+    }
+}
+
+时间复杂度分析
+遍历了所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用list保存了所有的元素，所以空间复杂度为:O(n)
+
+
+自己的思路2
+用queue做，根据先进先出的原则，先保存中间的，再保存两边的
+然后pop先pop右侧的，再左侧的，最后是中间的
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+    LinkedList<Integer> result = new LinkedList<>();
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    TreeNode p = root;
+    while(!stack.isEmpty() || p != null) {
+        if(p != null) {
+            stack.push(p);
+            result.addFirst(p.val); //先保存中间的
+            p = p.right;//然后保存右边的
+        } else {
+            TreeNode node = stack.pop();
+            p = node.left;//保存左边的，先进先出
+        }
+    }
+    return result;
+}
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+创建了queue和list保存所有的元素，所以空间复杂度为:O(n)
+
