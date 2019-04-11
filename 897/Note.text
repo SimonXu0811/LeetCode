@@ -1,0 +1,87 @@
+自己的思路
+DFS利用中序遍历，先放左侧的然后再放右侧进list中
+然后创建一颗新树，只存放右侧的节点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<Integer> list = new ArrayList<>();
+    public TreeNode increasingBST(TreeNode root) {
+        DFS(root);//深度优先把结点全部拿出来
+        int i = 1;
+        TreeNode node = new TreeNode(list.get(0));//创建一颗新树
+        TreeNode temp = node;
+        while(i < list.size()){
+            temp.right = new TreeNode(list.get(i));//全部放进右侧的节点
+            temp = temp.right;
+            i++;
+        }
+        return node;
+    }
+    
+    private List<Integer> DFS(TreeNode root){//中序遍历，把所有的元素全部保存进list
+        if(root == null){
+            return list;
+        }
+        DFS(root.left);
+        list.add(root.val);
+        DFS(root.right);
+        return list;
+    }
+}
+
+时间复杂度分析
+遍历了两遍树中的所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用list保存了所有的元素，又创建了一颗新树保存，所以空间复杂度为:O(n)
+
+
+
+
+别人的思路
+直接中序遍历树，然后遍历左侧树时，左侧的树清空，然后加到新建树的右侧去
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    TreeNode cur;
+    public TreeNode increasingBST(TreeNode root) {
+        TreeNode ans = new TreeNode(0);//创建一个新的树
+        cur = ans;
+        inorder(root);//中序遍历
+        return ans.right;
+    }
+
+    public void inorder(TreeNode node) {
+        if (node == null) return;
+        inorder(node.left);
+        node.left = null;//把左节点设为空
+        cur.right = node;//插入到右节点中
+        cur = node;//继续遍历
+        inorder(node.right);
+    }
+}
+
+
+时间复杂度分析
+遍历了树中的所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+临时创建了cur，遍历了h深度，就调用了几次空间，所以空间复杂度为:O(h)
