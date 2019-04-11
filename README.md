@@ -176,8 +176,8 @@
 |✔️|[No.538](https://leetcode.com/problems/convert-bst-to-greater-tree/)|Convert BST to Greater Tree|[Solution](./538/Code.java)|[Note](./538/Note.text)|Easy|O(n)|O(h)||
 |✔️|[No.543](https://leetcode.com/problems/diameter-of-binary-tree/)|Diameter of Binary Tree|[Solution](./543/Code.java)|[Note](./543/Note.text)|Easy|O(n)|O(h)||
 ||[No.687](https://leetcode.com/problems/longest-univalue-path/)|Longest Univalue Path|[Solution](./687/Code.java)|[Note](./687/Note.text)|Easy|O(n)|O(h)||
-||[No.897](https://leetcode.com/problems/increasing-order-search-tree/)|Increasing Order Search Tree|[Solution](./897/Code.java)|[Note](./897/Note.text)|Easy|O(n)|O(h)||
-||[No.617](https://leetcode.com/problems/merge-two-binary-trees/)|Merge Two Binary Trees|[Solution](./617/Code.java)|[Note](./617/Note.text)|Easy|O(n)|O(h)||
+|✔️|[No.897](https://leetcode.com/problems/increasing-order-search-tree/)|Increasing Order Search Tree|[Solution](./897/Code.java)|[Note](./897/Note.text)|Easy|O(n)|O(h)||
+|✔️|[No.617](https://leetcode.com/problems/merge-two-binary-trees/)|Merge Two Binary Trees|[Solution](./617/Code.java)|[Note](./617/Note.text)|Easy|O(n)|O(h)||
 ||[No.606](https://leetcode.com/problems/construct-string-from-binary-tree/)|Construct String from Binary Tree|[Solution](./606/Code.java)|[Note](./606/Note.text)|Easy|O(n)|O(h)||
 ||[No.572](https://leetcode.com/problems/subtree-of-another-tree/)|Subtree of Another Tree|[Solution](./572/Code.java)|[Note](./572/Note.text)|Easy|O(n)|O(h)||
 ||[No.563](https://leetcode.com/problems/binary-tree-tilt/)|Binary Tree Tilt|[Solution](./563/Code.java)|[Note](./563/Note.text)|Easy|O(n^2)|||
