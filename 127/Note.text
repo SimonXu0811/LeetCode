@@ -1,0 +1,49 @@
+思路
+首先创建一个set用来检查wordL中是否包含endWord，如果用List.contains就会报TLE，所以必须用hashset做
+然后用queue的先进先出原则，保存beginWord进去
+然后开始poll出来一个，遍历这个单词的所有字符，每一个都从a到z替换一次，如果遇到了和wordL中除它自身相同的元素就结束，保存到queue中为了下一次的检查
+然后把wordL中的元素删除，避免重复，一直循环到结束
+如果没有办法检测到替换后相同的字符串，那么就是不通的
+
+代码
+public class Solution {
+public int ladderLength(String beginWord, String endWord, List<String> wordL) {
+    Set<String> wordList = new HashSet<>(wordL);//检测是否endWord一开始就包含在wordL中
+    if(wordList.add(endWord)){
+        return 0;
+    }
+    Queue<String> queue = new LinkedList<String>();//保存检测过的元素
+    queue.add(beginWord);//从头开始
+    int level = 0;
+    while(!queue.isEmpty()){
+        int size = queue.size();
+        for(int i = 0; i < size; i++){//加入一个元素就检查一个元素
+            String cur = queue.remove();//先进先出，都是考虑先加的，因为循环之后队列中会出现三个元素
+            if(cur.equals(endWord)){ return level + 1;}//如果匹配到了，就说明结束了，那么就返回答案
+            for(int j = 0; j < cur.length(); j++){//开始遍历所有的字符，每个都从a到z进行替换
+                char[] word = cur.toCharArray();
+                for(char ch = 'a'; ch < 'z'; ch++){
+                    word[j] = ch;
+                    String check = new String(word);//为了查看是否wordL中有相同的元素
+                    if(!check.equals(cur) && wordList.contains(check)){//如果不等于本身并且原数组中存在了，那就加进去并且步骤加一
+                        queue.add(check);
+                        wordList.remove(check);
+                    }
+                }
+            }
+        }
+        level++;
+    }
+    return 0;
+}
+}
+
+时间复杂度分析
+queue中会有三个元素，所以时间为T(3)
+然后遍历一遍字符串元素时间为T(n)
+然后每一个都遍历一遍26个字母时间为T(26)
+所以总时间就为T(n)=T(1)*T(26^n)
+转成高阶无穷小就为:O(26^n)
+
+空间复杂度分析
+用到了set保存原数组元素，用了queue保存检测过的元素，所以空间复杂度为:O(n)
