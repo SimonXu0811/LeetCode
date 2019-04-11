@@ -1,0 +1,86 @@
+思路1
+递归思想，如果有一个不存在，那么就返回另一个
+如果都存在，那么就把两个数加起来
+最后返回合并后的树就行
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        if (t1 == null)//如果一个树为空，那么返回另一个
+            return t2;
+        if (t2 == null)
+            return t1;
+        t1.val += t2.val;//如果都存在，那么就两个相加
+        t1.left = mergeTrees(t1.left, t2.left);//左树与左树遍历
+        t1.right = mergeTrees(t1.right, t2.right);//右树与右树遍历
+        return t1;
+    }
+}
+
+时间复杂度分析
+遍历了树中的所有元素，所用时间取决于最小元素的那棵树，所以时间复杂度为:O(n)
+
+空间复杂度分析
+最好的情况就是另一颗树为空，最坏的情况就是t1中的元素全部都需要加，所以平均的空间复杂度为:O(logn)
+
+
+
+思路2
+不用递归用迭代的方式
+将t1和t2作为一对数组的形式，然后前序遍历
+如果两个都为空，那么继续迭代
+如果不为空，那么就加给t1，继续迭代左侧的
+然后继续迭代右侧的
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        if (t1 == null)
+            return t2;
+        Stack < TreeNode[] > stack = new Stack <> ();//存为数组的形式匹配对
+        stack.push(new TreeNode[] {t1, t2});
+        while (!stack.isEmpty()) {
+            TreeNode[] t = stack.pop();//根节点开始前序遍历
+            if (t[0] == null || t[1] == null) {//都为空就一直向下迭代
+                continue;
+            }
+            t[0].val += t[1].val;//两个元素值相加
+            if (t[0].left == null) {//一边为空就直接复制
+                t[0].left = t[1].left;
+            } else {
+                stack.push(new TreeNode[] {t[0].left, t[1].left});//继续左侧迭代
+            }
+            if (t[0].right == null) {//如果右侧没有，就复制过去
+                t[0].right = t[1].right;
+            } else {
+                stack.push(new TreeNode[] {t[0].right, t[1].right});//右侧迭代
+            }
+        }
+        return t1;
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所用的时间为:O(n)
+
+空间复杂度分析
+保存了元素在栈中，所以空间复杂度为:O(n)
+
