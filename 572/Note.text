@@ -1,0 +1,33 @@
+ 自己的思路
+ 前序迭代树，然后把树转成字符串的形式
+ 如果s的字符串包含了t的字符串，那么就是子树
+ 
+ 自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public boolean isSubtree(TreeNode s, TreeNode t) {
+        String tree1 = preorder(s);//s转成字符串
+        String tree2 = preorder(t);//t转成字符串
+        return tree1.indexOf(tree2) != -1;//如果树中没有索引的话
+    }
+    private String preorder(TreeNode t) {//前序遍历
+        if (t == null) {//返回的条件
+            return "null";
+        }
+        return "#" + t.val + "" + preorder(t.left) + "" + preorder(t.right);//把根节点定义，不然就会误判
+    }
+}
+
+时间复杂度分析
+遍历了树中的所有元素，然后还递归的字符串，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+用了string保存所有的字符长度，所以空间复杂度为:O(n)
