@@ -1,0 +1,31 @@
+自己的思路
+用多数相加转换成两数相加的思想，每次查找的都是sum - val
+然后从根节点开始一直遍历到叶子结点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if(root == null){//回溯条件
+            return false;
+        }
+        if(root.left == null && root.right == null && root.val == sum){//如果到了叶子结点并且找到了那个元素，就是true
+            return true;
+        }
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);//遍历到叶子结点
+    }
+}
+
+时间复杂度分析
+总共遍历了树的深度，所以时间复杂度为:O(h)
+
+空间复杂度分析
+每次都计算一次target，所以都会生成一个临时变量，所以空间复杂度为:O(h)
