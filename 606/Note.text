@@ -1,0 +1,88 @@
+自己的思路
+递归的思想，如果是叶子结点的话，那么直接加上树的值
+如果没有右子树直接给左子树封口
+如果有右子树那么先加上右子树再封口
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public String tree2str(TreeNode t) {
+        if(t == null){//递归结束
+            return "";
+        }
+        if(t.left == null && t.right == null){//如果是叶子结点，那就放在括号的最里面
+            return t.val + "";
+        }
+        if(t.right == null){//如果只有左结点，就给左节点加上然后封口，递归到叶子结点
+            return t.val + "(" + tree2str(t.left) + ")";
+        }
+        return t.val + "(" + tree2str(t.left) + ")(" + tree2str(t.right) + ")";//否则左右两边都递归
+    }
+}
+
+时间复杂度分析
+递归了树中的所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+递归了n次每次都占用了空间，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用栈做，如果是空树，那么就返回空，首先从根节点开始，在从叶子结点返回根节点的过程中，如果有存在的，那么就加个括号
+如果还是从根节点向叶子结点遍历的情况，那么就插入开括号和树的值
+如果只含右节点，那么要保留左节点的空值
+否则就加进去
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+public class Solution {
+    public String tree2str(TreeNode t) {
+        if (t == null)//空树就返回空
+            return "";
+        Stack <TreeNode> stack = new Stack <> ();
+        stack.push(t);//把根节点保存起来
+        Set <TreeNode> visited = new HashSet <> ();
+        StringBuilder s = new StringBuilder();
+        while (!stack.isEmpty()) {
+            t = stack.peek();
+            if (visited.contains(t)) {//从叶子节点回溯到根节点
+                stack.pop();
+                s.append(")");//把后面的闭合括号封上
+            } else {//从上向下遍历
+                visited.add(t);
+                s.append("(" + t.val);//开括号加上树的值
+                if (t.left == null && t.right != null)//如果只有右子树的话，那么也要保留左树的空值
+                    s.append("()");
+                if (t.right != null)//继续向下遍历
+                    stack.push(t.right);
+                if (t.left != null)
+                    stack.push(t.left);
+            }
+        }
+        return s.substring(1, s.length() - 1);//删除根节点前面的一个括号
+    }
+}
+
+时间复杂度分析
+遍历了所有的树中元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用stack和sb保存了结果，所以空间复杂度为:O(n)
