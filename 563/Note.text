@@ -1,0 +1,38 @@
+自己的思路
+后序遍历数组，因为后序遍历是从根节点开始的，那么根节点是0
+然后开始返回到上一个父节点，父节点为两数之差的绝对值
+一直遍历到根节点然后全加起来
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    int res = 0;
+    public int findTilt(TreeNode root) {
+        PostOrder(root);//后序遍历
+        return res;
+    }
+    
+    private int PostOrder(TreeNode root){
+        if(root == null){//回溯的起点
+            return 0;
+        }
+        int left = PostOrder(root.left);
+        int right = PostOrder(root.right);
+        res += Math.abs(right - left);//两个取差值
+        return left + right + root.val;//返回到根节点把两个加起来
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+回溯了的过程中每次都调用了一遍变量，所以空间复杂度为:O(n)
