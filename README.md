@@ -183,10 +183,10 @@
 |✔️|[No.563](https://leetcode.com/problems/binary-tree-tilt/)|Binary Tree Tilt|[Solution](./563/Code.java)|[Note](./563/Note.text)|Easy|O(n^2)|||
 |✔️|[No.094](https://leetcode.com/problems/binary-tree-inorder-traversal/)|Binary Tree Inorder Traversal|[Solution](./094/Code.java)|[Note](./094/Note.text)|Medium|O(n)|O(n)|Inorder Traversal|
 |✔️|[No.112](https://leetcode.com/problems/path-sum/)|Path Sum|[Solution](./112/Code.java)|[Note](./112/Note.text)|Easy|O(n)|O(1)|DFS|
-||[No.257](https://leetcode.com/problems/binary-tree-paths/)|Binary Tree Paths|[Solution](./257/Code.java)|[Note](./257/Note.text)|Easy|O(n)|O(1)|DFS|
+|✔️|[No.257](https://leetcode.com/problems/binary-tree-paths/)|Binary Tree Paths|[Solution](./257/Code.java)|[Note](./257/Note.text)|Easy|O(n)|O(1)|DFS|
 |✔️|[No.144](https://leetcode.com/problems/binary-tree-preorder-traversal/)|Binary Tree Preorder Traversal|[Solution](./144/Code.java)|[Note](./144/Note.text)|Medium|O(n)|O(n)|iteration traverse|
 |✔️|[No.145](https://leetcode.com/problems/binary-tree-postorder-traversal/)|Binary Tree Postorder Traversal|[Solution](./145/Code.java)|[Note](./145/Note.text)|Hard|O(n)|O(n)|iteration traverse|
-||[No.102](https://leetcode.com/problems/binary-tree-level-order-traversal/)|Binary Tree Level Order Traversal|[Solution](./102/Code.java)|[Note](./102/Note.text)|Medium|O(n)|O(n)|iteration traverse|
+|✔️|[No.102](https://leetcode.com/problems/binary-tree-level-order-traversal/)|Binary Tree Level Order Traversal|[Solution](./102/Code.java)|[Note](./102/Note.text)|Medium|O(n)|O(n)|iteration traverse|
 |🔒|No.250|Count Univalue Subtrees|Solution|Note|Medium|O(n)|O(n)||
 ||[No.106](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)|Construct Binary Tree from Inorder and Postorder Traversal|[Solution](./106/Code.java)|[Note](./106/Note.text)|Medium|O(n)|O(n)|build tree|
 ||[No.105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)|Construct Binary Tree from Inorder and Preorder Traversal|[Solution](./105/Code.java)|[Note](./105/Note.text)|Medium|O(n)|O(n)|build tree|
