@@ -1,0 +1,50 @@
+自己的思路
+BFS层序遍历
+首先加入根节点，然后poll进queue中
+然后如果有左节点，就加左节点，有右节点就加右节点
+然后获取queue的size就是这一层的结点数，然后继续遍历，把刚刚的父节点poll出来
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) {//空树
+            return new ArrayList<>();
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);//先加入根节点
+        List<List<Integer>> lists = new ArrayList<>();
+        List<Integer> arrays = new ArrayList<>();
+        TreeNode temp = null;
+        while (!queue.isEmpty()) {
+            int n = queue.size();// 这里通过读取队列的元素，获取这一层有多少个元素
+            for (int i = 0; i < n; i++) {
+                temp = queue.poll();//把上一层的节点poll出来，获取子节点
+                arrays.add(temp.val);
+                if (temp.left != null) {
+                    queue.add(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.add(temp.right);
+                }
+            }
+            lists.add(new ArrayList<>(arrays));// 将每一层的数据放入到链表中
+            arrays.clear();
+        }
+        return lists;
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了queue临时保存了最大的子树，所以空间复杂度为:O(n)
