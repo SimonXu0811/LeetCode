@@ -193,7 +193,7 @@
 |✔️|[No.116](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)|Populating Next Right Pointers in Each Node|[Solution](./116/Code.java)|[Note](./116/Cote.text)|Medium|O(n)|O(n)||
 |✔️|[No.117](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)|Populating Next Right Pointers in Each Node II|[Solution](./117/Code.java)|[Note](./117/Note.text)|Medium|O(n)|O(n)||
 ||[No.236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)|Lowest Common Ancestor of a Binary Tree|[Solution](./236/Code.java)|[Note](./236/Note.text)|Medium|O(n^2)|O(n)||
-||[No.100](https://leetcode.com/problems/same-tree/)|Same Tree|[Solution](./100/Code.java)|[Note](./100/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.100](https://leetcode.com/problems/same-tree/)|Same Tree|[Solution](./100/Code.java)|[Note](./100/Note.text)|Medium|O(n)|O(1)||
 |🔒|No.314|Binary Tree Vertical Order Traversal|Solution|Note|Medium|O(n)|O(n)||
 |✔️|[No.637](https://leetcode.com/problems/average-of-levels-in-binary-tree/)|Average of Levels in Binary Tree|[Solution](./637/Code.java)|[Note](./637/Note.text)|Easy|O(n)|O(n)||
 ||[No.103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)|Binary Tree Zigzag Level Order Traversal|[Solution](./103/Code.java)|[Note](./103/Note.text)|Medium|O(n)|O(n)||
