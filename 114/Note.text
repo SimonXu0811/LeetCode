@@ -1,0 +1,35 @@
+思路
+递归的方式
+后序遍历，然后从最后开始返回
+把保存root的右节点
+左节点附为null
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+   private TreeNode prev = null;
+
+   public void flatten(TreeNode root) {
+    if (root == null)//空树，返回
+        return;
+    flatten(root.right);//后序遍历，颠倒返回保存到树中
+    flatten(root.left);
+    root.right = prev;//只保留右节点
+    root.left = null;//左节点为空
+    prev = root;
+}
+}
+
+时间复杂度分析
+遍历所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
