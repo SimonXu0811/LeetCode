@@ -7,8 +7,8 @@
 - [x] [Stack](#stack)
 - [x] [Recursion](#recursion)
 - [x] [Queue](#queue)
-- [ ] [Binary Tree](#binary-tree)
-- [ ] Hash Table
+- [x] [Binary Tree](#binary-tree)
+- [ ] [Hash Table](#hash-table)
 - [ ] Sort
 - [ ] Heap
 - [ ] Binary Search
@@ -192,10 +192,32 @@
 |✔️|[No.105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)|Construct Binary Tree from Inorder and Preorder Traversal|[Solution](./105/Code.java)|[Note](./105/Note.text)|Medium|O(n)|O(n)|build tree|
 |✔️|[No.116](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)|Populating Next Right Pointers in Each Node|[Solution](./116/Code.java)|[Note](./116/Cote.text)|Medium|O(n)|O(n)||
 |✔️|[No.117](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)|Populating Next Right Pointers in Each Node II|[Solution](./117/Code.java)|[Note](./117/Note.text)|Medium|O(n)|O(n)||
-||[No.236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)|Lowest Common Ancestor of a Binary Tree|[Solution](./236/Code.java)|[Note](./236/Note.text)|Medium|O(n^2)|O(n)||
+|✔️|[No.236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)|Lowest Common Ancestor of a Binary Tree|[Solution](./236/Code.java)|[Note](./236/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.100](https://leetcode.com/problems/same-tree/)|Same Tree|[Solution](./100/Code.java)|[Note](./100/Note.text)|Medium|O(n)|O(1)||
 |🔒|No.314|Binary Tree Vertical Order Traversal|Solution|Note|Medium|O(n)|O(n)||
 |✔️|[No.637](https://leetcode.com/problems/average-of-levels-in-binary-tree/)|Average of Levels in Binary Tree|[Solution](./637/Code.java)|[Note](./637/Note.text)|Easy|O(n)|O(n)||
-||[No.103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)|Binary Tree Zigzag Level Order Traversal|[Solution](./103/Code.java)|[Note](./103/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)|Binary Tree Zigzag Level Order Traversal|[Solution](./103/Code.java)|[Note](./103/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.114](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)|Flatten Binary Tree to Linked List|[Solution](./114/Code.java)|[Note](./114/Note.text)|Medium|O(n)|O(1)|DFS|
-||[No.437](https://leetcode.com/problems/path-sum-iii/)|Path Sum III|[Solution](./437/Code.java)|[Note](./437/Note.text)|Medium|O(nlogn)|O(1)|DFS|
+|✔️|[No.437](https://leetcode.com/problems/path-sum-iii/)|Path Sum III|[Solution](./437/Code.java)|[Note](./437/Note.text)|Medium|O(n^2)|O(1)|DFS|
+
+## Hash Table
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|:---|---|-----|--------|----|----------|----|-----|---|
+||[No.202](https://leetcode.com/problems/happy-number/)|Happy Number|[Solution](./202/Code.java)|[Note](./202/Note.text)|Easy|O(n)|O(n)||
+||[No.204](https://leetcode.com/problems/count-primes/)|Count Primes|[Solution](./204/Code.java)|[Note](./204/Note.text)|Easy|O(n)|||
+||[No.205](https://leetcode.com/problems/isomorphic-strings/)|Isomorphic Strings|[Solution](./205/Code.java)|[Note](./205/Note.text)|Easy|O(n)|O(n)||
+||[No.217](https://leetcode.com/problems/contains-duplicate/)|Contains Duplicate|[Solution](./217/Code.java)|[Note](./217/Note.text)|Easy|O(n)|O(n)||
+||[No.219](https://leetcode.com/problems/contains-duplicate-ii/)|Contains DuplicateII|[Solution](./219/Code.java)|[Note](./219/Note.text)|Easy|O(n)|O(n)||
+|🔒|No.246|Strobogrammatic Number|Solution|Note|Easy|O(n)|O(n)||
+|🔒|No.244|Shortest Word Distance II|Solution|Note|Medium|O(m+n)|O(n)||
+|🔒|No.249|Group Shifted Strings|Solution|Note|Easy|O(n)|O(n)||
+|🔒|No.266|Palindrome Permutation|Solution|Note|Easy|O(n)|O(n)||
+|🔒|No.288|Unique Word Abbreviation|Solution|Note|Medium|O(n)|O(n)||
+||[No.299](https://leetcode.com/problems/bulls-and-cows/)|Bulls and Cows|[Solution](./299/Code.java)|[Note](./299/Note.text)|Medium|O(n)|O(n)||
+||[No.387](https://leetcode.com/problems/first-unique-character-in-a-string/)|First Unique Character in a String|[Solution](./387/Code.java)|[Note](./387/Note.text)|Easy|O(n)|O(n)||
+||[No.350](https://leetcode.com/problems/intersection-of-two-arrays-ii/)|Intersection of Two Arrays II|[Solution](./350/Code.java)|[Note](./350/Note.text)|Easy|O(n)|O(n)||
+||[No.049](https://leetcode.com/problems/group-anagrams/)|Group Anagrams|[Solution](./049/Code.java)|[Note](./049/Note.text)|Easy|O(nklonk)|O(n)||
+||[No.705](https://leetcode.com/problems/design-hashset/)|Design HashSet |[Solution](./705/Code.java)|[Note](./705/Note.text)|Easy|O(1)|O(n)||
+||[No.599](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)|Minimum Index Sum of Two Lists|[Solution](./599/Code.java)|[Note](./599/Note.text)|Easy|O(1)|O(n)||
+|🔒|No.359|Logger Rate Limiter|Solution|Note|Easy|O(1)|O(n)||
+
