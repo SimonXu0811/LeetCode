@@ -1,0 +1,30 @@
+思路
+首先创建一个数组，长度就为n
+因为是小于n而不是小于等于n，所以数组是可以避免2这种类型的出现
+遍历这个数组，将质数的保留false，不是质数就是true
+对于质数的判断，就是将该数组位置开始乘其他的除1和本身的其他数，这样就肯定不是质数了，但是要小于n
+
+代码
+public class Solution {
+    public int countPrimes(int n) {
+        boolean[] notPrime = new boolean[n];//所有的下标都是小于n的
+        int count = 0;
+        for (int i = 2; i < n; i++) {//遍历整个数组，0，1肯定不是质数
+            if (notPrime[i] == false) {//质数的位置保留false
+                count++;
+                for (int j = 2; j*i < n; j++) {//乘上其他的数，这样公因数肯定不是1和本身，肯定是非质数
+                    notPrime[i*j] = true;
+                }
+            }
+        }
+        return count;
+    }
+}
+
+时间复杂度分析
+遍历了所有的数组，所用时间为T(n)
+然后嵌套了循环遍历，最坏的情况就是T(n/2)
+所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+用了数组临时保存，长度为n个长度，所以空间复杂度为:O(n)
