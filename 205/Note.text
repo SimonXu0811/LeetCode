@@ -1,0 +1,37 @@
+思路
+用hashmap保存，将s中的做为key，将t中的做为value保存
+然后遍历整个字符串，如果s中出现重复的，那么就把value调出比较是否相同
+比如s = app， t= cdd
+那么map中保存的会是<a,c> <p,d>
+然后下一次遍历到p时，直接将value取出，就是d 与t中相同位置的字符比较，如果不同肯定就不相似
+
+代码
+public class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s == null || s.length() <= 1) return true;
+        HashMap<Character, Character> map = new HashMap<Character, Character>();
+        for(int i = 0 ; i< s.length(); i++){//遍历整个字符串，比较
+            char a = s.charAt(i);
+            char b = t.charAt(i);
+            if(map.containsKey(a)){//如果重复出现字符了，就取出value，和t中同索引的字符比较
+                 if(map.get(a).equals(b))//如果满足了就继续向后
+                continue;
+                else
+                return false;
+            }else{//如果没有加过，那么就是这个key-value对没有出现过，就加入这个key-value对
+                if(!map.containsValue(b))
+                map.put(a,b);
+                else return false;
+                
+            }
+        }
+        return true;
+        
+    }
+}
+
+时间复杂度分析
+遍历了一遍字符串，然后containsValue又遍历了一遍，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+用map保存，取决于字符串中不同元素的值，所以空间复杂度为:O(n)
