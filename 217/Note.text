@@ -1,0 +1,24 @@
+自己的思路
+用hashset保存数组中的值，如果加不进去就是有重复的，加的进去就是不重复
+
+自己的代码
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int i : nums){//遍历数组中所有的数值
+            if(!set.add(i)){//不能加就是重复了，就返回true
+                return true;
+            }
+            else{//否则就加进去
+                set.add(i);
+            }
+        }
+        return false;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用set保存了数组中的所有值，所以空间复杂为:O(n)
