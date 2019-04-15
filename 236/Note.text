@@ -1,0 +1,33 @@
+思路
+首先是空树，或者有一个节点就是根节点，那么直接返回不用遍历
+然后开始DFS遍历，如果两个都到了叶子结点还不存在，那么就返回null
+如果共享了一个父节点，那么就返回root
+如果在一条直线上，那么返回上层的结点
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+      if (root == null || root == p || root == q) return root;//如果根节点就是其中一个节点的话，就直接返回根节点
+      TreeNode left = lowestCommonAncestor(root.left, p, q);//深度遍历查找整棵树
+      TreeNode right = lowestCommonAncestor(root.right, p, q);
+      if(left == null && right == null) return null; //如果不存在于树中，就返回null
+      if(left != null && right != null) return root;  //如果找到了共享的父节点，就返回
+      return left == null ? right : left;//如果在一条直线上，就返回上层的一个
+    }
+}
+
+时间复杂度分析
+递归遍历了整棵树，所以时间复杂度为:O(n)
+
+空间复杂度分析
+每次递归都创建了新的变量保存，所以空间复杂度为:O(n)
