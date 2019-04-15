@@ -1,0 +1,50 @@
+自己的思路
+暴力算法，一个从头遍历，一个从改索引向后遍历
+如果存在两个数相同，并且索引小于等于k，那么就返回true
+
+自己的代码
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        for(int i = 0; i < nums.length; i++){//遍历整个数组
+            for(int j = i + 1; j < nums.length; j ++){//向后遍历
+                if(nums[i] == nums[j] && j - i <= k){//相等且索引小于等于k就返回true
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+时间复杂度分析
+两个嵌套循环，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
+
+
+
+别人的思路
+用set做，set的大小限制在k中，如果从i～i+k中有元素不能加进set了，就返回true
+否则就清空i之前的继续加，不断的滑动窗口
+比如数组为12347156123 k为4
+那么set中首先存放|1|2|3|4|7|由于没有重复的元素，那么就删除最前面的，然后滑动窗口
+|2|3|4|7|1|，还是没有继续滑动，一直到|7|1|5|6|1|
+
+别人的代码
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> set = new HashSet<Integer>();
+        for(int i = 0; i < nums.length; i++){//遍历数组
+            if(i > k) set.remove(nums[i-k-1]);//删除最前面的一个元素
+            if(!set.add(nums[i])) return true;//不能加就是重复了
+        }
+        return false;
+ }
+}
+
+时间复杂度分析
+遍历整个数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了k个空间存放，所以空间复杂度为:O(k)
