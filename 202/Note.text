@@ -1,0 +1,70 @@
+自己的思路1
+首先先创建一个计次，做为结束的条件。如果一直在循环，没有找到相应的元素就false
+然后用while循环把一个一个的数字平方相加
+如果等于1就返回true，否则继续递归
+
+自己的代码
+class Solution {
+    int count = 0;
+    public boolean isHappy(int n) {
+        return getsum(n);
+    }
+    
+    private boolean getsum(int n){
+        int res = 0;
+        count ++;
+        while(n != 0){//把数字分解并且平方相加
+            res += Math.pow(n%10,2);
+            n /= 10;
+        }
+        if(count > 100){//结束的标志
+            return false;
+        }
+        return res == 1? true:getsum(res);//如果是1就返回，不是就继续递归
+    }
+}
+
+时间复杂度分析
+递归的方式，每次相加都递归一次，count最多是100次，所以最多迭代100次
+然后分解数的长度也是常数级，所以时间复杂度为:O(1)
+
+空间复杂度分析
+每次迭代都会创建临时的变量，最多创建100次，所以时间复杂度为:O(1)
+
+
+自己的思路2
+用hashset来保存，如果开始循环了，在set中存在过了，那么检验是否为1，如果是就是true，不是就是false
+
+自己的代码
+class Solution {
+    Set<Integer> set = new HashSet<>();
+    public boolean isHappy(int n) {
+        return getsum(n);
+    }
+    
+    private boolean getsum(int n){
+        int res = 0;
+        if(set.isEmpty()){//首先加原数，防止循环开始不知道
+            set.add(n);
+        }
+        while(n != 0){//拆解数平方相加
+            res += Math.pow(n%10,2);
+            n /= 10;
+        }
+        if(!set.contains(res)){//如果不存在，那么就加进去
+            set.add(res);
+        }else {//存在了就判断是否为1
+        	if(res != 1) {
+        		return false;
+        	}
+        }
+        
+        return res == 1? true:getsum(res);//为1就停止，不为1就继续递归
+    }
+}
+
+时间复杂度分析
+递归循环为n，然后set查询为1，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了set保存，但是一但开始循环就停止，所以为常数级，所以空间复杂度为:O(1)
