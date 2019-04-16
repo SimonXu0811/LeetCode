@@ -308,3 +308,14 @@
 ||[No.079](https://leetcode.com/problems/word-search/)|Word Search|[Solution](./079/Code.java)|[Note](./079/Note.text)|Medium|O(n^2)|O(n)||
 ||[No.022](https://leetcode.com/problems/generate-parentheses/)|Generate Parentheses|[Solution](./022/Code.java)|[Note](./022/Note.text)|Medium|O(n!)|O(n)||
 ||[No.039](https://leetcode.com/problems/combination-sum/)|Combination Sum|[Solution](./039/Code.java)|[Note](./039/Note.text)|Medium|O(n!)|O(n)||
+
+## Dynamic Programming
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.091](https://leetcode.com/problems/decode-ways/)|Decode Ways|[Solution](./091/Code.java)|[Note](./091/Note.text)|Medium|O(n)|O(1)||
+||[No.062](https://leetcode.com/problems/unique-paths/)|Unique Paths|[Solution](./062/Code.java)|[Note](./062/Note.text)|Medium|O(n^2)|O(n)||
+||[No.070](https://leetcode.com/problems/climbing-stairs/)|Combing Stairs|[Solution](./070/Code.java)|[Note](./070/Note.text)|Medium|O(n)|O(n)||
+||[No.926](https://leetcode.com/problems/flip-string-to-monotone-increasing/)|Flip String to Monotone Increasing|[Solution](./926/Code.java)|[Note](./926/Note.text)|Medium|O(n)|O(n)||
+||[No.845](https://leetcode.com/problems/longest-mountain-in-array/)|Longest Mountain in Array|[Solution](./845/Code.java)|[Note](./845/Note.text)|Medium|O(n)|O(1)||
+||[No.139](https://leetcode.com/problems/word-break/)|Longest Mountain in Array|[Solution](./139/Code.java)|[Note](./139/Note.text)|Medium|O(n)|O(1)||
+||[No.300](https://leetcode.com/problems/longest-increasing-subsequence/)|Longest Increasing Subsequence|[Solution](./300/Code.java)|[Note](./300/Note.text)|Medium|O(nlogn)|O(1)||
