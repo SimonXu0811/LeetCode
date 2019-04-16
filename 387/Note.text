@@ -1,0 +1,73 @@
+自己的思路
+首先用set把所有出现的字符保存下来，然后用第二个set记录出现过多次的字符
+然后把set的中多次出现的字符删除
+遍历字符串找到第一个在set中出现的字符，然后返回索引
+
+自己的代码
+class Solution {
+    public int firstUniqChar(String s) {
+        Set<Character> set = new HashSet<>();//记录出现过的字符
+        Set<Character> repeat = new HashSet<>();//记录重复出现的字符
+        int i = 0;
+        for(char c : s.toCharArray()){//遍历整个字符串，set保存出现的字符，repeat记录重复的
+            if(!set.add(c)){
+                repeat.add(c);
+            }
+            set.add(c);
+        }
+        
+        for(char c : repeat){//把set中重复的字符串删除
+            set.remove(c);
+        }
+        
+        if(set.isEmpty()){//如果全都重复了就是-1
+            return -1;
+        }
+        
+        for(int res = 0; res < s.length(); res++){//找到字符串中第一个出现在set中的字符
+            if(set.contains(s.charAt(res))){
+                return res;
+            }
+        }
+        return -1;
+    }
+}
+
+时间复杂度分析
+最多的循环就是删除时，遍历了两遍repeat字符，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+用了两个set保存，所以空间复杂度为:O(n)
+
+
+
+
+别人的思路
+用hashmap其中character是key 出现的次数是value
+如果出现过一次，那么就是<key,1>，又重复出现那么就是在原来基础上再加1，变成了<key,2>
+然后找到第一个value为1的元素
+
+别人的代码
+class Solution {
+    public int firstUniqChar(String s) {
+        HashMap<Character, Integer> count = new HashMap<Character, Integer>();//key是出现的字符，value是出现的次数
+        int n = s.length();
+        for (int i = 0; i < n; i++) {//遍历整个字符串，如果出现一次就加一次
+            char c = s.charAt(i);
+            count.put(c, count.getOrDefault(c, 0) + 1);
+        }
+        
+        // find the index
+        for (int i = 0; i < n; i++) {//找到第一个只出现一次的元素
+            if (count.get(s.charAt(i)) == 1) 
+                return i;
+        }
+        return -1;
+    }
+}
+
+时间复杂度分析
+遍历了一次字符串，查找时间复杂度为1，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用map保存了所有出现的字符，所以空间复杂度为:O(n)
