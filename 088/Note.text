@@ -1,0 +1,59 @@
+自己的思路
+创建一个新的数组，用来保存两个的合并值
+哪个小将哪个插入到新的数组里
+然后把这个数组复制过去
+
+自己的代码
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] nums = new int[m+n];//临时保存两个合并后的数组
+        int l1 = 0, l2 = 0, i = 0;
+        while(l1 < m && l2 < n){//两个数组中都还有值
+            if(nums1[l1] <= nums2[l2]){//哪个小加哪个
+                nums[i++] = nums1[l1++];
+            }else{
+                nums[i++] = nums2[l2++];
+            }
+        }
+        
+        while(l1 < m){//nums1中还有非0值
+            nums[i++] = nums1[l1++];
+        }
+        
+        while(l2 < n){//nums2中还有值
+            nums[i++] = nums2[l2++];
+        }
+        
+        for(int j = 0; j < nums.length; j++){//复制回去
+            nums1[j] = nums[j];
+        }
+    }
+}
+
+时间复杂度分析
+遍历了m+n个值，所以时间复杂度为:O(m+n)
+
+空间复杂度分析
+借用了一个m+n的临时数组，所以空间复杂度为:O(m+n)
+
+
+
+别人的思路
+三指针算法，从m+n-1开始向前遍历
+然后A从m-1开始，B从n-1开始都向前遍历，哪个大加哪个到m+n-1
+如果B中还有，那么就直接全加进去
+
+别人的代码
+class Solution {
+    public void merge(int A[], int m, int B[], int n) {
+    int i=m-1, j=n-1, k=m+n-1;//一个是从A开始从后向前遍历，一个是从B开始从后向前遍历，一个是从合并后的索引开始，从后向前
+    while (i>-1 && j>-1) A[k--] = (A[i] > B[j]) ? A[i--] : B[j--];//哪个大就把哪个放到合并后的最后索引处
+    while (j>-1)         A[k--] = B[j--];//如果B中还有，那么就直接加进去，A中还有就在原地
+}
+}
+
+时间复杂度分析
+遍历了m+n的地址，所以时间复杂度为:O(m+n)
+
+空间复杂度分析
+原地算法，所以空间复杂度为:O(1)
