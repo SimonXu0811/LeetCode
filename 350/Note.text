@@ -1,0 +1,35 @@
+思路
+首先整理两个数组，然后分别遍历，两个比较如果一边的比较小那就索引继续加
+如果两个相等那么就加进array中
+
+代码
+class Solution {
+     public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);//两个数组排序
+        Arrays.sort(nums2);
+        ArrayList<Integer> ret = new ArrayList<>();//用来临时保存出现有交集的数
+        for(int i = 0, j = 0; i < nums1.length && j < nums2.length; ){
+            if(nums1[i] < nums2[j]){//如果一个比较小，那么就向后遍历
+                i++;
+            }else if(nums1[i] > nums2[j]){
+                j++;
+            }else{//如果两个相等就加进数组，向后遍历
+                ret.add(nums1[i]);
+                i++;
+                j++;
+            }
+        }
+        int[] myret = new int[ret.size()];//转成数组类型
+        int index = 0;
+        for(int num : ret){
+            myret[index++] = num;
+        }
+        return myret;
+    }
+}
+
+时间复杂度分析
+排序花费了T(nlogn)的时间，然后遍历用了T(n)，两个不嵌套所以时间复杂度为:O(nlogn)
+
+空间复杂度分析
+用了数组临时保存数据，所以空间复杂度为:O(n)
