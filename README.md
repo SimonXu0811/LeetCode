@@ -10,14 +10,14 @@
 - [x] [Binary Tree](#binary-tree)
 - [x] [Hash Table](#hash-table)
 - [ ] [Sort](#sort)
-- [ ] Heap
-- [ ] Binary Search
-- [ ] Binary Search Tree
-- [ ] N-ary Tree
-- [ ] Math
-- [ ] Graph
-- [ ] Backtracking
-- [ ] Dynamic Programming
+- [ ] [Heap](#heap)
+- [ ] [Math](#math)
+- [ ] [Binary Search](#binary-search)
+- [ ] [Binary Search Tree](#binary-search-tree)
+- [ ] [N-ary Tree](#n-ary-tree)
+- [ ] [Graph](#graph)
+- [ ] [BackTracking](#backtracking)
+- [ ] [Dynamic Programming](#dynamic-programming)
 
 ## Bit Manipulation
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
@@ -233,3 +233,78 @@
 |🔒|No.253|Meeting Rooms II|Solution|Note|Medium|O(nlogn)|O(n)||
 ||[No.347](https://leetcode.com/problems/top-k-frequent-elements/)|Top K Frequent Elements|[Solution](./347/Code.java)|[Note](./347/Note.text)|Medium|O(nlogn)|O(n)||
 ||[No.581](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)|Shortest Unsorted Continuous Subarray|[Solution](./581/Code.java)|[Note](./581/Note.text)|Easy|O(nlogn)|O(n)||
+
+## Heap
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.264](https://leetcode.com/problems/ugly-number-ii/)|Ugly Number II|[Solution](./264/Code.java)|[Note](./264/Note.text)|Medium|O(n)|O(1)||
+||[No.313](https://leetcode.com/problems/super-ugly-number/)|Super Ugly Number|[Solution](./313/Code.java)|[Note](./313/Note.text)|Medium|O(n * k)|O(n * k)||
+||[No.378](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|Kth Smallest Element in a Sorted Matrix|[Solution](./378/Code.java)|[Note](./378/Note.text)|Medium|O(nklogn)|O(n)||
+||[No.215](https://leetcode.com/problems/kth-largest-element-in-an-array/)|Kth Largest Element in an Array|[Solution](./215/Code.java)|[Note](./215/Note.text)|Medium|O(n+klogn)|O(n)||
+
+## Math
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.263](https://leetcode.com/problems/ugly-number/)|Ugly Number|[Solution](./263/Code.java)|[Note](./263/Note.text)|Easy|O(n)|O(1)||
+||[No.238](https://leetcode.com/problems/product-of-array-except-self/)|Product of Array Except Self|[Solution](./238/Code.java)|[Note](./238/Note.text)|Easy|O(n)|O(1)||
+||[No.621](https://leetcode.com/problems/task-scheduler/)|Task Scheduler|[Solution](./621/Code.java)|[Note](./621/Note.text)|Medium|O(n)|O(1)||
+||[No.326](https://leetcode.com/problems/power-of-three/)|Power of Three|[Solution](./326/Code.java)|[Note](./326/Note.text)|Easy|O(n)|O(1)|Math|
+||[No.892](https://leetcode.com/problems/surface-area-of-3d-shapes)|Surface Area of 3D Shapes|[Solution](./892/Code.java)|[Note](./892/Note.text)|Easy|O(n)|O(1)|Math|
+
+## Binary Search
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.855](https://leetcode.com/problems/exam-room/)|Exam Room|[Solution](./855/Code.java)|[Note](./855/Note.text)|Medium|O(n)|O(n)||
+||[No.374](https://leetcode.com/problems/guess-number-higher-or-lower/)|Guess Number Higher or Lower|[Solution](./374/Code.java)|[Note](./374/Note.text)|Easy|O(logn)|O(1)||
+||[No.475](https://leetcode.com/problems/heaters/)|Heaters|[Solution](./475/Code.java)|[Note](./475/Note.text)|Easy|O(nlogn)|O(1)||
+||[No.744](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)|Find Smallest Letter Greater Than Target|[Solution](./744/Code.java)|[Note](./744/Note.text)|Easy|O(n)|O(1)||
+||[No.852](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|Peak Index in a Mountain Array|[Solution](./852/Code.java)|[Note](./852/Note.text)|Easy|O(n)|O(1)||
+|🔒|No.426|Convert Binary Search Tree to Sorted Doubly Linked List|Solution|Note|Medium|O(n)|O(1)||
+||[No.050](https://leetcode.com/problems/powx-n/)|Pow(x, n)|[Solution](./050/Code.java)|[Note](./050/Note.text)|Medium|O(logn)|O(1)||
+||[No.153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|Find Minimum in Rotated Sorted Array|[Solution](./153/Code.java)|[Note](./153/Note.text)|Medium|O(logn)|O(n)||
+
+
+## Binary Search Tree
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)|Lowest Common Ancestor of a Binary Search Tree|[Solution](./235/Code.java)|[Note](./235/Note.text)|Easy|O(logn)|O(1)||
+|🔒|No.270|Closest Binary Search Tree Value|Solution|Note|Easy|O(logn)|O(1)||
+||[No.653](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)|Two Sum IV - Input is a BST|[Solution](./653/Code.java)|[Note](./653/Note.text)|Easy|O(n)|O(n)||
+||[No.098](https://leetcode.com/problems/validate-binary-search-tree/)|Validate Binary Search Tree|[Solution](./098/Code.java)|[Note](./098/Note.text)|Easy|O(n)|O(n)||
+||[No.278](https://leetcode.com/problems/first-bad-version/)|First Bad Version|[Solution](./278/Code.java)|[Note](./278/Note.text)|Easy|O(logn)|O(1)||
+||[No.033](https://leetcode.com/problems/search-in-rotated-sorted-array/)|Search in Rotated Array|[Solution](./033/Code.java)|[Note](./033/Note.text)|Medium|O(logn)|O(1)||
+||[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(1)|O(h)||
+
+
+## N-ary Tree
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.589](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)|N-ary Tree Preorder Traversal|[Solution](./589/Code.java)|[Note](./589/Note.text)|Easy|O(n)|O(n)||
+||[No.590](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)|N-ary Tree Postorder Traversal|[Solution](./590/Code.java)|[Note](./590/Note.text)|Easy|O(n)|O(n)||
+||[No.429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/)|N-ary Tree Levelorder Traversal|[Solution](./429/Code.java)|[Note](./429/Note.text)|Easy|O(n)|O(n)||
+||[No.559](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)|Maximum Depth of N-ary Tree|[Solution](./559/Code.java)|[Note](./559/Note.text)|Easy|O(n)|O(n)||
+||[No.208](https://leetcode.com/problems/implement-trie-prefix-tree/)|Implement Trie (Prefix Tree)|[Solution](./208/Code.java)|[Note](./208/Note.text)|Medium|O(k)|O(n)|trie|
+||[No.677](https://leetcode.com/problems/map-sum-pairs/)|Map Sum Pairs|[Solution](./677/Code.java)|[Note](./677/Note.text)|Medium|||trie|
+||[No.648](https://leetcode.com/problems/replace-words/)|Replace Words|[Solution](./648/Code.java)|[Note](./648/Note.text)|Medium|O(n)|O(n)|trie|
+||[No.211](https://leetcode.com/problems/add-and-search-word-data-structure-design/)|Add and Search Word - Data structure design|[Solution](./211/Code.java)|[Note](./211/Note.text)|Medium|O(n)|O(n)|trie|
+
+
+## Graph
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.200](https://leetcode.com/problems/number-of-islands/)|Number of Islands|[Solution](./200/Code.java)|[Note](./200/Note.text)|Medium|O(n)|O(n)|BFS|
+||[No.133](https://leetcode.com/problems/clone-graph/)|Clone Graph|[Solution](./133/Code.java)|[Note](./133/Note.text)|Medium|O(n)|O(n)|BFS|
+||[No.399](https://leetcode.com/problems/evaluate-division/)|Evaluate Division|[Solution](./399/Code.java)|[Note](./399/Note.text)|Medium|O(n)|O(n)|DFS|
+
+
+## Backtracking
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.017](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)|Letter Combinations of a Phone Number|[Solution](./017/Code.java)|[Note](./017/Note.text)|Medium|O(n)|O(n)||
+||[No.093](https://leetcode.com/problems/restore-ip-addresses/)|Restore IP Addresses|[Solution](./093/Code.java)|[Note](./093/Note.text)|Medium|O(n^4)|O(n)||
+||[No.078](https://leetcode.com/problems/subsets/)|Subset|[Solution](./078/Code.java)|[Note](./078/Note.text)|Medium|O(2^n)|O(n)||
+||[No.046](https://leetcode.com/problems/permutations/)|Permutations|[Solution](./046/Code.java)|[Note](./046/Note.text)|Medium|O(n!)|O(n)||
+||[No.047](https://leetcode.com/problems/permutations-ii/)|PermutationsII|[Solution](./047/Code.java)|[Note](./047/Note.text)|Medium|O(n!)|O(n)||
+||[No.079](https://leetcode.com/problems/word-search/)|Word Search|[Solution](./079/Code.java)|[Note](./079/Note.text)|Medium|O(n^2)|O(n)||
+||[No.022](https://leetcode.com/problems/generate-parentheses/)|Generate Parentheses|[Solution](./022/Code.java)|[Note](./022/Note.text)|Medium|O(n!)|O(n)||
+||[No.039](https://leetcode.com/problems/combination-sum/)|Combination Sum|[Solution](./039/Code.java)|[Note](./039/Note.text)|Medium|O(n!)|O(n)||
