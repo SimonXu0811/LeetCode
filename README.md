@@ -8,8 +8,8 @@
 - [x] [Recursion](#recursion)
 - [x] [Queue](#queue)
 - [x] [Binary Tree](#binary-tree)
-- [ ] [Hash Table](#hash-table)
-- [ ] Sort
+- [x] [Hash Table](#hash-table)
+- [ ] [Sort](#sort)
 - [ ] Heap
 - [ ] Binary Search
 - [ ] Binary Search Tree
@@ -221,3 +221,15 @@
 |✔️|[No.599](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)|Minimum Index Sum of Two Lists|[Solution](./599/Code.java)|[Note](./599/Note.text)|Easy|O(1)|O(n)||
 |🔒|No.359|Logger Rate Limiter|Solution|Note|Easy|O(1)|O(n)||
 
+## Sort
+|Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
+|---|---|-----|--------|----|----------|----|-----|---|
+||[No.088](https://leetcode.com/problems/merge-sorted-array/)|Merge Sorted Array|[Solution](./088/Code.java)|[Note](./088/Note.text)|Medium|O(n+m)|O(1)|three pointer|
+|🔒|No.252|Meeting Room|Solution|Note|Easy|O(nlogn)|O(1)||
+||[No.075](https://leetcode.com/problems/sort-colors/)|Sort Colors|[Solution](./075/Code.java)|[Note](./075/Note.text)|Medium|O(n)|O(1)|tri pointer|
+||[No.147](https://leetcode.com/problems/insertion-sort-list/)|Insertion Sort List|[Solution](./147/Code.java)|[Note](./147/Note.text)|Medium|O(n^2)|O(1)||
+||[No.148](https://leetcode.com/problems/sort-list/)|Sort List|[Solution](./148/Code.java)|[Note](./148/Note.text)|Medium|O(nlog)|O(1)|list merge sort|
+||[No.179](https://leetcode.com/problems/largest-number/)|Largest Number|[Solution](./179/Code.java)|[Note](./179/Note.text)|Medium|O(nlogn)|O(1)|cmp_to_key|
+|🔒|No.253|Meeting Rooms II|Solution|Note|Medium|O(nlogn)|O(n)||
+||[No.347](https://leetcode.com/problems/top-k-frequent-elements/)|Top K Frequent Elements|[Solution](./347/Code.java)|[Note](./347/Note.text)|Medium|O(nlogn)|O(n)||
+||[No.581](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)|Shortest Unsorted Continuous Subarray|[Solution](./581/Code.java)|[Note](./581/Note.text)|Easy|O(nlogn)|O(n)||
