@@ -214,10 +214,10 @@
 |🔒|No.266|Palindrome Permutation|Solution|Note|Easy|O(n)|O(n)||
 |🔒|No.288|Unique Word Abbreviation|Solution|Note|Medium|O(n)|O(n)||
 |✔️|[No.299](https://leetcode.com/problems/bulls-and-cows/)|Bulls and Cows|[Solution](./299/Code.java)|[Note](./299/Note.text)|Medium|O(n)|O(n)||
-||[No.387](https://leetcode.com/problems/first-unique-character-in-a-string/)|First Unique Character in a String|[Solution](./387/Code.java)|[Note](./387/Note.text)|Easy|O(n)|O(n)||
-||[No.350](https://leetcode.com/problems/intersection-of-two-arrays-ii/)|Intersection of Two Arrays II|[Solution](./350/Code.java)|[Note](./350/Note.text)|Easy|O(n)|O(n)||
-||[No.049](https://leetcode.com/problems/group-anagrams/)|Group Anagrams|[Solution](./049/Code.java)|[Note](./049/Note.text)|Easy|O(nklonk)|O(n)||
-||[No.705](https://leetcode.com/problems/design-hashset/)|Design HashSet |[Solution](./705/Code.java)|[Note](./705/Note.text)|Easy|O(1)|O(n)||
-||[No.599](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)|Minimum Index Sum of Two Lists|[Solution](./599/Code.java)|[Note](./599/Note.text)|Easy|O(1)|O(n)||
+|✔️|[No.387](https://leetcode.com/problems/first-unique-character-in-a-string/)|First Unique Character in a String|[Solution](./387/Code.java)|[Note](./387/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.350](https://leetcode.com/problems/intersection-of-two-arrays-ii/)|Intersection of Two Arrays II|[Solution](./350/Code.java)|[Note](./350/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.049](https://leetcode.com/problems/group-anagrams/)|Group Anagrams|[Solution](./049/Code.java)|[Note](./049/Note.text)|Easy|O(nklogn)|O(kn)||
+|✔️|[No.705](https://leetcode.com/problems/design-hashset/)|Design HashSet |[Solution](./705/Code.java)|[Note](./705/Note.text)|Easy|O(1)|O(n)||
+|✔️|[No.599](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)|Minimum Index Sum of Two Lists|[Solution](./599/Code.java)|[Note](./599/Note.text)|Easy|O(1)|O(n)||
 |🔒|No.359|Logger Rate Limiter|Solution|Note|Easy|O(1)|O(n)||
 
