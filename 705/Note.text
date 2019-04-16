@@ -1,0 +1,110 @@
+自己的思路
+用queue做
+插入add 删除如果队列中还有元素就继续删，直到完全删除
+查询就是contains
+
+自己的代码
+class MyHashSet {
+    Deque<Integer> list;
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+        list = new LinkedList<>();
+    }
+    
+    public void add(int key) {
+        list.add(key);
+    }
+    
+    public void remove(int key) {
+        while(list.contains(key)){
+            list.remove(key);
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        if(list.contains(key)) return true;
+        return false;
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+ 
+ 时间复杂度分析
+ add所用时间为:O(1)
+ 删除所用时间为:O(n)
+ 查询所用时间为:O(n)
+ 
+ 
+ 
+ 别人的思路
+ 根据hash表的定义创建一个二维数组，用来保存hash值以及数值
+ 计算公式就是hash = object % length
+ 然后把元素对应的加进去，并把数组设为是true，表示有元素在里面
+ 然后删除就只要找到了设为false
+ 查询就直接返回数组的值
+ 
+ 别人的代码
+ class MyHashSet {
+
+    private int buckets = 1000;
+    private int itemsPerBucket = 1001;
+    private boolean[][] table;
+    
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+        table = new boolean[buckets][];
+    }
+
+    public int hash(int key) {//计算hash值
+        return key % buckets;
+    }
+
+    public int pos(int key) {//计算插入的位置，代替了链表
+        return key / buckets;
+    }
+    
+    public void add(int key) {//插入对应的hash值和数值，然后设为true
+        int hashkey = hash(key);
+        
+        if (table[hashkey] == null) {
+            table[hashkey] = new boolean[itemsPerBucket];
+        }
+        table[hashkey][pos(key)] = true;
+    }
+    
+    public void remove(int key) {//找到直接设为false
+        int hashkey = hash(key);
+
+        if (table[hashkey] != null)
+            table[hashkey][pos(key)] = false;
+    }
+    
+    /** Returns true if this set did not already contain the specified element */
+    public boolean contains(int key) {//直接返回改位置的数组的值
+        int hashkey = hash(key);
+        return table[hashkey] != null && table[hashkey][pos(key)];
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+ 
+ 时间复杂度分析
+ 都没有用到循环，所以时间复杂度为:O(1)
+ 
+ 空间复杂度分析
+ 创建数组临时保存要插入的数，占用的空间取决于插入的个数，所以空间复杂度为:O(n)
+ 
+ 
