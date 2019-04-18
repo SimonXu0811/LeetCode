@@ -10,7 +10,7 @@
 - [x] [Binary Tree](#binary-tree)
 - [x] [Hash Table](#hash-table)
 - [x] [Sort](#sort)
-- [ ] [Heap](#heap)
+- [x] [Heap](#heap)
 - [ ] [Math](#math)
 - [ ] [Binary Search](#binary-search)
 - [ ] [Binary Search Tree](#binary-search-tree)
@@ -237,10 +237,10 @@
 ## Heap
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |---|---|-----|--------|----|----------|----|-----|---|
-||[No.264](https://leetcode.com/problems/ugly-number-ii/)|Ugly Number II|[Solution](./264/Code.java)|[Note](./264/Note.text)|Medium|O(n)|O(1)||
-||[No.313](https://leetcode.com/problems/super-ugly-number/)|Super Ugly Number|[Solution](./313/Code.java)|[Note](./313/Note.text)|Medium|O(n * k)|O(n * k)||
-||[No.378](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|Kth Smallest Element in a Sorted Matrix|[Solution](./378/Code.java)|[Note](./378/Note.text)|Medium|O(nklogn)|O(n)||
-||[No.215](https://leetcode.com/problems/kth-largest-element-in-an-array/)|Kth Largest Element in an Array|[Solution](./215/Code.java)|[Note](./215/Note.text)|Medium|O(n+klogn)|O(n)||
+|✔️|[No.264](https://leetcode.com/problems/ugly-number-ii/)|Ugly Number II|[Solution](./264/Code.java)|[Note](./264/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.313](https://leetcode.com/problems/super-ugly-number/)|Super Ugly Number|[Solution](./313/Code.java)|[Note](./313/Note.text)|Medium|O(n * k)|O(n * k)||
+|✔️|[No.378](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|Kth Smallest Element in a Sorted Matrix|[Solution](./378/Code.java)|[Note](./378/Note.text)|Medium|O(nklogn)|O(n)||
+|✔️|[No.215](https://leetcode.com/problems/kth-largest-element-in-an-array/)|Kth Largest Element in an Array|[Solution](./215/Code.java)|[Note](./215/Note.text)|Medium|O(n+klogn)|O(n)||
 
 ## Math
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
