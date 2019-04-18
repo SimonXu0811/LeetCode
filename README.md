@@ -9,7 +9,7 @@
 - [x] [Queue](#queue)
 - [x] [Binary Tree](#binary-tree)
 - [x] [Hash Table](#hash-table)
-- [ ] [Sort](#sort)
+- [x] [Sort](#sort)
 - [ ] [Heap](#heap)
 - [ ] [Math](#math)
 - [ ] [Binary Search](#binary-search)
