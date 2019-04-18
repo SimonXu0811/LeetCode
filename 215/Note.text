@@ -1,0 +1,27 @@
+自己的思路
+先生成最小堆，然后然后length - 1 - k个数
+
+自己的代码
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> que  = new PriorityQueue<>();
+        
+        for(int i : nums){//先生成一个最小堆
+            que.add(i);
+        }
+        
+        int count = 0;
+        
+        while(count++ != nums.length - k){//poll 出length - k个数
+            que.poll();
+        }
+        
+        return que.poll();//然后poll出下一个
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了优先级队列，所以空间复杂度为:O(n)
