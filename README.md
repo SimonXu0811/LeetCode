@@ -11,7 +11,7 @@
 - [x] [Hash Table](#hash-table)
 - [x] [Sort](#sort)
 - [x] [Heap](#heap)
-- [ ] [Math](#math)
+- [x] [Math](#math)
 - [ ] [Binary Search](#binary-search)
 - [ ] [Binary Search Tree](#binary-search-tree)
 - [ ] [N-ary Tree](#n-ary-tree)
@@ -247,9 +247,9 @@
 |---|---|-----|--------|----|----------|----|-----|---|
 |✔️|[No.263](https://leetcode.com/problems/ugly-number/)|Ugly Number|[Solution](./263/Code.java)|[Note](./263/Note.text)|Easy|O(n)|O(1)||
 |✔️|[No.238](https://leetcode.com/problems/product-of-array-except-self/)|Product of Array Except Self|[Solution](./238/Code.java)|[Note](./238/Note.text)|Easy|O(n)|O(1)||
-||[No.621](https://leetcode.com/problems/task-scheduler/)|Task Scheduler|[Solution](./621/Code.java)|[Note](./621/Note.text)|Medium|O(n)|O(1)||
-||[No.326](https://leetcode.com/problems/power-of-three/)|Power of Three|[Solution](./326/Code.java)|[Note](./326/Note.text)|Easy|O(n)|O(1)|Math|
-||[No.892](https://leetcode.com/problems/surface-area-of-3d-shapes)|Surface Area of 3D Shapes|[Solution](./892/Code.java)|[Note](./892/Note.text)|Easy|O(n)|O(1)|Math|
+|✔️|[No.621](https://leetcode.com/problems/task-scheduler/)|Task Scheduler|[Solution](./621/Code.java)|[Note](./621/Note.text)|Medium|O(nlogn)|O(1)||
+|✔️|[No.326](https://leetcode.com/problems/power-of-three/)|Power of Three|[Solution](./326/Code.java)|[Note](./326/Note.text)|Easy|O(1)|O(1)|Math|
+|✔️|[No.892](https://leetcode.com/problems/surface-area-of-3d-shapes)|Surface Area of 3D Shapes|[Solution](./892/Code.java)|[Note](./892/Note.text)|Easy|O(n)|O(1)|Math|
 
 ## Binary Search
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
