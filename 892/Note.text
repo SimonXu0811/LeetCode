@@ -1,0 +1,25 @@
+思路
+首先正常的就是层面有几个乘4，然后再加上上下的两个底
+然后要考虑左右两边的重合，如果有重合那么就减去最小高度的两个面
+然后考虑上下的重合，同样减去最小高度的两个面
+
+代码
+class Solution {
+    public int surfaceArea(int[][] grid) {
+         int res = 0; 
+        for(int i = 0; i < grid.length; i++){
+            for(int j = 0; j < grid[0].length; j++){
+                if(grid[i][j] > 0) res += 4 * grid[i][j] + 2;//正常情况下就是高度乘4加两个底
+                if(i < grid.length - 1) res -= (Math.min(grid[i][j],grid[i+1][j])*2);//然后如果与左右重合的，那么就减去最小高度的两个面
+                if(j < grid.length - 1) res -= (Math.min(grid[i][j],grid[i][j+1])*2);//如果上下重合的，那么就减去最小高度的两个面
+            }
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了二维数组中所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的数组，所以空间复杂度为:O(n)
