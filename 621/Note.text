@@ -1,0 +1,32 @@
+思路
+首先将字符做为下标，数组记录出现的频率
+然后整理数组，将出现最大频率的数组元素个数取出
+然后分两种情况讨论
+1.次数最多的任务A的cd时间大于其他任务的循环时间，那么最小时间为A全部执行完毕。时间为 (n-1)*间隔时间+n, n为A的cd的次数
+2.A的cd时间小于其他任务循环完成时间，那么这时候就没有等待的时间了，所有任务都可以完美排期。总时间为len(task_queue)
+
+代码
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        int[] count = new int[26];
+        for (int i = 0; i < tasks.length; i++) {//统计词频
+            count[tasks[i]-'A']++;
+        }
+        Arrays.sort(count);//词频排序，升序排序，count[25]是频率最高的
+        int maxCount = 0;
+        for (int i = 25; i >= 0; i--) {//统计有多少个频率最高的字母
+            if(count[i] != count[25]){
+                break;
+            }
+            maxCount++;
+        }
+        //公式算出的值可能会比数组的长度小，取两者中最大的那个
+        return Math.max((count[25] - 1) * (n + 1) + maxCount , tasks.length);
+    }
+}
+
+时间复杂度分析
+整理了数组，用了归并算法，所以时间复杂度为:O(nlogn)
+
+空间复杂度分析
+借用了一个数组，26个空间，所以空间复杂度为:O(1)
