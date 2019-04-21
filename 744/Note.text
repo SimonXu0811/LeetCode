@@ -1,0 +1,44 @@
+自己的思路
+遍历整个数组，找到第一个比target大的数组
+由于是排好序的，所以就不需要排序了
+
+自己的代码
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        for (char c: letters)//遍历数组，找第一个最大于target的
+            if (c > target) return c;
+        return letters[0];
+    }
+}
+
+时间复杂度分析
+遍历了所有的数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
+
+
+
+别人的思路
+二分查找法，如果那个字符比target小或者等于，那么向后找
+否则的话就向前的一半继续查找
+最后返回找到的字符
+
+别人的代码
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int low = 0, high = letters.length;
+        while (low < high) {//二分查找
+            int mid = low + (high - low) / 2;
+            if (letters[mid] <= target) low = mid + 1;//如果不比目标大，那么就后一半
+            else high = mid;//否则就前一半
+        }
+        return letters[low % letters.length];
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
