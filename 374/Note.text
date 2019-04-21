@@ -1,0 +1,59 @@
+自己的思路1
+遍历整个数组，如果这个猜出来是0，那么就是这个值
+
+自己的代码
+/* The guess API is defined in the parent class GuessGame.
+   @param num, your guess
+   @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
+      int guess(int num); */
+
+public class Solution extends GuessGame {
+    public int guessNumber(int n) {
+        for (int i = 1; i < n; i++){//遍历整个数组，一直找到那个数字相同的数
+            if (guess(i) == 0)
+                return i;
+        }
+        return n;
+    }
+}
+
+时间复杂度分析
+遍历了所有数，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有额外空间，所以空间复杂度为:O(1)
+
+
+
+自己的思路2
+改写二分法，如果这个数的guess是0，那么返回，如果小于0，那么就高的一半，如果大于0，那么就小的一半
+
+自己的代码
+/* The guess API is defined in the parent class GuessGame.
+   @param num, your guess
+   @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
+      int guess(int num); */
+
+public class Solution extends GuessGame {
+    public int guessNumber(int n) {
+        int low = 1;
+        int high = n;
+        while (low <= high) {//改写二分法
+            int mid = low + (high - low) / 2;
+            int res = guess(mid);
+            if (res == 0)//如果是0，那么就是找到了
+                return mid;
+            else if (res < 0)//猜小了，那么就找大的一半
+                high = mid - 1;
+            else
+                low = mid + 1;//猜大了，就找小的一半
+        }
+        return -1;
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
