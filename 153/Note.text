@@ -1,0 +1,47 @@
+自己的思路
+整理数组，然后返回最小的值
+
+自己的代码
+class Solution {
+    public int findMin(int[] nums) {
+        Arrays.sort(nums);
+        return nums[0];
+    }
+}
+
+时间复杂度分析
+内置函数排序，所以时间复杂度为:O(nlogn(
+
+空间复杂度分析
+归并算法，所以分治成了n个小块，一个额外的数组排序，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+二分找最小值，如果找到一个是递减的，那么向后移动
+如果是递增的，向前移动，找到第一个最小的值
+
+别人的代码
+class Solution {
+    public int findMin(int[] nums) {
+        int start=0;int mid=0;
+        int end=nums.length-1;
+        while(start<=end){//二分法
+            mid=(start+end)/2;
+            if((mid>=1&&nums[mid]<nums[mid-1])||(mid==0&&nums[mid]<nums[nums.length-1]))
+                return nums[mid];
+            if(nums[end]<nums[mid]){//如果递减，那么就向后移动
+                start=mid+1;
+            }else{//否则向前移动
+                end=mid-1;
+            }
+        }
+        return nums[start];
+    }
+}
+
+时间复杂度分析
+二分法，时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度:O(1)
