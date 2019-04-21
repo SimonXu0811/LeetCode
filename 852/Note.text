@@ -1,0 +1,51 @@
+自己的思路
+就是找到最大值的索引
+所以遍历数组，找最大值已经它的索引
+
+自己的代码
+class Solution {
+    public int peakIndexInMountainArray(int[] A) {
+        int index = 0;
+        int max = -1;
+        for(int i = 0; i < A.length; i++){//遍历数组，找到最大值，以及那个索引
+            if(A[i] > max){
+                max = A[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
+
+
+
+别人的思路
+二分法查找
+如果前一个数比后一个数小，那么向后移动，否则前向
+
+别人的代码
+class Solution {
+    public int peakIndexInMountainArray(int[] A) {
+        int lo = 0, hi = A.length - 1;
+        while (lo < hi) {//二分查找
+            int mi = lo + (hi - lo) / 2;
+            if (A[mi] < A[mi + 1])//如果有更大的值，那么向后移动
+                lo = mi + 1;
+            else
+                hi = mi;
+        }
+        return lo;
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
