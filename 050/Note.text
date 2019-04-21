@@ -1,0 +1,33 @@
+自己的思路
+用内置的函数
+
+自己的代码
+class Solution {
+    public double myPow(double x, int n) {
+        return Math.pow(x,n);//内置函数
+    }
+}
+
+时间复杂度分析
+内置函数，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+不断的除2，每次n除2，就把x平方一下
+
+别人的代码
+double myPow(double x, int n) { 
+    if(n==0) return 1;
+    double t = myPow(x,n/2);//递归
+    if(n%2) return n<0 ? 1/x*t*t : x*t*t;//每次除2，就平方一下
+    else return t*t;
+}
+
+时间复杂度分析
+分治算法，每次二分，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
