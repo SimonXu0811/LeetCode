@@ -1,0 +1,54 @@
+思用
+使用一个set记录当前学生的座位号。如果set为空，则第一个学生进入 0 号就坐。
+当set非空时，需要暴力枚举整个set来找到最大的间隔，然后插入新的位置到数组中，保持set为升序。
+当有学生离开时，直接在set里删除。
+代码
+class ExamRoom {
+    int N;
+    TreeSet<Integer> students;
+
+    public ExamRoom(int N) {
+        this.N = N;
+        students = new TreeSet();
+    }
+
+    public int seat() {
+        int student = 0;//这个用来记录长度
+        if (students.size() > 0) {
+            int dist = students.first();
+            Integer prev = null;
+            for (Integer s: students) {//遍历整个set，如果有值，那么记录位置，然后取中间，每次加上中间去前面的距离
+                if (prev != null) {
+                    int d = (s - prev) / 2;
+                    if (d > dist) {
+                        dist = d;
+                        student = prev + d;
+                    }
+                }
+                prev = s;
+            }
+            if (N - 1 - students.last() > dist)//如果加上距离超过了最后的位置，那么就放最后的位置
+                student = N - 1;
+        }
+        students.add(student);
+        return student;
+    }
+
+    public void leave(int p) {
+        students.remove(p);
+    }
+}
+
+/**
+ * Your ExamRoom object will be instantiated and called as such:
+ * ExamRoom obj = new ExamRoom(N);
+ * int param_1 = obj.seat();
+ * obj.leave(p);
+ */
+ 
+ 时间复杂度分析
+ 插入和删除操作都需要遍历整个数组，故单次操作的时间复杂度为 O(P)，P为学生的个数。
+ 
+ 空间复杂度分析
+ 使用了一个额外的set存储，故空间复杂度为 O(P)。
+ 
