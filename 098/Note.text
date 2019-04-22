@@ -1,0 +1,43 @@
+自己的思路
+将二叉搜索树保存在数组中，然后看是不是递增的
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        inorder(root, list);//保存树中的元素
+        for(int i = 1; i < list.size(); i++){//查看是否递增
+            if(list.get(i - 1) >= list.get(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    private List<Integer> inorder(TreeNode root, List<Integer> list){
+        if(root == null){
+            return list;
+        }
+        
+        inorder(root.left,list);
+        list.add(root.val);
+        inorder(root.right,list);
+            
+        return list;
+    }
+}
+
+时间复杂度分析
+中序遍历，又遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了数组保存了元素，然后递归也耗费了空间，所以空间复杂度为:O(n)
