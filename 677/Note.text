@@ -1,0 +1,38 @@
+自己的思路
+用hashmap保存，key为String value为整数，然后如果有相同的起始的，那么就获取出来相加
+
+自己的代码
+class MapSum {
+    HashMap<String, Integer> map;
+    public MapSum() {
+        map = new HashMap<>();
+    }
+    public void insert(String key, int val) {
+        map.put(key, val);
+    }
+    public int sum(String prefix) {
+        int ans = 0;
+        for (String key: map.keySet()) {//遍历整个map，如果起始是prefix，那么就加上key
+            if (key.indexOf(prefix) == 0) {
+                ans += map.get(key);
+            }
+        }
+        return ans;
+    }
+}
+
+/**
+ * Your MapSum object will be instantiated and called as such:
+ * MapSum obj = new MapSum();
+ * obj.insert(key,val);
+ * int param_2 = obj.sum(prefix);
+ */
+ 
+ 时间复杂度分析
+ sum中时间复杂度为:O(n^2)
+ 
+ 空间复杂度分析
+ 就用了一个map保存，空间复杂度为:O(1)
+ 
+ 
+ 
