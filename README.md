@@ -283,7 +283,7 @@
 |✔️|[No.429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/)|N-ary Tree Levelorder Traversal|[Solution](./429/Code.java)|[Note](./429/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.559](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)|Maximum Depth of N-ary Tree|[Solution](./559/Code.java)|[Note](./559/Note.text)|Easy|O(n)|O(n)||
 |❗️|[No.208](https://leetcode.com/problems/implement-trie-prefix-tree/)|Implement Trie (Prefix Tree)|[Solution](./208/Code.java)|[Note](./208/Note.text)|Medium|O(k)|O(k)|trie|
-|❗️|[No.677](https://leetcode.com/problems/map-sum-pairs/)|Map Sum Pairs|[Solution](./677/Code.java)|[Note](./677/Note.text)|Medium|O(n^2)|O(n)|trie|
+|❗️|[No.677](https://leetcode.com/problems/map-sum-pairs/)|Map Sum Pairs|[Solution](./677/Code.java)|[Note](./677/Note.text)|Medium|O(n^2)|O(1)|trie|
 |❗️|[No.648](https://leetcode.com/problems/replace-words/)|Replace Words|[Solution](./648/Code.java)|[Note](./648/Note.text)|Medium|O(n^3)|O(n)|trie|
 |❗️|[No.211](https://leetcode.com/problems/add-and-search-word-data-structure-design/)|Add and Search Word - Data structure design|[Solution](./211/Code.java)|[Note](./211/Note.text)|Medium|O(P)|O(P)|trie|
 
