@@ -1,0 +1,93 @@
+自己的思路
+讲树保存到两个list中，然后查找k-target是否存在于树中，如果存在就返回true
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    Queue<Integer> list = new LinkedList<>();
+    public boolean findTarget(TreeNode root, int k) {
+        Queue<Integer> target = new LinkedList<>();
+        target = inorder(root);//将树中的元素保存在两个list中
+        
+        while(!target.isEmpty()){
+            int t = k - target.poll();//如果target存在数中，那么就返回true
+            if(list.contains(t)) return true;
+        }
+        
+        return false;
+        
+    }
+    
+    private Queue<Integer> inorder(TreeNode root){
+        if(root == null) return list;
+        
+        inorder(root.left);
+        list.add(root.val);
+        inorder(root.right);
+        
+        return list;
+    }
+}
+
+时间复杂度分析
+遍历了三遍树，linkedlist的查询时间为1，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了两个list，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+用一个list中序遍历，由于是二叉搜索树，所以中序遍历完之后就是有序的
+那么就用双指针法，如果两树加起来小，那么左边的向右移
+如果大，那么右边的向左移动
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public boolean findTarget(TreeNode root, int k) {
+        List < Integer > list = new ArrayList();
+        inorder(root, list);//首先将树中的元素保存到list中
+        int l = 0, r = list.size() - 1;
+        while (l < r) {//双指针
+            int sum = list.get(l) + list.get(r);
+            if (sum == k)
+                return true;
+            if (sum < k)//两边之和太小了，那么左边的移动
+                l++;
+            else//太大了，那么右边的移动
+                r--;
+        }
+        return false;
+    }
+    public void inorder(TreeNode root, List < Integer > list) {
+        if (root == null)
+            return;
+        inorder(root.left, list);
+        list.add(root.val);
+        inorder(root.right, list);
+    }
+}
+
+时间复杂度分析
+主要时间浪费在递归上，双指针的时间平均为n/2，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了list保存，递归也耗费了空间，所以空间复杂度为:O(n)
+
