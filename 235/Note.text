@@ -1,0 +1,76 @@
+自己的思路
+搜索二叉树，由于二叉树是已经排好序的，所以直接根据大小的值来搜索
+如果节点的值都大于根节点，那么就是在右子树中
+如果都小于根节点，就是在左子树中
+否则就是在节点两边，返回这个根节点
+
+自己的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        int rootval = root.val;//每次都要重新获取值
+        int pval = p.val;
+        int qval = q.val;
+        
+        if(rootval < pval && rootval < qval) return lowestCommonAncestor(root.right,p,q);//如果都大于根节点，那么就是右子树
+        if(rootval > pval && rootval > qval) return lowestCommonAncestor(root.left,p,q);//都小于就是左子树
+        return root;//两边就返回节点
+    }
+}
+
+时间复杂度分析
+递归思想，遍历了整棵树，所以时间复杂度为:O(n)
+
+空间复杂度分析
+每次递归都创建了遍历，递归了n次就用了3n的空间，所以空间复杂度为:O(n)
+
+
+
+别人的思路
+迭代法，直接遍历树，如果都小那么就是左，都大就是向右，知道节点在两边
+
+别人的代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        int valp = p.val;
+        int valq = q.val;
+        TreeNode node = root;
+        
+        while(node != null){//迭代法
+            int valnode = node.val;
+            if(valnode < valp && valnode < valq){//都大于根节点，就向右子树移动
+                node = node.right;
+            }
+            else if(valnode > valp && valnode > valq){//都小于就向左子树移动
+                node = node.left;
+            }
+            else return node;//否则就的到节点
+        }
+        return null;
+    }
+}
+
+
+时间复杂度分析
+迭代了一半的树，取决于树的深度，所以时间复杂度为:O(n)
+
+空间复杂度分析
+每次迭代都创建了一个临时空间，相比于递归，所用的空间是常数级的，所以空间复杂度为:O(1)
+
