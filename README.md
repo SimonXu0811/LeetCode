@@ -278,9 +278,9 @@
 ## N-ary Tree
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |---|---|-----|--------|----|----------|----|-----|---|
-||[No.589](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)|N-ary Tree Preorder Traversal|[Solution](./589/Code.java)|[Note](./589/Note.text)|Easy|O(n)|O(n)||
-||[No.590](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)|N-ary Tree Postorder Traversal|[Solution](./590/Code.java)|[Note](./590/Note.text)|Easy|O(n)|O(n)||
-||[No.429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/)|N-ary Tree Levelorder Traversal|[Solution](./429/Code.java)|[Note](./429/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.589](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)|N-ary Tree Preorder Traversal|[Solution](./589/Code.java)|[Note](./589/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.590](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)|N-ary Tree Postorder Traversal|[Solution](./590/Code.java)|[Note](./590/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/)|N-ary Tree Levelorder Traversal|[Solution](./429/Code.java)|[Note](./429/Note.text)|Easy|O(n)|O(n)||
 ||[No.559](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)|Maximum Depth of N-ary Tree|[Solution](./559/Code.java)|[Note](./559/Note.text)|Easy|O(n)|O(n)||
 ||[No.208](https://leetcode.com/problems/implement-trie-prefix-tree/)|Implement Trie (Prefix Tree)|[Solution](./208/Code.java)|[Note](./208/Note.text)|Medium|O(k)|O(n)|trie|
 ||[No.677](https://leetcode.com/problems/map-sum-pairs/)|Map Sum Pairs|[Solution](./677/Code.java)|[Note](./677/Note.text)|Medium|||trie|
