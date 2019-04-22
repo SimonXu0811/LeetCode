@@ -1,0 +1,29 @@
+自己的思路
+就是查找第一个为true的数，暴力算法超时，所以换了二分
+二分在mid的时候一直超出了integer的最大值，所以改用long型
+
+自己的代码
+/* The isBadVersion API is defined in the parent class VersionControl.
+      boolean isBadVersion(int version); */
+
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        long l = 1, h = n;
+        while(l < h){//二分，最后两个指针碰撞了就是这个值
+            long mid = (h + l) / 2;
+            if(isBadVersion((int)mid)){
+                h = mid;
+            }
+            else{
+                l = mid + 1;
+            }
+        }
+        return (int)l;
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
