@@ -13,7 +13,7 @@
 - [x] [Heap](#heap)
 - [x] [Math](#math)
 - [x] [Binary Search](#binary-search)
-- [ ] [Binary Search Tree](#binary-search-tree)
+- [x] [Binary Search Tree](#binary-search-tree)
 - [ ] [N-ary Tree](#n-ary-tree)
 - [ ] [Graph](#graph)
 - [ ] [BackTracking](#backtracking)
@@ -267,13 +267,12 @@
 ## Binary Search Tree
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |---|---|-----|--------|----|----------|----|-----|---|
-||[No.235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)|Lowest Common Ancestor of a Binary Search Tree|[Solution](./235/Code.java)|[Note](./235/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)|Lowest Common Ancestor of a Binary Search Tree|[Solution](./235/Code.java)|[Note](./235/Note.text)|Easy|O(logn)|O(1)||
 |🔒|No.270|Closest Binary Search Tree Value|Solution|Note|Easy|O(logn)|O(1)||
-||[No.653](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)|Two Sum IV - Input is a BST|[Solution](./653/Code.java)|[Note](./653/Note.text)|Easy|O(n)|O(n)||
-||[No.098](https://leetcode.com/problems/validate-binary-search-tree/)|Validate Binary Search Tree|[Solution](./098/Code.java)|[Note](./098/Note.text)|Easy|O(n)|O(n)||
-||[No.278](https://leetcode.com/problems/first-bad-version/)|First Bad Version|[Solution](./278/Code.java)|[Note](./278/Note.text)|Easy|O(logn)|O(1)||
-||[No.033](https://leetcode.com/problems/search-in-rotated-sorted-array/)|Search in Rotated Array|[Solution](./033/Code.java)|[Note](./033/Note.text)|Medium|O(logn)|O(1)||
-||[No.173](https://leetcode.com/problems/binary-search-tree-iterator/)|Binary Search Tree Iterator|[Solution](./173/Code.java)|[Note](./173/Note.text)|Medium|O(1)|O(h)||
+|✔️|[No.653](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)|Two Sum IV - Input is a BST|[Solution](./653/Code.java)|[Note](./653/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.098](https://leetcode.com/problems/validate-binary-search-tree/)|Validate Binary Search Tree|[Solution](./098/Code.java)|[Note](./098/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.278](https://leetcode.com/problems/first-bad-version/)|First Bad Version|[Solution](./278/Code.java)|[Note](./278/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.033](https://leetcode.com/problems/search-in-rotated-sorted-array/)|Search in Rotated Array|[Solution](./033/Code.java)|[Note](./033/Note.text)|Medium|O(logn)|O(1)||
 
 
 ## N-ary Tree
