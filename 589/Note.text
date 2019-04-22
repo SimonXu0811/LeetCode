@@ -1,0 +1,86 @@
+自己的思路1
+用递归的方式，和二叉树比起来，N叉最大的区别就是children是一个数组的形式
+所以用for each遍历子数
+
+自己的代码
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> children;
+
+    public Node() {}
+
+    public Node(int _val,List<Node> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+class Solution {
+    List<Integer> list = new ArrayList<>();
+    public List<Integer> preorder(Node root) {
+        if(root == null){//空树不管
+            return list;
+        }
+        list.add(root.val);//前序
+        for(Node node : root.children){//遍历所有的子树
+            preorder(node);
+        }
+        return list;//回溯
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+递归占用了元素大小的空间，所以空间复杂度为:O(n)
+
+
+
+自己的思路2
+用非递归的方式，由于是前序，那么就是先保存最左边底下的，然后一直到右边最底下
+所以可以用stack后进先出的方式，每次先把树元素压进栈，然后poll出最上层的
+
+自己的代码
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> children;
+
+    public Node() {}
+
+    public Node(int _val,List<Node> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+class Solution {
+    public List<Integer> preorder(Node root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;//空树不管
+        
+        Stack<Node> stack = new Stack<>();
+        stack.add(root);//先push进一个root，然后开始迭代
+        
+        while (!stack.empty()) {//一直到没有子树为止
+            root = stack.pop();
+            list.add(root.val);//前序根节点在最前
+            for (int i = root.children.size() - 1; i >= 0; i--)//遍历所有的子树，由于是数组，所以要用for循环，先压进去，然后一个一个的迭代到最底下
+                stack.add(root.children.get(i));
+        }
+        
+        return list;
+    }
+}
+
+时间复杂度分析
+遍历了所有的元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了stack临时保存，大小取决于树中元素的个数，所以空间复杂度为:O(n)
+
+
