@@ -257,9 +257,9 @@
 |✔️|[No.855](https://leetcode.com/problems/exam-room/)|Exam Room|[Solution](./855/Code.java)|[Note](./855/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.374](https://leetcode.com/problems/guess-number-higher-or-lower/)|Guess Number Higher or Lower|[Solution](./374/Code.java)|[Note](./374/Note.text)|Easy|O(logn)|O(1)||
 |✔️|[No.475](https://leetcode.com/problems/heaters/)|Heaters|[Solution](./475/Code.java)|[Note](./475/Note.text)|Easy|O(nlogn)|O(1)||
-|✔️|[No.744](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)|Find Smallest Letter Greater Than Target|[Solution](./744/Code.java)|[Note](./744/Note.text)|Easy|O(n)|O(1)||
-|✔️|[No.852](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|Peak Index in a Mountain Array|[Solution](./852/Code.java)|[Note](./852/Note.text)|Easy|O(n)|O(1)||
-|🔒|No.426|Convert Binary Search Tree to Sorted Doubly Linked List|Solution|Note|Medium|O(n)|O(1)||
+|✔️|[No.744](https://leetcode.com/problems/find-smallest-letter-greater-than-target/)|Find Smallest Letter Greater Than Target|[Solution](./744/Code.java)|[Note](./744/Note.text)|Easy|O(logn)|O(1)||
+|✔️|[No.852](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|Peak Index in a Mountain Array|[Solution](./852/Code.java)|[Note](./852/Note.text)|Easy|O(logn)|O(1)||
+|🔒|No.426|Convert Binary Search Tree to Sorted Doubly Linked List|Solution|Note|Medium|O(logn)|O(1)||
 |✔️|[No.050](https://leetcode.com/problems/powx-n/)|Pow(x, n)|[Solution](./050/Code.java)|[Note](./050/Note.text)|Medium|O(logn)|O(1)||
 |✔️|[No.153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|Find Minimum in Rotated Sorted Array|[Solution](./153/Code.java)|[Note](./153/Note.text)|Medium|O(logn)|O(n)||
 
