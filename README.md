@@ -291,9 +291,9 @@
 ## Graph
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |---|---|-----|--------|----|----------|----|-----|---|
-|✔️|[No.200](https://leetcode.com/problems/number-of-islands/)|Number of Islands|[Solution](./200/Code.java)|[Note](./200/Note.text)|Medium|O(n)|O(n)|BFS|
+|✔️|[No.200](https://leetcode.com/problems/number-of-islands/)|Number of Islands|[Solution](./200/Code.java)|[Note](./200/Note.text)|Medium|O(n^k)|O(k)|BFS|
 |✔️|[No.133](https://leetcode.com/problems/clone-graph/)|Clone Graph|[Solution](./133/Code.java)|[Note](./133/Note.text)|Medium|O(n)|O(n)|BFS|
-|❗️|[No.399](https://leetcode.com/problems/evaluate-division/)|Evaluate Division|[Solution](./399/Code.java)|[Note](./399/Note.text)|Medium|O(n)|O(n)|DFS|
+|❗️|[No.399](https://leetcode.com/problems/evaluate-division/)|Evaluate Division|[Solution](./399/Code.java)|[Note](./399/Note.text)|Medium|O(n+m)|O(1)|DFS|
 
 
 ## Backtracking
