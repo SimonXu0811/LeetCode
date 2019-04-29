@@ -16,7 +16,7 @@
 - [x] [Binary Search Tree](#binary-search-tree)
 - [x] [N-ary Tree](#n-ary-tree)
 - [x] [Graph](#graph)
-- [ ] [BackTracking](#backtracking)
+- [x] [BackTracking](#backtracking)
 - [ ] [Dynamic Programming](#dynamic-programming)
 
 ## Bit Manipulation
