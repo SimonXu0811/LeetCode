@@ -301,9 +301,9 @@
 |---|---|-----|--------|----|----------|----|-----|---|
 |✔️|[No.017](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)|Letter Combinations of a Phone Number|[Solution](./017/Code.java)|[Note](./017/Note.text)|Medium|O(3^N*4^M)|O(3^N*4^M)||
 |✔️|[No.093](https://leetcode.com/problems/restore-ip-addresses/)|Restore IP Addresses|[Solution](./093/Code.java)|[Note](./093/Note.text)|Medium|O(1)|O(1)||
-||[No.078](https://leetcode.com/problems/subsets/)|Subset|[Solution](./078/Code.java)|[Note](./078/Note.text)|Medium|O(2^n)|O(n)||
-||[No.046](https://leetcode.com/problems/permutations/)|Permutations|[Solution](./046/Code.java)|[Note](./046/Note.text)|Medium|O(n!)|O(n)||
-||[No.047](https://leetcode.com/problems/permutations-ii/)|PermutationsII|[Solution](./047/Code.java)|[Note](./047/Note.text)|Medium|O(n!)|O(n)||
+|✔️|[No.078](https://leetcode.com/problems/subsets/)|Subset|[Solution](./078/Code.java)|[Note](./078/Note.text)|Medium|O(2^n)|O(n)||
+|✔️|[No.046](https://leetcode.com/problems/permutations/)|Permutations|[Solution](./046/Code.java)|[Note](./046/Note.text)|Medium|O(n!)|O(n)||
+|✔️|[No.047](https://leetcode.com/problems/permutations-ii/)|PermutationsII|[Solution](./047/Code.java)|[Note](./047/Note.text)|Medium|O(n!)|O(n)||
 ||[No.079](https://leetcode.com/problems/word-search/)|Word Search|[Solution](./079/Code.java)|[Note](./079/Note.text)|Medium|O(n^2)|O(n)||
 ||[No.022](https://leetcode.com/problems/generate-parentheses/)|Generate Parentheses|[Solution](./022/Code.java)|[Note](./022/Note.text)|Medium|O(n!)|O(n)||
 ||[No.039](https://leetcode.com/problems/combination-sum/)|Combination Sum|[Solution](./039/Code.java)|[Note](./039/Note.text)|Medium|O(n!)|O(n)||
