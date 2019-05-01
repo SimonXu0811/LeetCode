@@ -1,0 +1,21 @@
+自己的思路
+排列组合的方式，就是总共的步数m+n-2中抽取m-1个向下走
+所以就是m-1Cm+n-2
+
+自己的代码
+class Solution {
+    public int uniquePaths(int m, int n) {
+            int N = n + m - 2;//总步数
+            int k = m - 1; //向下的步数
+            double res = 1;
+            for (int i = 1; i <= k; i++)
+                res = res * (N - k + i) / i;//阶乘
+            return (int)res;
+    }
+}
+
+时间复杂度分析
+就是向下的步数和，所以为:O(n)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
