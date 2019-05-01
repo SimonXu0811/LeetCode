@@ -311,9 +311,9 @@
 ## Dynamic Programming
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
 |---|---|-----|--------|----|----------|----|-----|---|
-||[No.091](https://leetcode.com/problems/decode-ways/)|Decode Ways|[Solution](./091/Code.java)|[Note](./091/Note.text)|Medium|O(n)|O(1)||
-||[No.062](https://leetcode.com/problems/unique-paths/)|Unique Paths|[Solution](./062/Code.java)|[Note](./062/Note.text)|Medium|O(n^2)|O(n)||
-||[No.070](https://leetcode.com/problems/climbing-stairs/)|Combing Stairs|[Solution](./070/Code.java)|[Note](./070/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.091](https://leetcode.com/problems/decode-ways/)|Decode Ways|[Solution](./091/Code.java)|[Note](./091/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.062](https://leetcode.com/problems/unique-paths/)|Unique Paths|[Solution](./062/Code.java)|[Note](./062/Note.text)|Medium|O(n^2)|O(n)||
+|✔️|[No.070](https://leetcode.com/problems/climbing-stairs/)|Combing Stairs|[Solution](./070/Code.java)|[Note](./070/Note.text)|Medium|O(n)|O(n)||
 ||[No.926](https://leetcode.com/problems/flip-string-to-monotone-increasing/)|Flip String to Monotone Increasing|[Solution](./926/Code.java)|[Note](./926/Note.text)|Medium|O(n)|O(n)||
 ||[No.845](https://leetcode.com/problems/longest-mountain-in-array/)|Longest Mountain in Array|[Solution](./845/Code.java)|[Note](./845/Note.text)|Medium|O(n)|O(1)||
 ||[No.139](https://leetcode.com/problems/word-break/)|Longest Mountain in Array|[Solution](./139/Code.java)|[Note](./139/Note.text)|Medium|O(n)|O(1)||
