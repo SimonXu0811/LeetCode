@@ -1,0 +1,29 @@
+思路
+动态规划
+最后一个表示整个数组是否可以被拆分
+dp[i]表示 s 中以 i - 1 结尾的字符串是否可被 wordDict 拆分
+如果两个后序子集都出现在数组中，那么就是true
+
+代码
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        int n = s.length();
+        boolean[] dp = new boolean[n + 1];//用来记录是否可拆分
+        dp[0] = true;
+        for (int i = 1; i <= n; i++) {//查看i-1之前的字符串是否在数组里
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && wordDict.contains(s.substring(j, i))) {//如果0-j在数组里 并且j-i也在那么就是true
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[n];
+    }
+}
+
+时间复杂度分析
+遍历了两遍数组，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+借用了数组，所以空间复杂为:O(n)
