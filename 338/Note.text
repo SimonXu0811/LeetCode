@@ -1,0 +1,21 @@
+自己的思路
+用一个数组，遍历0-n，用内置函数数出1的个数
+然后放进数组
+
+自己的代码
+class Solution {
+    public int[] countBits(int num) {
+        int[] res = new int[num + 1];
+        for(int i = 0; i <= num; i++){
+            res[i] = Integer.bitCount(i);//内置函数转换
+        }
+        
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了0-n，然后内置函数又遍历了数的长度，所以时间复杂度为:O(m*n)
+
+空间复杂度分析
+就用了一个数组，所以空间复杂度为:O(n)
