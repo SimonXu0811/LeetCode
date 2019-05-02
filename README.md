@@ -34,6 +34,7 @@
 |✔️|[No.762](https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/)|Prime Number of Set Bits in Binary Representation|[Solution](./762/Code.java)|[Note](./762/Note.text)|Medium|O(1)|O(1)|Bit Manipulation|
 |✔️ |[No.371](https://leetcode.com/problems/sum-of-two-integers/)|Sum of Two Integers|[Solution](./371/Code.java)|[Note](./371/Note.text)|Easy|O(1)|O(1)|Bit Manipulation|
 |✔️ |[No.268](https://leetcode.com/problems/missing-number/)|Missing Number|[Solution](./268/Code.java)|[Note](./268/Note.text)|Easy|O(n)|O(1)|Bit Manipulation,Math|
+|✔️ |[No.338](https://leetcode.com/problems/counting-bits/submissions/)|Counting Bits|[Solution](./338/Code.java)|[Note](./338/Note.text)|Easy|O(n*m)|O(n)|Bit Manipulation,Math|
  
  ## Array
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
