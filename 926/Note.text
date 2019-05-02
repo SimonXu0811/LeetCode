@@ -1,0 +1,27 @@
+思路
+在从左向右扫描的过程中，我们动态维护这个分割点
+分割点左侧1的数量，分割点右侧1的数量和0的数量
+一旦发现分割点右侧0的数量超过了1的数量
+说明此时把分割点直接右移到当前扫描点可以减小翻转次数。
+
+代码
+class Solution {
+    public int minFlipsMonoIncr(String S) {
+        int leftOnes = 0, rightOnes = 0, rightZeros = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (S.charAt(i) == '0') rightZeros++;
+            else rightOnes++;
+            if (rightZeros > rightOnes) {  // 在分割点左右对比
+                leftOnes += rightOnes;
+                rightOnes = rightZeros = 0;
+            }
+        }
+        return leftOnes + rightZeros;
+    }
+}
+
+时间复杂度分析
+遍历了一遍字符串，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
