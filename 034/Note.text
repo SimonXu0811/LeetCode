@@ -1,0 +1,78 @@
+自己的思路
+先从前向后遍历找有没有值，有的话就保存第一次出现的索引
+再从当前位置向后遍历，一直保存到堆后一个出现的值
+然后初始设为{-1,-1}表示都不存在
+
+自己的代码
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int[] res = {-1, -1};//初始状态
+        int i = 0;
+        for(i = 0; i < nums.length; i++){//先找第一次出现的
+            if(nums[i] == target){
+                res[0] = i;
+                break;
+            }
+        }
+        for(int j = i; j < nums.length; j++){//然后从当前状态向后移动
+            if(nums[j] == target){
+                res[1] = j;
+            } 
+        }
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+二分搜索
+如果搜索到了，或者这个数大，那么就继续左半边搜索
+如果没有出现，那么就低边界移动一个，搜索
+对左边的要求的就是找第一个未重复的目标值
+右边的就是最后一个重复的目标值
+
+别人的代码
+class Solution {
+    private int extremeInsertionIndex(int[] nums, int target, boolean left) {//二分法搜索
+        int lo = 0;
+        int hi = nums.length;
+
+        while (lo < hi) {
+            int mid = (lo + hi) / 2;
+            if (nums[mid] > target || (left && target == nums[mid])) {//对于左边就是有重复的还要继续分，直到没有重复的目标值
+                hi = mid;
+            }
+            else {//右边就是有重复的一直向后移动
+                lo = mid+1;
+            }
+        }
+
+        return lo;
+    }
+
+    public int[] searchRange(int[] nums, int target) {
+        int[] targetRange = {-1, -1};
+
+        int leftIdx = extremeInsertionIndex(nums, target, true);
+        if (leftIdx == nums.length || nums[leftIdx] != target) {//如果搜索到结束都没有
+            return targetRange;
+        }
+
+        targetRange[0] = leftIdx;
+        targetRange[1] = extremeInsertionIndex(nums, target, false)-1;
+
+        return targetRange;
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
