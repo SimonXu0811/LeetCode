@@ -320,3 +320,4 @@
 |✔️|[No.845](https://leetcode.com/problems/longest-mountain-in-array/)|Longest Mountain in Array|[Solution](./845/Code.java)|[Note](./845/Note.text)|Medium|O(n)|O(1)||
 |✔️|[No.139](https://leetcode.com/problems/word-break/)|Word Break|[Solution](./139/Code.java)|[Note](./139/Note.text)|Medium|O(n^2)|O(n)||
 |✔️|[No.300](https://leetcode.com/problems/longest-increasing-subsequence/)|Longest Increasing Subsequence|[Solution](./300/Code.java)|[Note](./300/Note.text)|Medium|O(n^2)|O(n)||
+|✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
