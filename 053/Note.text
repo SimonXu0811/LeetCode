@@ -1,0 +1,51 @@
+自己的思路
+遍历每一个元素和后面元素的和，找到最大值
+
+自己的代码
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < nums.length; i++){//遍历每一个元素
+            int sum = 0;
+            for(int j = i; j < nums.length; j++){//向后相加，找到每个元素的最大和
+                sum += nums[j];
+                max = Math.max(sum,max);
+            }
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+遍历了两次数组，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+动态规划
+状态就是看加了后面一位数之后比较，如果小了那么就下一位
+状态转移方程就是dp[i] = dp[i - 1] + nums[i] > dp[i - 1] ? dp[i - 1] + nums[i] : dp[i - 1]
+然后找到最后的最大值
+
+别人的代码
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int[] dp = new int[nums.length];//动态规划
+        dp[0] = nums[0];
+        int max = dp[0];
+        
+        for(int i = 1; i < nums.length; i++){
+            dp[i] = Math.max(nums[i],  nums[i] + dp[i - 1]);//状态转移方程
+            max = Math.max(dp[i], max);//找到最大的和值
+        }
+        return max;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了额外的数组，所以空间复杂度为:O(n)
