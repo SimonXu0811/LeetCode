@@ -79,6 +79,7 @@
 |✔️ |[No.485](https://leetcode.com/problems/max-consecutive-ones/)|Max Consecutive Ones|[Solution](./485/Code.java)|[Note](./485/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.004](https://leetcode.com/problems/median-of-two-sorted-arrays/)|Median of Two Sorted Arrays|[Solution](./004/Code.java)|[Note](./004/Note.text)|Hard|O(nlogn)|O(n)||
 |✔️ |[No.036](https://leetcode.com/problems/valid-sudoku/)|Valid Sudoku|[Solution](./036/Code.java)|[Note](./036/Note.text)|Medium|O(n)|O(1)||
+|✔️ |[No.048](https://leetcode.com/problems/rotate-image/)|Rotate Image|[Solution](./048/Code.java)|[Note](./048/Note.text)|Medium|O(n)|O(1)||
 
 ## String
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
