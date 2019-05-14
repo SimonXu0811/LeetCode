@@ -1,0 +1,49 @@
+自己的思路
+首先先计算整个链表的长度
+然后计算出要移动的链表节点的位置
+然后将后面的链表移到前面，前面的链表移到后面
+最后末尾加一个null就好
+
+自己的代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
+        ListNode dumhead = new ListNode(0);
+        dumhead.next = head;
+        ListNode back = dumhead;
+        ListNode cur = dumhead;
+        int len = 0;
+        
+        while(cur.next != null){//首先计算出长度
+            cur = cur.next;
+            len++;
+        }
+        
+        int count = len - k % len;//找到开始旋转的位置
+        
+        for(int i = count; i > 0; i--){//找到旋转节点后面的链表
+            back = back.next;
+        }
+        
+        cur.next = dumhead.next;//旋转
+        dumhead.next = back.next;
+        back.next = null;
+        
+        return dumhead.next;
+        
+    }
+}
+
+时间复杂度分析
+遍历了两次链表，没有嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+多加了一个节点，常数级，所以空间复杂度为:O(1)
