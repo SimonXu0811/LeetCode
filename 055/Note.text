@@ -1,0 +1,23 @@
+思路
+动态规划
+思路就是找到最大的移动距离
+状态变化就是看这个索引i+nums[i]之后的距离是不是比前面的大
+如果大的话，那么就保存这个距离，继续向后判断看是不是有更大的距离
+
+代码
+class Solution {
+    public boolean canJump(int[] A) {
+    int max = 0;
+    for(int i=0;i<A.length;i++){
+        if(i>max) {return false;}//如果最大长度到不了最后的索引，那就是false
+        max = Math.max(A[i]+i,max);//找最大的步数
+    }
+    return true;
+    }
+}
+
+时间复杂度分析
+遍历了一遍数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
