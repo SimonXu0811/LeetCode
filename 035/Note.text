@@ -1,0 +1,27 @@
+自己的思路
+二分搜索法
+直到两个指针碰撞为止
+由于是排好序的，所以只要找中点比较就好
+如果相等就返回
+如果小了就向后移动
+大了就向前移动
+
+自己的代码
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int low = 0, high = nums.length-1;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid] == target) return mid;//找到了相等的数
+            else if(nums[mid] > target) high = mid-1;//如果大了向前移动
+            else low = mid+1;//小了向后移动
+        }
+        return low;
+    }
+}
+
+时间复杂度分析
+二分搜索法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+没有用到额外的空间，所以空间复杂度为:O(1)
