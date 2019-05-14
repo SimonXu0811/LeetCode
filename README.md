@@ -265,6 +265,7 @@
 |🔒|No.426|Convert Binary Search Tree to Sorted Doubly Linked List|Solution|Note|Medium|O(logn)|O(1)||
 |✔️|[No.050](https://leetcode.com/problems/powx-n/)|Pow(x, n)|[Solution](./050/Code.java)|[Note](./050/Note.text)|Medium|O(logn)|O(1)||
 |✔️|[No.153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|Find Minimum in Rotated Sorted Array|[Solution](./153/Code.java)|[Note](./153/Note.text)|Medium|O(logn)|O(n)||
+|✔️|[No.035](https://leetcode.com/problems/search-insert-position/)|Search Insert Position|[Solution](./035/Code.java)|[Note](./035/Note.text)|Medium|O(logn)|O(1)||
 
 
 ## Binary Search Tree
