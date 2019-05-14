@@ -1,0 +1,66 @@
+自己的思路
+创建一个临时的数组保存，然后将原矩阵旋转
+旋转之后再把数据复制到原矩阵上
+
+自己的代码
+class Solution {
+    public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        int[][] temp = new int [n][n];
+        int row = n; int col = 0;
+        
+        for(int i = 0; i < n; i++){//先将原矩阵进行旋转，得到一个新的矩阵
+            row --;
+            col = 0;
+            for(int j = 0; j < n; j++){
+                temp[col++][row] = matrix[i][j];
+            }
+        }
+        
+        for(int i = 0; i < n; i++){//然后复制到原矩阵上面
+            for(int j = 0; j < n; j++){
+                matrix[i][j] = temp[i][j];
+            }
+        }
+    }
+}
+
+时间复杂度分析
+遍历了两次矩阵，没有嵌套， 所以时间复杂度为:O(n)
+
+空间复杂度分析
+借用了一个新的矩阵，所以空间复杂度为:O(n)
+
+
+别人的思路
+原地算法
+首先先将所有的行列进行交换
+然后交换完成之后再把每一行翻转
+
+别人的代码
+public class Solution {
+    public void rotate(int[][] matrix) {
+        for(int i = 0; i<matrix.length; i++){//先行列交换
+            for(int j = i; j<matrix[0].length; j++){
+                int temp = 0;
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+        for(int i =0 ; i<matrix.length; i++){//然后每一行首尾交换
+            for(int j = 0; j<matrix.length/2; j++){
+                int temp = 0;
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[i][matrix.length-1-j];
+                matrix[i][matrix.length-1-j] = temp;
+            }
+        }
+    }
+}
+
+时间复杂度分析
+遍历了两次矩阵，没有嵌套，所以时间复杂度为:O(n)
+
+空间复杂分析
+没有用到额外的空间，所以空间复杂度为:O(1)
