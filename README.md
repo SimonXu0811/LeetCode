@@ -131,6 +131,7 @@
 |✔️|[No.142](https://leetcode.com/problems/linked-list-cycle-ii/)|Linked List CycleII|[Solution](./142/Code.java)|[Note](./142/Note.text)|Medium|O(n)|O(1)|quick slow pointer|
 |✔️|[No.023](https://leetcode.com/problems/merge-k-sorted-lists/)|Merge k Sorted Lists|[Solution](./023/Code.java)|[Note](./023/Note.text)|Hard|O(knlogn)|O(n)||
 |✔️|[No.138](https://leetcode.com/problems/copy-list-with-random-pointer/)|Copy List with Random Pointer|[Solution](./138/Code.java)|[Note](./138/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.063](https://leetcode.com/problems/rotate-list/)|Rotate List|[Solution](./063/Code.java)|[Note](./063/Note.text)|Medium|O(n)|O(1)||
 
 ## Stack
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
@@ -325,7 +326,5 @@
 |✔️|[No.139](https://leetcode.com/problems/word-break/)|Word Break|[Solution](./139/Code.java)|[Note](./139/Note.text)|Medium|O(n^2)|O(n)||
 |✔️|[No.300](https://leetcode.com/problems/longest-increasing-subsequence/)|Longest Increasing Subsequence|[Solution](./300/Code.java)|[Note](./300/Note.text)|Medium|O(n^2)|O(n)||
 |✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
-|✔️|[No.04](https://leetcode.com/problems/combination-sum-ii/)|Combination Sum II|[Solution](./040/Code.java)|[Note](./040/Note.text)|Medium|O(n)|O(n)||
-|✔️|[No.0530](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
-|✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.040](https://leetcode.com/problems/combination-sum-ii/)|Combination Sum II|[Solution](./040/Code.java)|[Note](./040/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.055](https://leetcode.com/problems/jump-game/)|Jump Game|[Solution](./055/Code.java)|[Note](./055/Note.text)|Medium|O(n)|O(1)||
