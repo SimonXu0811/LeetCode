@@ -328,3 +328,4 @@
 |✔️|[No.04](https://leetcode.com/problems/combination-sum-ii/)|Combination Sum II|[Solution](./040/Code.java)|[Note](./040/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.0530](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
 |✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.055](https://leetcode.com/problems/jump-game/)|Jump Game|[Solution](./055/Code.java)|[Note](./055/Note.text)|Medium|O(n)|O(1)||
