@@ -324,3 +324,6 @@
 |✔️|[No.139](https://leetcode.com/problems/word-break/)|Word Break|[Solution](./139/Code.java)|[Note](./139/Note.text)|Medium|O(n^2)|O(n)||
 |✔️|[No.300](https://leetcode.com/problems/longest-increasing-subsequence/)|Longest Increasing Subsequence|[Solution](./300/Code.java)|[Note](./300/Note.text)|Medium|O(n^2)|O(n)||
 |✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.04](https://leetcode.com/problems/combination-sum-ii/)|Combination Sum II|[Solution](./040/Code.java)|[Note](./040/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.0530](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
+|✔️|[No.053](https://leetcode.com/problems/maximum-subarray/submissions/)|Maximum Subarray|[Solution](./053/Code.java)|[Note](./053/Note.text)|Easy|O(n)|O(n)||
