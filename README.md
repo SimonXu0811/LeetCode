@@ -252,7 +252,7 @@
 |✔️|[No.621](https://leetcode.com/problems/task-scheduler/)|Task Scheduler|[Solution](./621/Code.java)|[Note](./621/Note.text)|Medium|O(nlogn)|O(1)||
 |✔️|[No.326](https://leetcode.com/problems/power-of-three/)|Power of Three|[Solution](./326/Code.java)|[Note](./326/Note.text)|Easy|O(1)|O(1)|Math|
 |✔️|[No.892](https://leetcode.com/problems/surface-area-of-3d-shapes)|Surface Area of 3D Shapes|[Solution](./892/Code.java)|[Note](./892/Note.text)|Easy|O(n)|O(1)|Math|
-|✔️|[No.009](https://leetcode.com/problems/palindrome-number/)|Surface Area of 3D Shapes|[Solution](./009/Code.java)|[Note](./009/Note.text)|Easy|O(logn)|O(1)|Math|
+|✔️|[No.009](https://leetcode.com/problems/palindrome-number/)|Palindrome Number|[Solution](./009/Code.java)|[Note](./009/Note.text)|Easy|O(logn)|O(1)|Math|
 
 ## Binary Search
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
