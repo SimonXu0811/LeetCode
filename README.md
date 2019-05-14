@@ -132,6 +132,7 @@
 |✔️|[No.023](https://leetcode.com/problems/merge-k-sorted-lists/)|Merge k Sorted Lists|[Solution](./023/Code.java)|[Note](./023/Note.text)|Hard|O(knlogn)|O(n)||
 |✔️|[No.138](https://leetcode.com/problems/copy-list-with-random-pointer/)|Copy List with Random Pointer|[Solution](./138/Code.java)|[Note](./138/Note.text)|Medium|O(n)|O(n)||
 |✔️|[No.063](https://leetcode.com/problems/rotate-list/)|Rotate List|[Solution](./063/Code.java)|[Note](./063/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.082](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)|Remove Duplicates from Sorted List II|[Solution](./082/Code.java)|[Note](./082/Note.text)|Medium|O(n^2)|O(1)||
 
 ## Stack
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
