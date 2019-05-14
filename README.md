@@ -78,6 +78,7 @@
 |✔️ |[No.561](https://leetcode.com/problems/array-partition-i/)|Array Partition I|[Solution](./561/Code.java)|[Note](./561/Note.text)|Easy|O(nlogn)|O(1)||
 |✔️ |[No.485](https://leetcode.com/problems/max-consecutive-ones/)|Max Consecutive Ones|[Solution](./485/Code.java)|[Note](./485/Note.text)|Easy|O(n)|O(1)||
 |✔️ |[No.004](https://leetcode.com/problems/median-of-two-sorted-arrays/)|Median of Two Sorted Arrays|[Solution](./004/Code.java)|[Note](./004/Note.text)|Hard|O(nlogn)|O(n)||
+|✔️ |[No.036](https://leetcode.com/problems/valid-sudoku/)|Valid Sudoku|[Solution](./036/Code.java)|[Note](./036/Note.text)|Medium|O(n)|O(1)||
 
 ## String
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
