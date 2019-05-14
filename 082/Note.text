@@ -1,0 +1,43 @@
+思路
+创建一个新的链表
+首先原链表判断这个数是不是等于后面的数，如果是那么就先向后移动
+然后再从新的链表中删掉这个数
+如果没有重复就向后移动
+一直到遍历完成
+
+代码
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dumhead = new ListNode(0);
+        dumhead.next = head;//新的链表用来删除相同的数值
+        ListNode cur = head;
+        ListNode temp = dumhead;
+        while(cur != null){
+            while(cur.next != null && cur.val == cur.next.val){//找到相同的数
+                cur = cur.next;
+            }
+            if(temp.next == cur){//在新的链表中删除
+                temp = temp.next;
+            }
+            else{//一起向后移动
+                temp.next = cur.next;
+            }
+            cur = cur.next;//继续遍历原链表找元素是否重复
+        }
+        return dumhead.next;
+    }
+}
+
+时间复杂度分析
+再遍历链表的基础上还遍历了重复的个数和新链表中重复的元素，所以时间复杂度为:O(n^2)
+
+空间复杂度分析
+用到了常数级的变量，所以时间复杂度为:O(1)
