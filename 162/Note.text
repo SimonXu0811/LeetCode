@@ -1,0 +1,53 @@
+自己的思路
+就是找数组中的最大值索引
+
+自己的代码
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int index = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(max < nums[i]){//找最大值索引
+                max = nums[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+}
+
+时间复杂度分析
+遍历了整个数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的变量空间，所以空间复杂度为:O(1)
+
+
+别人的思路
+用二分搜索法搜索
+如果搜索到这个数比后面一个大，就肯定是答案
+如果不是，那么向后移动，再找答案
+
+别人的代码
+public class Solution {
+    public int findPeakElement(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {//二分法
+            int mid = (l + r) / 2;
+            if (nums[mid] > nums[mid + 1])//只要比后面大就是凸出来的
+                r = mid;
+            else//否则看后面的一半
+                l = mid + 1;
+        }
+        return l;
+    }
+}
+
+时间复杂度分析
+二分法，所以时间复杂度为:O(logn)
+
+空间复杂度分析
+常数级的空间，所以空间复杂度为:O(1)
+
+
+
