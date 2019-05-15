@@ -1,0 +1,39 @@
+思路
+层序遍历，然后每次记录每一层的个数，最后只要加每一层的最后一个即可
+
+代码
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        rightView(root, result, 0);//回溯
+        return result;
+    }
+    
+    public void rightView(TreeNode curr, List<Integer> result, int currDepth){
+        if(curr == null){//回溯的终点，开始返回
+            return;
+        }
+        if(currDepth == result.size()){//记录最后一个即可
+            result.add(curr.val);
+        }
+        
+        rightView(curr.right, result, currDepth + 1);//BFS
+        rightView(curr.left, result, currDepth + 1);
+        
+    }
+}
+
+时间复杂度分析
+遍历了树中的所有元素，所以时间复杂度为:O(n)
+
+空间复杂度分析
+保存了回溯的空间，所以空间复杂度为:O(n)
