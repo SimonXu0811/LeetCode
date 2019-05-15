@@ -1,0 +1,23 @@
+思路
+纯数学知识，就是26位循环，如果是一组加一个A不是那就加上它代表的字母
+
+代码
+public class Solution {
+    public String convertToTitle(int n) {
+        StringBuilder result = new StringBuilder();//sb可用来更改字符串
+
+        while(n>0){
+            n--;
+            result.insert(0, (char)('A' + n % 26));//26为一组查看
+            n /= 26;
+        }
+
+        return result.toString();//返回字符串
+    }
+}
+
+时间复杂度分析
+时间取决于整数的大小，所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的空间，所以空间复杂度为:O(1)
