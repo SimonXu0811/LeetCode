@@ -1,0 +1,33 @@
+自己的思路
+后缀计算试，用stack做
+首先判断是否为运算符，如果是，那么就弹出两个来运算，完成之后放回stack中
+如果不是运算符，那么就直接入栈
+最后留下的一个就是答案
+
+自己的代码
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for(String s : tokens){
+            if(s.equals("+")){//如果是运算法，就弹出最顶上的两个计算
+                stack.push(stack.pop() + stack.pop());
+            }else if(s.equals("-")){
+                stack.push((stack.pop() - stack.pop()) * -1);
+            }else if(s.equals("*")){
+                stack.push(stack.pop()*stack.pop());
+            }else if(s.equals("/")){
+                int temp = stack.pop();
+                stack.push(stack.pop() / temp);
+            }else{//如果不是就直接入栈
+                stack.push(Integer.valueOf(s));
+            }
+        }
+        return stack.pop();//最后的就是答案
+    }
+}
+
+时间复杂度分析
+遍历了一次数组，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了stack储存空间，所以时间复杂度为:O(n)
