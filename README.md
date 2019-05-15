@@ -148,6 +148,7 @@
 |✔️|[No.921](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|Minimum Add to Make Parentheses Valid|[Solution](./921/Code.java)|[Note](./921/Note.text)|Medium|O(n)|O(1)||
 |🔒|No.339|Nested List Weight Sum|Solution|Note|Easy|O(n)|O(1)|DFS|
 |🔒|No.716|Max Stack|Solution)|Note|Easy|O(n)|O(1)|DFS|
+|✔️|[No.150](https://leetcode.com/problems/evaluate-reverse-polish-notation/)|Evaluate Reverse Polish Notation|[Solution](./150/Code.java)|[Note](./150/Note.text)|Medium|O(n)|O(n)||
 
 
 
