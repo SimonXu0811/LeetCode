@@ -114,6 +114,7 @@
 |✔️|[No.008](https://leetcode.com/problems/string-to-integer-atoi/)| String to Integer (atoi)|[Solution](./008/Code.java)|[Note](./008/Note.text)|Meduim|O(n)|O(1)||
 |✔️|[No.151](https://leetcode.com/problems/reverse-words-in-a-string/)| Reverse Words in a String|[Solution](./151/Code.java)|[Note](./151/Note.text)|Meduim|O(n)|O(n)||
 |✔️|[No.557](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| Reverse Words in a String III|[Solution](./557/Code.java)|[Note](./557/Note.text)|Easy|O(n)|O(n)||
+|✔️ |[No.018](https://leetcode.com/problems/4sum/)|4Sum|[Solution](./018/Code.java)|[Note](./018/Note.text)|Medium|O(n)|O(1)|two pointer|
 
 ## Linked List
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
