@@ -81,6 +81,7 @@
 |✔️ |[No.004](https://leetcode.com/problems/median-of-two-sorted-arrays/)|Median of Two Sorted Arrays|[Solution](./004/Code.java)|[Note](./004/Note.text)|Hard|O(nlogn)|O(n)||
 |✔️ |[No.036](https://leetcode.com/problems/valid-sudoku/)|Valid Sudoku|[Solution](./036/Code.java)|[Note](./036/Note.text)|Medium|O(n)|O(1)||
 |✔️ |[No.048](https://leetcode.com/problems/rotate-image/)|Rotate Image|[Solution](./048/Code.java)|[Note](./048/Note.text)|Medium|O(n)|O(1)||
+|✔️ |[No.018](https://leetcode.com/problems/4sum/)|4Sum|[Solution](./018/Code.java)|[Note](./018/Note.text)|Medium|O(n)|O(1)|two pointer|
 
 ## String
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
@@ -114,7 +115,7 @@
 |✔️|[No.008](https://leetcode.com/problems/string-to-integer-atoi/)| String to Integer (atoi)|[Solution](./008/Code.java)|[Note](./008/Note.text)|Meduim|O(n)|O(1)||
 |✔️|[No.151](https://leetcode.com/problems/reverse-words-in-a-string/)| Reverse Words in a String|[Solution](./151/Code.java)|[Note](./151/Note.text)|Meduim|O(n)|O(n)||
 |✔️|[No.557](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| Reverse Words in a String III|[Solution](./557/Code.java)|[Note](./557/Note.text)|Easy|O(n)|O(n)||
-|✔️ |[No.018](https://leetcode.com/problems/4sum/)|4Sum|[Solution](./018/Code.java)|[Note](./018/Note.text)|Medium|O(n)|O(1)|two pointer|
+|✔️|[No.043](https://leetcode.com/problems/multiply-strings/)| Multiply Strings|[Solution](./043/Code.java)|[Note](./043/Note.text)|Medium|O(n*m)|O(n+m)||
 
 ## Linked List
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
