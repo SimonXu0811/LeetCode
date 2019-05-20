@@ -1,0 +1,53 @@
+自己的思路
+根据思路分别分为上，右，下，左来思考
+如果填充完一行或一列就开始移动
+对于上层就是（startC，endC) 
+右层就是（startR，endR）
+下层就是（endC，startC）
+左层就是（endR，startR）
+然后每次运行完就移动
+
+自己的代码
+class Solution {
+    public int[][] generateMatrix(int n) {
+        int[][] res = new int [n][n];
+        int num = 1;
+        int startR = 0;
+        int endR = n - 1;
+        int startC = 0;
+        int endC = n - 1;
+        
+        if(n == 0){
+            return res;
+        }
+        while(startR <= endR && startC <= endC){
+            for(int i = startC; i <= endC; i++){ //上层
+                res[startR][i] = num++;
+            }
+            startR ++;//运行完向里面靠
+            
+            for(int i = startR; i <= endR; i++){//右层
+                res[i][endC] = num++;
+            }
+            endC--;//向里面靠
+            
+            for(int i = endC; i >= startC; i--){//下层
+                     res[endR][i] = num++;
+            }
+            endR--;//向里面靠
+            
+            for(int i = endR; i >= startR; i--){//左层
+                res[i][startC] = num++;
+            }
+            startC ++;//向里面靠
+        }
+        
+        return res;
+    }
+}
+
+时间复杂度分析
+遍历了一遍的矩阵，所以时间复杂度为:O(n)
+
+空间复杂度分析
+没有额外的空间，所以空间复杂度为:O(1)
