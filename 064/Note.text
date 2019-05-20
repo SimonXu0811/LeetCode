@@ -1,0 +1,29 @@
+自己的思路
+找到每一个的状态和状态转移规律
+对于最上层，就是每次加上左一个
+对于最右层，就是每次加上上一个
+对于中间的，每次加小的那一个
+这样每一个数都是从过路径相加得来的，不用考虑其他的
+
+自己的代码
+class Solution {
+    public int minPathSum(int[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(i == 0 && j == 0) continue;//不用考虑起始点
+                if(i == 0) grid[i][j] += grid[i][j - 1];//最上层，每次加上左边的
+                else if (j == 0) grid[i][j] += grid[i - 1][j];//最右层，每次加上上面的
+                else grid[i][j] += Math.min(grid[i - 1][j] , grid[i][j - 1]);//找到上左小的那一个
+            }
+        }
+        return grid[n - 1][m - 1];
+    }
+}
+
+时间复杂度分析
+遍历了所有的数字，所以时间复杂度为:O(n)
+
+空间复杂度分析
+原地算法，没有额外的空间，所以空间复杂度为:O(1)
