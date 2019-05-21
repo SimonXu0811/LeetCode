@@ -1,0 +1,30 @@
+自己的思路
+回溯法，首先结束的条件就是数组的长度达到了k
+然后开始添加，首先添加完一个数，之后再从这个数向后遍历
+如果到了长度就返回上一层继续
+
+自己的代码
+class Solution {
+    List<List<Integer>> res = new ArrayList<>();
+    public List<List<Integer>> combine(int n, int k) {
+        backTrace(n,k,new ArrayList<>(),1);//回溯
+        return res;
+    }
+    
+    private void backTrace(int n, int k, List<Integer> list, int temp){
+        if(list.size() == k){//终点就是长度满足了
+            res.add(new ArrayList(list));
+        }
+        for(int i = temp; i < n + 1; i++){
+            list.add(i);//添加一个数
+            backTrace(n, k, list, i + 1);//从这个数开始继续向后添加
+            list.remove(list.size() - 1);//到顶了就回溯
+        }
+    }
+}
+
+时间复杂度分析
+遍了了所有的n，所以时间复杂度为:O(n)
+
+空间复杂度分析
+用了递归的空间，所以空间复杂度为:O(n)
