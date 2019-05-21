@@ -1,0 +1,95 @@
+自己的思路
+首先创建一个数组用来记录0的位置
+然后根据数组中的0来重置它的行列
+
+自己的代码
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int[][] checker = new int[n][m];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(matrix[i][j] == 0)
+                    checker[i][j] = 1;//先找到所有0的位置
+            }
+        }
+        
+        for(int i = 0; i < n; i++){//重置行列
+            for(int j = 0; j < m; j++){
+                if(checker[i][j] == 1){
+                    setRow(i,matrix,m);
+                    setCol(j,matrix,n);
+                }
+            }
+        }
+    }
+    
+    private void setRow(int row, int[][] matrix, int m){
+        for(int i = 0; i < m; i++){
+            matrix[row][i] = 0;
+        }
+    }
+    
+    private void setCol(int col, int[][] matrix, int n){
+        for(int i = 0; i < n; i++){
+            matrix[i][col] = 0;
+        }
+    }
+}
+
+时间复杂度分析
+遍历了两次矩阵，然后重置时又遍历了一次，所以时间复杂度为:O(n^2*m) nm分别代表行列
+
+空间复杂度分析
+创建了一个空间记录，所以时空间复杂度为:O(m*n)
+
+
+
+别人的思路
+首先判断在最上层和最左层是否有值为0
+然后再判断是否中间的值为0，如果为0那么就将左侧和上侧边界的设为0
+第二次遍历从（1，1）开始，如果这个数的边缘两个为0，那么就将这个值归零
+最后再考虑左侧和上侧，如果一开始判断有0，那么就全部化0
+
+别人的代码
+public class Solution {
+public void setZeroes(int[][] matrix) {
+    boolean fr = false,fc = false;
+    for(int i = 0; i < matrix.length; i++) {
+        for(int j = 0; j < matrix[0].length; j++) {
+            if(matrix[i][j] == 0) {
+                if(i == 0) fr = true;//如果最上侧有0，那么就记录
+                if(j == 0) fc = true;//如果最左侧有0，就记录
+                matrix[0][j] = 0;//遇到有值为0，那么左侧和上侧都归为0
+                matrix[i][0] = 0;
+            }
+        }
+    }
+    for(int i = 1; i < matrix.length; i++) {
+        for(int j = 1; j < matrix[0].length; j++) {
+            if(matrix[i][0] == 0 || matrix[0][j] == 0) {//如果遇到有值的边界为0，那么就将这个值为0
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    if(fr) {//如果记录过了，就这一行归位0
+        for(int j = 0; j < matrix[0].length; j++) {
+            matrix[0][j] = 0;
+        }
+    }
+    if(fc) {
+        for(int i = 0; i < matrix.length; i++) {
+            matrix[i][0] = 0;
+        }
+    }
+    
+}
+
+时间复杂度分析
+遍历了两次，没有嵌套，所以时间复杂度为:O(n)
+
+空间复杂度分析
+常数级的空间，所以空间复杂度为:O(1)
+
+
