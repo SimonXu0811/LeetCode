@@ -285,6 +285,7 @@
 |✔️|[No.153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|Find Minimum in Rotated Sorted Array|[Solution](./153/Code.java)|[Note](./153/Note.text)|Medium|O(logn)|O(n)||
 |✔️|[No.035](https://leetcode.com/problems/search-insert-position/)|Search Insert Position|[Solution](./035/Code.java)|[Note](./035/Note.text)|Medium|O(logn)|O(1)||
 |✔️|[No.162](https://leetcode.com/problems/find-peak-element/)|Find Peak Element|[Solution](./162/Code.java)|[Note](./162/Note.text)|Medium|O(logn)|O(1)||
+|✔️|[No.074](https://leetcode.com/problems/search-a-2d-matrix/)|Search a 2D Matrix|[Solution](./074/Code.java)|[Note](./074/Note.text)|Medium|O(logn)|O(1)||
 
 
 
