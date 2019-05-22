@@ -270,6 +270,7 @@
 |✔️|[No.892](https://leetcode.com/problems/surface-area-of-3d-shapes)|Surface Area of 3D Shapes|[Solution](./892/Code.java)|[Note](./892/Note.text)|Easy|O(n)|O(1)|Math|
 |✔️|[No.009](https://leetcode.com/problems/palindrome-number/)|Palindrome Number|[Solution](./009/Code.java)|[Note](./009/Note.text)|Easy|O(logn)|O(1)|Math|
 |✔️|[No.168](https://leetcode.com/problems/excel-sheet-column-title/)|Excel Sheet Column Title|[Solution](./168/Code.java)|[Note](./168/Note.text)|Easy|O(n)|O(1)|Math|
+|✔️|[No.060](https://leetcode.com/problems/permutation-sequence/)|Permutation Sequence|[Solution](./060/Code.java)|[Note](./060/Note.text)|Easy|O(n)|O(n)|Math|
 
 ## Binary Search
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
