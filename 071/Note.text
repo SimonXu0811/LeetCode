@@ -1,0 +1,29 @@
+自己的思路
+用stack做，可以遇到..就弹出上一层的
+然后stack中只保存路径，不保存. .. 
+最后利用双头对列返回最底层的
+
+自己的代码
+class Solution {
+    public String simplifyPath(String path) {
+        Deque<String> stack = new LinkedList<>();//双端对列，stack弹出，最后返回先进先出的
+        for(String s:path.split("/")){//遇到..就返回上一层的路径
+            if(s.equals("..")&&!stack.isEmpty()){
+                    stack.pop();
+                }
+            if(s.equals(".")||s.equals("")||s.equals("..")) continue;//不保存. .. 
+            else stack.push(s);//只保存路径名称
+            }
+        StringBuilder sb = new StringBuilder();
+        while(!stack.isEmpty()){//从底部开始输出
+            sb.append("/"+stack.pollLast()+"");
+        }
+        return sb.length() == 0 ? "/" : sb.toString();//如果为空就返回/
+    }
+}
+
+时间复杂度分析
+遍历了整个字符串，所以时间复杂度为:O(n)
+
+空间复杂度分析
+借用了数组临时保存，所以空间复杂度为:O(n)
