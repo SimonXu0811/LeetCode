@@ -156,6 +156,7 @@
 |🔒|No.339|Nested List Weight Sum|Solution|Note|Easy|O(n)|O(1)|DFS|
 |🔒|No.716|Max Stack|Solution)|Note|Easy|O(n)|O(1)|DFS|
 |✔️|[No.150](https://leetcode.com/problems/evaluate-reverse-polish-notation/)|Evaluate Reverse Polish Notation|[Solution](./150/Code.java)|[Note](./150/Note.text)|Medium|O(n)|O(n)||
+|✔️|[No.071](https://leetcode.com/problems/simplify-path/)|Simplify Path|[Solution](./071/Code.java)|[Note](./071/Note.text)|Medium|O(n)|O(n)||
 
 
 
