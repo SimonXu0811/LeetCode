@@ -219,6 +219,7 @@
 |✔️|[No.108](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)|Convert Sorted Array to Binary Search Tree|[Solution](./108/Code.java)|[Note](./108/Note.text)|Easy|O(n)|O(n)|DFS|
 |✔️|[No.109](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/solution/)|Convert Sorted List to Binary Search Tree|[Solution](./109/Code.java)|[Note](./109/Note.text)|Medium|O(nlogn)|O(n)|DFS|
 |✔️|[No.199](https://leetcode.com/problems/bitwise-and-of-numbers-range/)|Binary Tree Right Side View|[Solution](./199/Code.java)|[Note](./199/Note.text)|Medium|O(n)|O(n)|BFS|
+|✔️|[No.095](https://leetcode.com/problems/unique-binary-search-trees-ii/)|Unique Binary Search Trees II|[Solution](./095/Code.java)|[Note](./095/Note.text)|Medium|O(n^3)|O(n)||
 
 ## Hash Table
 |Marker|NO.|Title|Solution|Note|Difficulty|Time|Space|Tag|
