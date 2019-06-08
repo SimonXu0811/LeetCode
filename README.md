@@ -356,3 +356,4 @@
 |✔️|[No.152](https://leetcode.com/problems/maximum-product-subarray/)|Maximum Product Subarray|[Solution](./152/Code.java)|[Note](./152/Note.text)|Medium|O(n)|O(1)||
 |✔️|[No.064](https://leetcode.com/problems/minimum-path-sum/)|Minimum Path Sum|[Solution](./064/Code.java)|[Note](./064/Note.text)|Medium|O(n)|O(1)||
 |✔️|[No.063](https://leetcode.com/problems/unique-paths-ii/)|Unique Paths II|[Solution](./063/Code.java)|[Note](./063/Note.text)|Medium|O(n)|O(1)||
+|✔️|[No.120](https://leetcode.com/problems/triangle/)|Triangle|[Solution](./120/Code.java)|[Note](./120/Note.text)|Medium|O(i*j)|O(i)||
