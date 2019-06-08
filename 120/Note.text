@@ -1,0 +1,24 @@
+自己的思路
+动态规划的思想
+首先找到第一个最小的值
+然后找到每一层中位置的最小值，然后想加
+
+自己的代码
+class Solution {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int[] A = new int[triangle.size() + 1];//用来记录每一层的最小值
+        
+        for (int i = triangle.size() - 1; i >= 0; i--){//从最后一层开始
+            for(int j = 0; j < triangle.get(i).size(); j++){//比较相邻的值
+                A[j] = Math.min(A[j], A[j + 1]) + triangle.get(i).get(j);//找到相邻值的最小和
+            }
+        }
+        return A[0];
+    }
+}
+
+时间复杂度分析
+遍历了所有的数字，所以时间复杂度为:O(j*i)
+
+空间复杂度分析
+用到了额外的空间记录每一层的最小数，所以空间复杂度为:O(i)
